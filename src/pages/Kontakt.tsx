@@ -61,7 +61,7 @@ export default function Kontakt() {
 
   // Set page title and handle job parameter
   useEffect(() => {
-    document.title = 'Kontakt | Recovery Kanzlei';
+    document.title = 'Kontakt | Korte & Partner';
     
     // Check for job query parameter and prefill message
     const searchParams = new URLSearchParams(location.search);
@@ -268,499 +268,118 @@ Mit freundlichen Grüßen`;
     }
   };
 
-  const handleFormStart = () => {
-    if (submitStartTime === 0) {
-      setSubmitStartTime(Date.now());
-    }
-  };
+  const field = "rounded-none border-0 border-b border-primary/30 bg-transparent px-0 focus-visible:ring-0 focus-visible:border-secondary";
+  const label = "text-[11px] uppercase tracking-[0.2em] text-secondary";
 
-  const scrollToForm = () => {
-    document.getElementById('kontakt-form')?.scrollIntoView({ 
-      behavior: 'smooth' 
-    });
-  };
-
-  const partnerLogos = [
-    {
-      name: "Cybercrime Komplettschutz",
-      logo: "/lovable-uploads/da91dba8-4542-49e2-a65f-f3c47c7a5afd.png"
-    },
-    {
-      name: "Polizei Nordrhein-Westfalen",
-      logo: "/lovable-uploads/1834d8de-5216-4084-be7f-b4973552d4e2.png"
-    },
-    {
-      name: "Bundeskriminalamt", 
-      logo: "/lovable-uploads/b2f48b3f-04a9-45fa-93e8-b4a2979906d0.png"
-    },
-    {
-      name: "Coinbase",
-      logo: "/lovable-uploads/40855976-8084-4aa6-8ab3-40a1b0d75ab6.png"
-    },
-    {
-      name: "Binance",
-      logo: "/lovable-uploads/a353d06a-d600-40b4-8ac2-e8fae21230d5.png"
-    },
-    {
-      name: "IOSCO",
-      logo: "/lovable-uploads/7cf1155a-1e93-404a-bb7f-b70fbba16ab9.png"
-    }
+  const faqs = [
+    ["Was kostet das erste Gespräch?", "Nichts. Im Erstgespräch klären wir, ob und wie wir helfen können. Erst wenn Sie uns beauftragen, entstehen Kosten — und die nennen wir Ihnen vorher schriftlich."],
+    ["Wie schnell melden Sie sich?", "In der Regel am selben Werktag. Bei akuten Betrugsfällen rufen wir Sie so schnell wie möglich zurück, weil jede Stunde zählt."],
+    ["Welche Unterlagen soll ich bereithalten?", "Alles, was den Ablauf zeigt: Kontoauszüge, Transaktions-IDs, Wallet-Adressen, E-Mails, Chatverläufe und Screenshots. Unvollständig ist besser als gar nicht."],
+    ["Behandeln Sie meine Daten vertraulich?", "Selbstverständlich. Wir unterliegen der anwaltlichen Schweigepflicht. Ihre Angaben werden ausschließlich zur Bearbeitung Ihrer Anfrage verwendet."],
   ];
 
   return (
     <div className="min-h-screen bg-background">
       <EditorialHero
-        eyebrow="Korte & Partner — Kontakt"
-        breadcrumb={[
-          { label: "Home", href: "/" },
-          { label: "Kontakt" },
-        ]}
-        title={<>Diskrete Erstberatung<br />in Krypto-Sachen.</>}
-        lead="Wir prüfen Ihren Sachverhalt vertraulich — Rückmeldung in der Regel innerhalb von 60 Minuten."
-        meta={
-          <>
-            <span className="flex items-center gap-2"><CheckCircle className="h-3.5 w-3.5" />Kostenlose Erstberatung</span>
-            <span className="flex items-center gap-2"><CheckCircle className="h-3.5 w-3.5" />Absolut vertraulich</span>
-            <span className="flex items-center gap-2"><CheckCircle className="h-3.5 w-3.5" />Rückmeldung in 60 Minuten</span>
-          </>
-        }
-      >
-        {phoneEnabled && (
-          <Button
-            size="lg"
-            className="rounded-none h-14 px-10 text-xs font-semibold tracking-[0.2em] uppercase bg-primary-foreground text-primary hover:bg-primary-foreground/90"
-            asChild
-          >
-            <a href={`tel:${phone}`}>
-              <Phone className="mr-2 h-4 w-4" />
-              Soforthilfe: Jetzt anrufen
-            </a>
-          </Button>
-        )}
-        <Button
-          variant="outline"
-          size="lg"
-          className="rounded-none h-14 px-10 text-xs font-semibold tracking-[0.2em] uppercase border-primary-foreground/70 bg-transparent text-primary-foreground hover:bg-primary-foreground hover:text-primary"
-          onClick={scrollToForm}
-        >
-          Kostenlose Erstberatung anfragen
-        </Button>
-      </EditorialHero>
+        eyebrow="Kontakt"
+        breadcrumb={[{ label: "Titelseite", href: "/" }, { label: "Kontakt" }]}
+        title={<>Schreiben Sie uns.<br /><em className="text-secondary">Wir hören zu.</em></>}
+        lead="Schildern Sie Ihr Anliegen in wenigen Sätzen. Wir melden uns persönlich — vertraulich und für Sie zunächst kostenfrei."
+        image={heroImage}
+      />
 
-
-      {/* Social Proof Section */}
-      <Section className="py-12 bg-gradient-glass backdrop-blur-md">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-8">
-            <p className="text-muted-foreground text-sm uppercase tracking-wider font-medium">
-              Bekannt aus Verfahren und Kooperationen mit
-            </p>
+      <section id="kontakt-form" className="container mx-auto px-6 max-w-7xl py-16 grid lg:grid-cols-12 gap-14">
+        <aside className="lg:col-span-4 space-y-10">
+          <div>
+            <p className="kicker mb-5">Die Kanzlei</p>
+            <address className="not-italic font-serif text-2xl leading-snug text-primary">Korte &amp; Partner<br />Domstraße 15<br />20095 Hamburg</address>
           </div>
-          <div className="flex flex-wrap items-center justify-center gap-8 lg:gap-12 opacity-70 hover:opacity-100 transition-opacity">
-            {partnerLogos.map((partner, index) => (
-              <div key={index} className="flex items-center justify-center h-12">
-                <img
-                  src={partner.logo}
-                  alt={partner.name}
-                  className="h-8 lg:h-10 w-auto object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
-                />
+          <div className="border-t border-border pt-8 space-y-4">
+            {phoneEnabled && (
+              <div><p className={label}>Telefon</p><a href={`tel:${phone}`} className="font-serif text-xl text-primary hover:text-secondary">{phone}</a></div>
+            )}
+            <div><p className={label}>E-Mail</p><a href="mailto:info@kortekanzlei.de" className="font-serif text-xl text-primary hover:text-secondary">info@kortekanzlei.de</a></div>
+            <div><p className={label}>Erreichbarkeit</p><p className="text-foreground/80">Montag bis Freitag, 8 – 19 Uhr</p></div>
+          </div>
+          <div className="bg-primary text-primary-foreground p-7">
+            <p className="text-[11px] uppercase tracking-[0.24em] text-accent mb-3">Akuter Betrugsfall?</p>
+            <p className="text-sm leading-relaxed text-primary-foreground/80">Überweisen Sie kein weiteres Geld, sichern Sie alle Nachrichten und melden Sie sich sofort. Je früher wir handeln, desto mehr lässt sich sichern.</p>
+          </div>
+        </aside>
+
+        <div className="lg:col-span-8 bg-card border border-border p-8 md:p-12">
+          <p className="kicker mb-4">Anfrage</p>
+          <h2 className="font-serif text-3xl md:text-4xl text-primary mb-10">Ihr Anliegen in wenigen Zeilen.</h2>
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} onFocus={handleFormStart} className="space-y-8">
+              <FormField control={form.control} name="honeypot" render={({ field: f }) => (
+                <FormItem className="hidden"><FormControl><Input {...f} tabIndex={-1} autoComplete="off" /></FormControl></FormItem>
+              )} />
+
+              <FormField control={form.control} name="name" render={({ field: f }) => (
+                <FormItem><FormLabel className={label}>Name *</FormLabel><FormControl><Input className={field} placeholder="Vor- und Nachname" {...f} /></FormControl><FormMessage /></FormItem>
+              )} />
+
+              <div className="grid md:grid-cols-2 gap-8">
+                <FormField control={form.control} name="email" render={({ field: f }) => (
+                  <FormItem><FormLabel className={label}>E-Mail *</FormLabel><FormControl><Input className={field} type="email" placeholder="name@beispiel.de" {...f} /></FormControl><FormMessage /></FormItem>
+                )} />
+                <FormField control={form.control} name="phone" render={({ field: f }) => (
+                  <FormItem><FormLabel className={label}>Telefon *</FormLabel><FormControl><Input className={field} type="tel" placeholder="Für einen schnellen Rückruf" {...f} /></FormControl><FormMessage /></FormItem>
+                )} />
               </div>
+
+              <div className="grid md:grid-cols-2 gap-8">
+                <FormField control={form.control} name="topic" render={({ field: f }) => (
+                  <FormItem><FormLabel className={label}>Betreff *</FormLabel><FormControl><Input className={field} placeholder="Worum geht es?" {...f} /></FormControl><FormMessage /></FormItem>
+                )} />
+                <FormField control={form.control} name="damage_amount" render={({ field: f }) => (
+                  <FormItem><FormLabel className={label}>Schadenshöhe (optional)</FormLabel><FormControl><Input className={field} placeholder="z. B. 25.000 EUR" {...f} /></FormControl><FormMessage /></FormItem>
+                )} />
+              </div>
+
+              <FormField control={form.control} name="message" render={({ field: f }) => (
+                <FormItem><FormLabel className={label}>Nachricht *</FormLabel><FormControl><Textarea className="rounded-none border-primary/30 bg-background min-h-[160px] focus-visible:ring-0 focus-visible:border-secondary" placeholder="Was ist passiert? Wann? Welche Beträge sind betroffen?" {...f} /></FormControl><FormMessage /></FormItem>
+              )} />
+
+              <FormField control={form.control} name="consent" render={({ field: f }) => (
+                <FormItem className="flex flex-row items-start space-x-3 space-y-0">
+                  <FormControl><Checkbox checked={f.value} onCheckedChange={f.onChange} className="rounded-none" /></FormControl>
+                  <div className="space-y-1 leading-none">
+                    <FormLabel className="text-sm font-normal">Ich habe die Datenschutzerklärung gelesen und stimme der Verarbeitung meiner Angaben zu. *</FormLabel>
+                    <FormMessage />
+                  </div>
+                </FormItem>
+              )} />
+
+              <div className="flex flex-col sm:flex-row sm:items-center gap-5 pt-2">
+                <Button type="submit" disabled={isSubmitting} className="rounded-none bg-primary text-primary-foreground hover:bg-secondary h-14 px-10 text-[12px] tracking-[0.2em] uppercase">
+                  {isSubmitting ? "Wird gesendet …" : "Anfrage absenden"}
+                  {!isSubmitting && <ArrowRight className="ml-2 h-4 w-4" />}
+                </Button>
+                <p className="text-sm text-muted-foreground">Kostenfrei, unverbindlich, vertraulich.</p>
+              </div>
+            </form>
+          </Form>
+        </div>
+      </section>
+
+      <section className="bg-muted">
+        <div className="container mx-auto px-6 max-w-4xl py-20">
+          <div className="text-center mb-12">
+            <p className="kicker mb-5">Leserfragen</p>
+            <h2 className="font-serif text-3xl md:text-4xl text-primary">Was Mandanten vorab wissen wollen.</h2>
+          </div>
+          <Accordion type="single" collapsible className="border-t-4 border-double border-primary">
+            {faqs.map(([q, a], i) => (
+              <AccordionItem key={q} value={`f${i}`} className="border-border">
+                <AccordionTrigger className="font-serif text-lg text-left text-primary hover:no-underline">{q}</AccordionTrigger>
+                <AccordionContent className="text-foreground/75 leading-relaxed">{a}</AccordionContent>
+              </AccordionItem>
             ))}
-          </div>
+          </Accordion>
         </div>
-      </Section>
-
-      {/* Contact Section */}
-      <Section className="py-20 bg-gradient-to-br from-background via-background to-primary/5">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-8 items-stretch max-w-7xl mx-auto">
-            
-            {/* Left Column - Info & Trust */}
-            <div className="h-full flex flex-col space-y-8">
-              {/* Contact Information */}
-              <Card className="border-0 shadow-card bg-card">
-                <CardHeader>
-                  <CardTitle className="text-2xl font-bold flex items-center gap-2">
-                    <Phone className="h-6 w-6 text-primary" />
-                    Kontaktinformationen
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                  {phoneEnabled && (
-                    <Button 
-                      variant="outline" 
-                      className="w-full justify-start h-auto p-4 hover:bg-primary/5"
-                      asChild
-                    >
-                      <a href={`tel:${phone}`} className="flex items-center gap-3">
-                        <div className="p-2 rounded-full bg-primary/10">
-                          <Phone className="h-5 w-5 text-primary" />
-                        </div>
-                        <div className="text-left">
-                          <p className="font-semibold">Telefon</p>
-                          <p className="text-sm text-muted-foreground">{phone}</p>
-                        </div>
-                      </a>
-                    </Button>
-                  )}
-                  
-                  <Button 
-                    variant="outline" 
-                    className="w-full justify-start h-auto p-4 hover:bg-primary/5"
-                    asChild
-                  >
-                    <a href="mailto:info@kortekanzlei.de" className="flex items-center gap-3">
-                      <div className="p-2 rounded-full bg-primary/10">
-                        <Mail className="h-5 w-5 text-primary" />
-                      </div>
-                      <div className="text-left">
-                        <p className="font-semibold">E-Mail</p>
-                        <p className="text-sm text-muted-foreground">info@kortekanzlei.de</p>
-                      </div>
-                    </a>
-                  </Button>
-                  
-                  <div className="flex items-center gap-3 p-4 rounded-lg border bg-muted/20">
-                    <div className="p-2 rounded-full bg-primary/10">
-                      <MapPin className="h-5 w-5 text-primary" />
-                    </div>
-                    <div>
-                      <p className="font-semibold">Adresse</p>
-                      <p className="text-sm text-muted-foreground">Domstraße 15<br />20095 Hamburg</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center gap-3 p-4 rounded-lg border bg-muted/20">
-                    <div className="p-2 rounded-full bg-primary/10">
-                      <Clock className="h-5 w-5 text-primary" />
-                    </div>
-                    <div>
-                      <p className="font-semibold">Öffnungszeiten</p>
-                      <p className="text-sm text-muted-foreground">Mo-Fr: 8:00 - 18:00 Uhr<br />Sa: 9:00 - 14:00 Uhr</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* 3-Step Process */}
-              <Card className="border-0 shadow-card bg-card">
-                <CardHeader>
-                  <CardTitle className="text-xl font-bold">So läuft es ab</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-sm">1</div>
-                    <div>
-                      <h4 className="font-semibold">Kurzes Gespräch</h4>
-                      <p className="text-sm text-muted-foreground">Kostenlos, unverbindlich - wir hören uns Ihren Fall an</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-sm">2</div>
-                    <div>
-                      <h4 className="font-semibold">Forensische Ersteinschätzung</h4>
-                      <p className="text-sm text-muted-foreground">60-Minuten Rückmeldung zu Ihren Erfolgsaussichten</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-sm">3</div>
-                    <div>
-                      <h4 className="font-semibold">Maßnahmenplan</h4>
-                      <p className="text-sm text-muted-foreground">Erfolgsbasiert - Sie zahlen nur bei Erfolg</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-
-            </div>
-
-            {/* Right Column - Contact Form */}
-            <Card id="kontakt-form" className="border-0 shadow-card bg-card h-full flex flex-col">
-              <CardHeader>
-                <CardTitle className="text-2xl font-bold">
-                  Kostenlose Erstberatung anfragen
-                </CardTitle>
-                <p className="text-muted-foreground">
-                  Schildern Sie uns Ihren Fall – wir melden uns innerhalb von 60 Minuten
-                </p>
-              </CardHeader>
-              <CardContent className="flex-1 flex flex-col">
-                <Form {...form}>
-                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 h-full flex flex-col" onFocus={handleFormStart}>
-                    
-                    {/* Honeypot field - hidden from users */}
-                    <FormField
-                      control={form.control}
-                      name="honeypot"
-                      render={({ field }) => (
-                        <FormItem className="hidden">
-                          <FormControl>
-                            <Input {...field} tabIndex={-1} autoComplete="off" />
-                          </FormControl>
-                        </FormItem>
-                      )}
-                    />
-                    
-                    <FormField
-                      control={form.control}
-                      name="name"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Vor- und Nachname *</FormLabel>
-                          <FormControl>
-                            <Input placeholder="Ihr Vor- und Nachname" {...field} />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <div className="grid md:grid-cols-2 gap-4">
-                      <FormField
-                        control={form.control}
-                        name="email"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>E-Mail-Adresse *</FormLabel>
-                            <FormControl>
-                              <Input placeholder="Ihre Email-Adresse" type="email" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-
-                      <FormField
-                        control={form.control}
-                        name="phone"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Telefonnummer *</FormLabel>
-                            <FormControl>
-                              <Input type="tel" placeholder="Ihre Telefonnummer" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                    </div>
-
-                    <div className="grid md:grid-cols-2 gap-4">
-                      <FormField
-                        control={form.control}
-                        name="topic"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Thema/Anliegen *</FormLabel>
-                            <FormControl>
-                              <Input placeholder="Ihr Thema oder Anliegen" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-
-                      <FormField
-                        control={form.control}
-                        name="damage_amount"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>Schadenshöhe (optional)</FormLabel>
-                            <FormControl>
-                              <Input placeholder="z.B. 50.000 EUR" {...field} />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                    </div>
-
-                    <FormField
-                      control={form.control}
-                      name="message"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Ihre Nachricht *</FormLabel>
-                          <FormControl>
-                            <Textarea 
-                              placeholder="Beschreiben Sie Ihren Fall bitte so detailliert wie möglich..."
-                              className="min-h-[120px]"
-                              {...field}
-                            />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <FormField
-                      control={form.control}
-                      name="consent"
-                      render={({ field }) => (
-                        <FormItem className="flex flex-row items-start space-x-3 space-y-0">
-                          <FormControl>
-                            <Checkbox
-                              checked={field.value}
-                              onCheckedChange={field.onChange}
-                            />
-                          </FormControl>
-                          <div className="space-y-1 leading-none">
-                            <FormLabel className="text-sm">
-                              Ich habe die Datenschutzerklärung gelesen und akzeptiere sie. *
-                            </FormLabel>
-                            <FormMessage />
-                          </div>
-                        </FormItem>
-                      )}
-                    />
-
-                    <Button 
-                      type="submit" 
-                      className="w-full h-12 text-lg font-semibold"
-                      disabled={isSubmitting}
-                    >
-                      {isSubmitting ? 'Wird gesendet...' : 'Kostenlose Erstberatung anfragen'}
-                      {!isSubmitting && <ArrowRight className="ml-2 h-5 w-5" />}
-                    </Button>
-                    
-                    <p className="text-center text-sm text-muted-foreground">
-                      100% kostenlos & unverbindlich
-                    </p>
-                  </form>
-                </Form>
-              </CardContent>
-              <CardFooter className="mt-auto border-t bg-muted/10">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full text-center">
-                  <div className="flex items-center justify-center gap-2">
-                    <Shield className="h-4 w-4 text-primary" />
-                    <span className="text-sm text-muted-foreground">Ihre Daten sind sicher</span>
-                  </div>
-                  <div className="flex items-center justify-center gap-2">
-                    <Clock className="h-4 w-4 text-primary" />
-                    <span className="text-sm text-muted-foreground">Rückmeldung in 60 Min</span>
-                  </div>
-                  <div className="flex items-center justify-center gap-2">
-                    <CheckCircle className="h-4 w-4 text-primary" />
-                    <span className="text-sm text-muted-foreground">Kostenlos & unverbindlich</span>
-                  </div>
-                </div>
-              </CardFooter>
-            </Card>
-          </div>
-
-          {/* Trust Bar - Full Width */}
-          <div className="max-w-7xl mx-auto mt-16">
-            <Card className="border-0 shadow-card bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5">
-              <CardContent className="p-8">
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-6 divide-x-0 md:divide-x divide-primary/20">
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-primary mb-2">500+</div>
-                    <p className="text-sm text-muted-foreground">erfolgreiche Fälle</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-primary mb-2">15+</div>
-                    <p className="text-sm text-muted-foreground">Jahre Erfahrung</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-primary mb-2">24/7</div>
-                    <p className="text-sm text-muted-foreground">Erreichbarkeit</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-primary mb-2">100%</div>
-                    <p className="text-sm text-muted-foreground">DSGVO konform</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </Section>
-
-      {/* FAQ Section */}
-      <Section className="py-16 bg-muted/20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl lg:text-4xl font-bold mb-4">Häufig gestellte Fragen</h2>
-              <p className="text-lg text-muted-foreground">
-                Antworten auf die wichtigsten Fragen rund um unsere Hilfe bei Krypto-Betrug
-              </p>
-            </div>
-            
-            <Accordion type="single" collapsible className="space-y-4">
-              <AccordionItem value="item-1" className="bg-card border-0 px-6 rounded-lg shadow-sm">
-                <AccordionTrigger className="text-left font-semibold">
-                  Wie schnell melden Sie sich bei mir?
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
-                  Wir melden uns in der Regel innerhalb von 60 Minuten bei Ihnen zurück, 
-                  oft sogar schneller. Bei Eingang außerhalb der Geschäftszeiten spätestens 
-                  am nächsten Werktag bis 9:00 Uhr.
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="item-2" className="bg-card border-0 px-6 rounded-lg shadow-sm">
-                <AccordionTrigger className="text-left font-semibold">
-                  Was kostet die Erstberatung?
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
-                  Die Erstberatung ist für Sie völlig kostenlos und unverbindlich. 
-                  Erst wenn Sie sich für eine Zusammenarbeit entscheiden, entstehen Kosten - 
-                  und auch dann arbeiten wir erfolgsbasiert.
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="item-3" className="bg-card border-0 px-6 rounded-lg shadow-sm">
-                <AccordionTrigger className="text-left font-semibold">
-                  Welche Informationen sollte ich bereitstellen?
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
-                  Je mehr Details Sie uns mitteilen können, desto besser können wir Ihnen helfen: 
-                  Wallet-Adressen, Transaktions-IDs, Screenshots, E-Mail-Verläufe, Namen der 
-                  verdächtigen Personen oder Plattformen.
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="item-4" className="bg-card border-0 px-6 rounded-lg shadow-sm">
-                <AccordionTrigger className="text-left font-semibold">
-                  Welche Erfolgsaussichten gibt es?
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
-                  Die Erfolgsaussichten hängen stark vom Einzelfall ab. In über 500 Fällen konnten 
-                  wir bereits erfolgreich Gelder zurückholen. Eine erste Einschätzung erhalten Sie 
-                  kostenlos in unserem Erstgespräch.
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
-          </div>
-        </div>
-      </Section>
-
-      {/* Mobile Sticky CTA Bar */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t shadow-lg p-4 lg:hidden">
-        <div className="flex gap-2">
-          {phoneEnabled && (
-            <Button 
-              size="sm" 
-              className="flex-1"
-              asChild
-            >
-              <a href={`tel:${phone}`}>
-                <Phone className="mr-2 h-4 w-4" />
-                Anrufen
-              </a>
-            </Button>
-          )}
-          <Button 
-            variant="outline" 
-            size="sm" 
-            className="flex-1"
-            onClick={scrollToForm}
-          >
-            Formular
-          </Button>
-        </div>
-      </div>
+      </section>
 
       <Footer />
     </div>
