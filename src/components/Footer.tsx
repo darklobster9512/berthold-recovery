@@ -7,24 +7,24 @@ export const Footer = () => {
   const a = "text-primary-foreground/70 hover:text-accent transition-colors";
   return (
     <footer className="bg-primary text-primary-foreground">
-      <div className="container mx-auto px-6 max-w-7xl pt-20 pb-10">
-        <div className="text-center pb-12 border-b border-primary-foreground/15">
-          <p className="font-serif text-4xl md:text-6xl tracking-tight">
+      <div className="container mx-auto px-6 max-w-7xl pt-12 md:pt-20 pb-8 md:pb-10">
+        <div className="text-center pb-8 md:pb-12 border-b border-primary-foreground/15">
+          <p className="font-serif text-3xl md:text-6xl tracking-tight">
             Korte <span className="italic text-accent">&amp;</span> Partner
           </p>
           <p className="mt-4 text-[11px] uppercase tracking-[0.4em] text-primary-foreground/50">Rechtsanwälte · Hamburg</p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 py-14">
-          <div>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10 md:gap-12 py-10 md:py-14">
+          <div className="col-span-2 lg:col-span-1">
             <p className="text-[11px] uppercase tracking-[0.24em] text-accent mb-5">Die Kanzlei</p>
             <p className="text-sm text-primary-foreground/70 leading-relaxed">
               Eine unabhängige Sozietät für Wirtschafts-, Vermögens- und digitales Recht. Wir arbeiten in kleinen Teams, direkt und mit Blick auf das wirtschaftliche Ergebnis.
             </p>
           </div>
-          <div>
+          <div className="col-span-2 lg:col-span-1">
             <p className="text-[11px] uppercase tracking-[0.24em] text-accent mb-5">Rechtsgebiete</p>
-            <ul className="space-y-2 text-sm">
+            <ul className="grid grid-cols-2 lg:grid-cols-1 gap-x-6 gap-y-2 text-sm">
               {kompetenzen.map((k) => (
                 <li key={k.to}><Link to={k.to} className={a}>{k.label}</Link></li>
               ))}
