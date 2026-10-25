@@ -8,7 +8,7 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
-    allowedHosts: ['kortekanzlei.com', 'kortekanzlei.de'],
+    allowedHosts: ['berthold-partner.de'],
   },
   plugins: [
     react(),

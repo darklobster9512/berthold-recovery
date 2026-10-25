@@ -61,7 +61,7 @@ export const KompetenzLayout = ({
 
         <figure className="container mx-auto px-6 max-w-7xl">
           <img src={image} alt={breadcrumbLabel} width={1600} height={1104} className="w-full h-[220px] md:h-[460px] object-cover" />
-          <figcaption className="mt-3 text-xs text-muted-foreground border-b border-border pb-3">Korte &amp; Partner · {breadcrumbLabel}</figcaption>
+          <figcaption className="mt-3 text-xs text-muted-foreground border-b border-border pb-3">Berthold &amp; Partner · {breadcrumbLabel}</figcaption>
         </figure>
 
         {/* Body: sidebar + two-column text */}

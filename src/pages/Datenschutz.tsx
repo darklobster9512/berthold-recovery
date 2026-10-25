@@ -23,11 +23,11 @@ const Datenschutz = () => {
               <div>
                 <h3 className="font-serif text-2xl mb-4 text-primary">1. Verantwortlicher</h3>
                 <div className="space-y-2 text-muted-foreground">
-                  <p className="font-medium text-foreground">Korte & Partner</p>
-                  <p>Domstraße 15</p>
-                  <p>20095 Hamburg</p>
+                  <p className="font-medium text-foreground">Berthold & Partner</p>
+                  <p>Friedrichstraße 186</p>
+                  <p>10117 Berlin</p>
                   <p>Deutschland</p>
-                  <p><span className="font-medium">E-Mail:</span> info@kortekanzlei.de</p>
+                  <p><span className="font-medium">E-Mail:</span> info@berthold-partner.de</p>
                 </div>
               </div>
 
@@ -38,7 +38,7 @@ const Datenschutz = () => {
                 <h3 className="font-serif text-2xl mb-4 text-primary">2. Datenschutzbeauftragter</h3>
                 <p className="text-muted-foreground">
                   Für Fragen zum Datenschutz wenden Sie sich bitte an unseren Datenschutzbeauftragten 
-                  unter datenschutz@kortekanzlei.de
+                  unter datenschutz@berthold-partner.de
                 </p>
               </div>
 
@@ -192,12 +192,12 @@ const Datenschutz = () => {
                     Ihrer personenbezogenen Daten durch uns zu beschweren.
                   </p>
                   <p>
-                    Zuständige Aufsichtsbehörde in Bayern:<br />
-                    Bayerisches Landesamt für Datenschutzaufsicht<br />
-                    Promenade 18<br />
-                    91522 Ansbach<br />
-                    Telefon: 0981 180093-0<br />
-                    E-Mail: poststelle@lda.bayern.de
+                    Zuständige Aufsichtsbehörde in Berlin:<br />
+                    Berliner Beauftragte für Datenschutz und Informationsfreiheit<br />
+                    Alt-Moabit 59–61<br />
+                    10555 Berlin<br />
+                    Telefon: 030 13889-0<br />
+                    E-Mail: mailbox@datenschutz-berlin.de
                   </p>
                 </div>
               </div>

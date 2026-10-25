@@ -63,7 +63,7 @@ export const ArticleLayout = ({ rubric, title, standfirst, date, readTime, autho
             <p className="text-[11px] uppercase tracking-[0.24em] text-accent mb-3">Ähnlicher Fall?</p>
             <p className="font-serif text-xl leading-snug mb-5">Sprechen Sie mit uns — vertraulich und zunächst kostenfrei.</p>
             <p className="text-sm space-y-1">
-              <a href="mailto:info@kortekanzlei.de" className="block hover:text-accent">info@kortekanzlei.de</a>
+              <a href="mailto:info@berthold-partner.de" className="block hover:text-accent">info@berthold-partner.de</a>
               {phoneEnabled && <a href={`tel:${phone}`} className="block hover:text-accent">{phone}</a>}
             </p>
             <Link to="/kontakt" className="mt-5 inline-block text-[11px] uppercase tracking-[0.24em] border-b border-accent pb-1 hover:text-accent">Anfrage senden</Link>

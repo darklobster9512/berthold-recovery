@@ -67,7 +67,7 @@ const perks = [
 
 const Stellenangebote = () => {
   useEffect(() => {
-    document.title = "Karriere | Korte & Partner";
+    document.title = "Karriere | Berthold & Partner";
   }, []);
 
   return (
@@ -94,7 +94,7 @@ const Stellenangebote = () => {
       <section className="container mx-auto px-6 max-w-7xl pb-20">
         <div className="flex items-end justify-between border-b-4 border-double border-primary pb-4 mb-2">
           <h2 className="font-serif text-3xl md:text-4xl text-primary">Offene Stellen</h2>
-          <span className="text-[11px] uppercase tracking-[0.24em] text-muted-foreground">Standort Hamburg · {jobs.length} Anzeigen</span>
+          <span className="text-[11px] uppercase tracking-[0.24em] text-muted-foreground">Standort Berlin · {jobs.length} Anzeigen</span>
         </div>
 
         <Accordion type="single" collapsible>

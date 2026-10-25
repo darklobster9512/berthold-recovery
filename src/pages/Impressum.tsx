@@ -26,9 +26,9 @@ const Impressum = () => {
               <div>
                 <h3 className="font-serif text-2xl mb-4 text-primary">Anwaltskanzlei</h3>
                 <div className="space-y-2 text-muted-foreground">
-                  <p className="font-medium text-foreground">Korte & Partner</p>
-                  <p>Domstraße 15</p>
-                  <p>20095 Hamburg</p>
+                  <p className="font-medium text-foreground">Berthold & Partner</p>
+                  <p>Friedrichstraße 186</p>
+                  <p>10117 Berlin</p>
                   <p>Deutschland</p>
                 </div>
               </div>
@@ -40,7 +40,7 @@ const Impressum = () => {
                 <h3 className="font-serif text-2xl mb-4 text-primary">Kontakt</h3>
                 <div className="space-y-2 text-muted-foreground">
                   {phoneEnabled && <p><span className="font-medium">Telefon:</span> <PhoneDisplay /></p>}
-                  <p><span className="font-medium">E-Mail:</span> info@kortekanzlei.de</p>
+                  <p><span className="font-medium">E-Mail:</span> info@berthold-partner.de</p>
                 </div>
               </div>
 
@@ -49,7 +49,7 @@ const Impressum = () => {
               {/* Geschäftsführung */}
               <div>
                 <h3 className="font-serif text-2xl mb-4 text-primary">Geschäftsführung</h3>
-                <p className="text-muted-foreground">Dr. Thomas Korte</p>
+                <p className="text-muted-foreground">Dr. Holger Berthold</p>
               </div>
 
               <Separator />
@@ -58,8 +58,8 @@ const Impressum = () => {
               <div>
                 <h3 className="font-serif text-2xl mb-4 text-primary">Registereintrag</h3>
                 <div className="space-y-2 text-muted-foreground">
-                  <p><span className="font-medium">Registergericht:</span> Amtsgericht Hamburg</p>
-                  <p><span className="font-medium">Registernummer:</span> PR 317</p>
+                  <p><span className="font-medium">Registergericht:</span> Amtsgericht Charlottenburg (Berlin)</p>
+                  <p><span className="font-medium">Registernummer:</span> PR 219</p>
                 </div>
               </div>
 
@@ -69,7 +69,7 @@ const Impressum = () => {
               <div>
                 <h3 className="font-serif text-2xl mb-4 text-primary">Umsatzsteuer-Identifikationsnummer</h3>
                 <p className="text-muted-foreground">
-                  <span className="font-medium">USt-IdNr.:</span> DE317391938
+                  <span className="font-medium">USt-IdNr.:</span> DE316474931
                 </p>
               </div>
 
@@ -80,7 +80,7 @@ const Impressum = () => {
                 <h3 className="font-serif text-2xl mb-4 text-primary">Berufsrechtliche Angaben</h3>
                 <div className="space-y-3 text-muted-foreground">
                   <p><span className="font-medium">Berufsbezeichnung:</span> Rechtsanwalt (verliehen in Deutschland)</p>
-                  <p><span className="font-medium">Zuständige Rechtsanwaltskammer:</span> Hanseatische Rechtsanwaltskammer Hamburg</p>
+                  <p><span className="font-medium">Zuständige Rechtsanwaltskammer:</span> Rechtsanwaltskammer Berlin</p>
                   <p><span className="font-medium">Berufsrechtliche Regelungen:</span></p>
                   <ul className="ml-6 space-y-1 list-disc">
                     <li>Bundesrechtsanwaltsordnung (BRAO)</li>
@@ -115,14 +115,14 @@ const Impressum = () => {
               <div>
                 <h3 className="font-serif text-2xl mb-4 text-primary">Aufsichtsbehörde</h3>
                 <div className="space-y-2 text-muted-foreground">
-                  <p>Hanseatische Rechtsanwaltskammer Hamburg</p>
-                  <p>Valentinskamp 88</p>
-                  <p>20355 Hamburg</p>
-                  <p>Telefon: 040 357441-0</p>
+                  <p>Rechtsanwaltskammer Berlin</p>
+                  <p>Littenstraße 9</p>
+                  <p>10179 Berlin</p>
+                  <p>Telefon: 030 306931-0</p>
                   <p>
                     Website: 
-                    <a href="https://www.rak-hamburg.de" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline ml-1">
-                      www.rak-hamburg.de
+                    <a href="https://www.rak-berlin.org" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline ml-1">
+                      www.rak-berlin.org
                     </a>
                   </p>
                 </div>
