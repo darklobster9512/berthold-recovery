@@ -79,7 +79,7 @@ const Index = () => {
           </div>
 
           <aside className="lg:col-span-4 lg:border-l lg:border-border lg:pl-10">
-            <p className="kicker mb-6 hidden lg:block">In dieser Ausgabe</p>
+            <div className="hidden lg:block mb-6"><p className="kicker">In dieser Ausgabe</p></div>
             <ol className="divide-y divide-border hidden lg:block">
               {kompetenzen.map((k, i) => (
                 <li key={k.to}>
