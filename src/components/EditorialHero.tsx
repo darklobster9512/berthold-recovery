@@ -50,7 +50,7 @@ export const EditorialHero = ({
             </p>
           )}
           <p className="kicker mb-6">{eyebrow}</p>
-          <h1 className="font-serif text-4xl md:text-6xl leading-[1.08] text-primary">{title}</h1>
+          <h1 className="font-serif text-[2rem] md:text-6xl leading-[1.1] text-primary">{title}</h1>
           {lead && <p className="mt-8 font-serif italic text-xl md:text-2xl text-foreground/70 leading-relaxed max-w-3xl mx-auto">{lead}</p>}
           {meta && (
             <div className="mt-8 flex flex-wrap items-center justify-center gap-6 text-[11px] tracking-[0.2em] uppercase text-muted-foreground">{meta}</div>
@@ -59,7 +59,7 @@ export const EditorialHero = ({
         </div>
         {image ? (
           <figure className="container mx-auto px-6 max-w-7xl">
-            <img src={image} alt="" className="w-full h-[300px] md:h-[440px] object-cover" />
+            <img src={image} alt="" className="w-full h-[220px] md:h-[440px] object-cover" />
           </figure>
         ) : (
           <div className="container mx-auto px-6 max-w-7xl"><div className="border-t-4 border-double border-primary" /></div>

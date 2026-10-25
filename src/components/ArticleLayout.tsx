@@ -47,8 +47,8 @@ export const ArticleLayout = ({ rubric, title, standfirst, date, readTime, autho
         image={image}
       />
 
-      <section className="container mx-auto px-6 max-w-7xl py-16 grid lg:grid-cols-12 gap-12">
-        <article className="lg:col-span-8 text-[17px] leading-relaxed text-foreground/85 space-y-6 [&_h2]:font-serif [&_h2]:text-2xl [&_h2]:md:text-3xl [&_h2]:text-primary [&_h2]:pt-6 [&_h2]:leading-snug [&>p:first-child]:dropcap">
+      <section className="container mx-auto px-6 max-w-7xl py-10 md:py-16 grid lg:grid-cols-12 gap-10 lg:gap-12">
+        <article className="lg:col-span-8 text-base md:text-[17px] leading-relaxed text-foreground/85 space-y-6 [&_h2]:font-serif [&_h2]:text-2xl [&_h2]:md:text-3xl [&_h2]:text-primary [&_h2]:pt-6 [&_h2]:leading-snug [&>p:first-child]:dropcap">
           {children}
         </article>
 
@@ -90,5 +90,5 @@ export const ArticleLayout = ({ rubric, title, standfirst, date, readTime, autho
 };
 
 export const PullQuote = ({ children }: { children: ReactNode }) => (
-  <blockquote className="my-10 border-y border-accent py-8 font-serif italic text-2xl md:text-3xl text-secondary leading-snug text-center">{children}</blockquote>
+  <blockquote className="my-8 md:my-10 border-y border-accent py-6 md:py-8 font-serif italic text-xl md:text-3xl text-secondary leading-snug text-center">{children}</blockquote>
 );
