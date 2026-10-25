@@ -268,6 +268,10 @@ Mit freundlichen Grüßen`;
     }
   };
 
+  const handleFormStart = () => {
+    if (submitStartTime === 0) setSubmitStartTime(Date.now());
+  };
+
   const field = "rounded-none border-0 border-b border-primary/30 bg-transparent px-0 focus-visible:ring-0 focus-visible:border-secondary";
   const label = "text-[11px] uppercase tracking-[0.2em] text-secondary";
 
