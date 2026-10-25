@@ -1,46 +1,29 @@
 import { KompetenzLayout } from "@/components/KompetenzLayout";
+import img from "@/assets/partner-iosco-summit.jpg";
 
 const BlogPostWertpapier = () => (
   <KompetenzLayout
+    image={img}
     breadcrumbLabel="Kapitalmarktrecht"
-    title={<>Wertpapier- &<br />Kapitalmarktrecht.</>}
-    heroLead="Von der Produktstrukturierung über aufsichtsrechtliche Verfahren bis zur Durchsetzung von Anlegeransprüchen — klassisch und für tokenisierte Finanzinstrumente."
-    introStatement="Klassisches Kapitalmarktrecht, verbunden mit Krypto-Kompetenz."
+    title={<>Kapitalmärkte verstehen.<br /><em className="text-secondary">Ansprüche durchsetzen.</em></>}
+    heroLead="Ob Anleihe, Fonds oder tokenisiertes Wertpapier — wir begleiten Anbieter wie Anleger durch ein Regelwerk, das ständig dichter wird."
+    introStatement="Zwischen MiFID II und MiCAR braucht es Anwälte, die beide Welten sprechen."
     introBody={
       <>
-        <p>
-          Wir beraten und vertreten in allen Fragen des Wertpapier- und Kapitalmarktrechts — von der Produktstrukturierung über aufsichtsrechtliche Verfahren bis zur Durchsetzung von Anlegeransprüchen.
-        </p>
-        <p>
-          Die Regulierungsdichte am Kapitalmarkt nimmt stetig zu. Mit Kryptowerten und tokenisierten Finanzinstrumenten ist eine neue Asset-Klasse hinzugekommen, deren rechtliche Einordnung — von MiCAR über Prospektpflichten bis hin zu Geldwäsche- und Compliance-Vorgaben — fundierte Expertise erfordert.
-        </p>
+        <p>Das Kapitalmarktrecht ist längst nicht mehr nur Sache von Banken und Börsen. Neue Anbieter, digitale Plattformen und Krypto-Produkte haben den Markt geöffnet — und zugleich neue Risiken geschaffen.</p>
+        <p>Wir beraten Unternehmen bei Aufbau und Aufsicht, vertreten geschädigte Anleger gegen Emittenten und Vermittler und übersetzen technische Produktmerkmale in belastbare juristische Argumente.</p>
+        <p>Dabei verbinden wir klassische Prospekt- und Beratungshaftung mit fundiertem Wissen über Token, Smart Contracts und die Vorgaben der europäischen Krypto-Regulierung.</p>
       </>
     }
-    focusHeadline="Beratung, Streit, Verfahren."
+    focusHeadline="Vier Felder, ein Anspruch: Klarheit."
     focusItems={[
-      {
-        title: "Beratung von FinTechs, Wertpapierfirmen und -dienstleistern",
-        content:
-          "Wir beraten FinTechs, Wertpapierfirmen und Krypto-Asset-Dienstleister bei Lizenzierung, Compliance-Aufbau, Produktgestaltung und der Umsetzung aufsichtsrechtlicher Vorgaben — von MiFID II bis MiCAR.",
-      },
-      {
-        title: "Schadenersatzansprüche bei (Krypto-)Futures, Swaps, Investmentfonds, Anleihen",
-        content:
-          "Wir setzen Schadenersatzansprüche aus fehlerhafter Anlageberatung, Prospekthaftung und Pflichtverletzungen bei komplexen Finanzprodukten durch — einschließlich Krypto-Derivaten, Futures, Swaps und Investmentfonds. Über zehn Jahre Prozesserfahrung fließen in jedes Mandat ein.",
-      },
-      {
-        title: "Kryptowährungen und Finanzierungen",
-        content:
-          "Krypto-Assets sind ein Kernbereich unserer Kanzlei. Wir beraten bei der Strukturierung von Token-Emissionen, bei Streitigkeiten aus Krypto-Investments und Krediten und bei der rechtssicheren Integration von Krypto-Werten in bestehende Finanzierungen.",
-      },
-      {
-        title: "Zivil-, aufsichts- und verwaltungsbehördliche Verfahren",
-        content:
-          "Wir vertreten in Zivilprozessen, aufsichts- und verwaltungsbehördlichen Verfahren rund um Finanz- und Krypto-Produkte — vor Gerichten ebenso wie gegenüber FMA, BaFin und vergleichbaren Aufsichtsstellen.",
-      },
+      { title: "Aufsichtsrecht für FinTechs und Finanzdienstleister", content: "Erlaubnisverfahren, Compliance-Organisation und Produktprüfung — wir bereiten Anbieter auf BaFin und europäische Vorgaben vor, von MiFID II bis MiCAR." },
+      { title: "Anlegerschutz und Schadensersatz", content: "Fehlerhafte Beratung, irreführende Prospekte, riskante Derivate: Wir prüfen Ihre Ansprüche gegen Banken, Vermittler und Emittenten und setzen sie konsequent durch." },
+      { title: "Token, Krypto-Finanzierungen und Emissionen", content: "Wir strukturieren Token-Emissionen rechtssicher, begleiten Finanzierungen mit digitalen Assets und klären Streitigkeiten rund um Krypto-Investments." },
+      { title: "Verfahren vor Gerichten und Behörden", content: "Ob Zivilklage, Verwaltungsverfahren oder Anhörung bei der Aufsicht — wir vertreten Sie dort, wo über Ihr Geld entschieden wird." },
     ]}
-    ctaTitle="Kapitalmarktmandat anfragen."
-    ctaBody="Ob Lizenzierung, Anlegerverfahren oder Token-Strukturierung — wir prüfen Ihren Sachverhalt und entwickeln eine belastbare Strategie."
+    ctaTitle="Ihr Kapitalmarktfall verdient eine zweite Meinung."
+    ctaBody="Schicken Sie uns die wichtigsten Unterlagen. Wir sagen Ihnen offen, welche Wege es gibt und was sie kosten."
   />
 );
 

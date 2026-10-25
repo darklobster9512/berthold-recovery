@@ -1,59 +1,28 @@
 import { KompetenzLayout } from "@/components/KompetenzLayout";
+import img from "@/assets/contact-hero-bg.jpg";
 
 const BlogPostGesellschaftsrecht = () => (
   <KompetenzLayout
-    breadcrumbLabel="Gesellschaftsrecht"
-    title={<>Gesellschafts- &<br />Unternehmens­recht.</>}
-    heroLead="Von der Gründung über laufende gesellschaftsrechtliche Themen bis zu Transaktionen und Streitigkeiten — mit eigener Krypto- und MiCAR-Kompetenz."
-    introStatement="Unternehmensrecht als interdisziplinäre Aufgabe."
+    image={img}
+    breadcrumbLabel="Gesellschafts- & Unternehmensrecht"
+    title={<>Gute Strukturen.<br /><em className="text-secondary">Weniger Streit.</em></>}
+    heroLead="Von der Gründung über die Nachfolge bis zum Konflikt unter Gesellschaftern: Wir begleiten Unternehmen durch alle Phasen."
+    introStatement="Ein guter Gesellschaftsvertrag ist die beste Streitvermeidung."
     introBody={
       <>
-        <p>
-          Wir beraten Unternehmen in allen Phasen — von der Gründung über laufende gesellschaftsrechtliche Themen bis hin zu Transaktionen und Streitigkeiten.
-        </p>
-        <p>
-          Bei Mandant:innen aus dem Krypto- und Blockchain-Bereich begleiten wir die Gründung und Strukturierung von Krypto-Asset-Dienstleistern, MiCAR-Lizenzierungen sowie die Tokenisierung von Beteiligungen. Unsere kanzleieigene Krypto-Kompetenz erlaubt es, regulatorische, gesellschafts- und kapitalmarktrechtliche Fragen aus einer Hand zu beantworten.
-        </p>
-        <p>
-          Im Streitfall vertreten wir Gesellschafter, Geschäftsführer und Unternehmen vor Gericht und in Schiedsverfahren — national wie international.
-        </p>
+        <p>Unternehmen wachsen, Beteiligungen ändern sich, Generationen wechseln. Jede dieser Phasen verlangt nach passenden rechtlichen Strukturen.</p>
+        <p>Wir gestalten Verträge, die Interessen fair ausgleichen, begleiten Transaktionen und finden Lösungen, wenn Gesellschafter nicht mehr an einem Strang ziehen — am Verhandlungstisch oder vor Gericht.</p>
       </>
     }
-    focusHeadline="Gründung, Transaktion, Streit."
+    focusHeadline="Wofür Unternehmer uns holen."
     focusItems={[
-      {
-        title: "Allgemeines Unternehmensrecht / externe Rechtsabteilung",
-        content:
-          'Gute Beratung im Unternehmensrecht erfordert fächerübergreifende Kenntnis und ein Verständnis für wirtschaftliche und operative Zusammenhänge. Wir unterstützen Unternehmen unterschiedlicher Größe laufend als „externe Rechtsabteilung".',
-      },
-      {
-        title: "Beratung zu allen Bereichen des Gesellschaftsrechts",
-        content:
-          "Die Wahl der Rechtsform, optimal gestaltete Gesellschaftsverträge, Geschäftsordnungen und Gesellschaftervereinbarungen verhindern Konflikte und schaffen Raum für das operative Geschäft.",
-      },
-      {
-        title: "Gesellschaftsgründungen",
-        content:
-          "Ausgeklügelte vertragliche Grundlagen, die zukünftige Entwicklungen und Szenarien bestmöglich berücksichtigen, bilden die Basis für unternehmerischen Erfolg.",
-      },
-      {
-        title: "Unternehmenskauf und -verkauf (M&A)",
-        content:
-          "Ein vorteilhafter Unternehmenskauf erfordert umfassende Vorbereitung. Mit ganzheitlichem Ansatz verstehen wir uns als deal-maker, nicht deal-breaker.",
-      },
-      {
-        title: "Umgründungen, Einbringungen und Verschmelzungen",
-        content:
-          "Das Umgründungssteuergesetz bietet umfangreiche Gestaltungsmöglichkeiten — Umwandlung, Einbringung, Spaltung. Wir führen Sie durch dieses Geflecht aus Optionen.",
-      },
-      {
-        title: "Gesellschafterstreitigkeiten",
-        content:
-          "Bei Gesellschafterstreitigkeiten kommen wir als versierte, streiterfahrene, aber lösungsfördernde Rechtsanwält:innen mit Verhandlungserfahrung zum Einsatz.",
-      },
+      { title: "Gründung und Gesellschaftsverträge", content: "Rechtsformwahl, Satzungen, Beteiligungsmodelle und Gesellschaftervereinbarungen — maßgeschneidert statt Musterlösung." },
+      { title: "Transaktionen und Umstrukturierungen", content: "Kauf und Verkauf von Unternehmen und Anteilen, Due Diligence, Umwandlungen und Holding-Strukturen." },
+      { title: "Gesellschafterstreit", content: "Abberufung, Ausschluss, Abfindung: Wir vertreten Ihre Position entschlossen und suchen dabei stets den wirtschaftlich sinnvollsten Weg." },
+      { title: "Organhaftung und Governance", content: "Wir beraten Geschäftsführer und Aufsichtsgremien zu Pflichten und Haftungsrisiken und verteidigen sie im Ernstfall." },
     ]}
-    ctaTitle="Unternehmen rechtssicher aufstellen."
-    ctaBody="Ob Gründung, Transaktion, MiCAR-Lizenz oder Gesellschafterstreit — wir entwickeln die passende rechtliche Struktur und vertreten Sie konsequent."
+    ctaTitle="Steht in Ihrem Unternehmen eine Weichenstellung an?"
+    ctaBody="Sprechen Sie mit uns, bevor Entscheidungen fallen. Ein Gespräch kostet weniger als ein späterer Streit."
   />
 );
 

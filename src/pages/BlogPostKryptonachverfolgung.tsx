@@ -1,44 +1,27 @@
 import { KompetenzLayout } from "@/components/KompetenzLayout";
+import img from "@/assets/crypto-hero-bg.jpg";
 
 const BlogPostKryptonachverfolgung = () => (
   <KompetenzLayout
+    image={img}
     breadcrumbLabel="Kryptonachverfolgung"
-    title={<>Krypto­nach­verfolgung &<br />Mittel­herkunft.</>}
-    heroLead="Forensische Rekonstruktion von Geldflüssen on-chain und gerichtsfeste Dokumentation digitaler Vermögenswerte — gegenüber Banken, Krypto-Börsen, Aufsichts- und Strafverfolgungsbehörden."
-    introStatement="Juristische Expertise, verbunden mit zertifizierter Blockchain-Forensik."
+    title={<>Jede Transaktion<br /><em className="text-secondary">hinterlässt Spuren.</em></>}
+    heroLead="Wir rekonstruieren Geldflüsse auf der Blockchain und belegen die Herkunft digitaler Vermögenswerte — gerichtsfest und verständlich."
+    introStatement="Die Blockchain vergisst nichts. Man muss sie nur lesen können."
     introBody={
       <>
-        <p>
-          Die rechtliche Einordnung von Krypto-Transaktionen und der Nachweis ihrer Mittelherkunft gehören zu den anspruchsvollsten Aufgaben im modernen Wirtschaftsrecht. Unsere Kanzlei verbindet juristische Expertise mit zertifizierter Blockchain-Forensik.
-        </p>
-        <p>
-          Wir rekonstruieren Geldflüsse on-chain, dokumentieren die Herkunft digitaler Vermögenswerte gerichtsfest und unterstützen Mandant:innen gegenüber Banken, Krypto-Börsen, Aufsichts- und Strafverfolgungsbehörden — von der Erstanalyse bis zur Durchsetzung von Herausgabe- und Schadenersatzansprüchen.
-        </p>
+        <p>Gestohlene oder ergaunerte Kryptowerte gelten oft als verloren. Doch jede Bewegung ist öffentlich dokumentiert. Mit spezialisierter Software und Erfahrung lassen sich Wege bis zu Börsen und Verwahrstellen verfolgen.</p>
+        <p>Umgekehrt brauchen seriöse Anleger einen sauberen Herkunftsnachweis, wenn Banken oder Notare fragen, woher das Geld stammt. Auch hier liefern wir prüfbare Berichte.</p>
       </>
     }
-    focusHeadline="Analyse, Dokumentation, Durchsetzung."
+    focusHeadline="Forensik, die vor Gericht besteht."
     focusItems={[
-      {
-        title: "Mittelherkunftsnachweis",
-        content: (
-          <>
-            <p className="mb-4">
-              Wir erstellen Mittelherkunftsnachweise (Source of Funds), die den Anforderungen von Banken, Krypto-Börsen und Aufsichtsbehörden standhalten. Grundlage ist eine vollständige On-Chain-Analyse der relevanten Wallets und Transaktionsketten — mit Zeitstempeln, Beträgen, Gegenparteien und Risikoindikatoren.
-            </p>
-            <p>
-              Auf Wunsch koordinieren wir die Vorlage gegenüber dem jeweiligen Institut und vertreten Sie bei Rückfragen oder bei der Freigabe blockierter Beträge.
-            </p>
-          </>
-        ),
-      },
-      {
-        title: "Asset- und Krypto-Nachverfolgung",
-        content:
-          'Im Zentrum unserer Arbeit steht die Rückholung entwendeter oder unrechtmäßig transferierter Krypto-Vermögenswerte. Mittels „Follow the Money"-Analyse identifizieren wir die Empfänger-Wallets, ordnen sie Börsen oder Dienstleistern zu und schaffen damit die Grundlage für Auskunfts-, Einfrierungs- und Herausgabeanträge — auch grenzüberschreitend.',
-      },
+      { title: "Transaktionsanalyse nach Betrug", content: "Wir verfolgen Coins über Wallets, Mixer und Börsen, identifizieren Ansatzpunkte und bereiten Sicherungs- und Auskunftsanträge vor." },
+      { title: "Mittelherkunftsnachweis", content: "Für Bank, Notar oder Finanzamt: ein nachvollziehbarer Bericht über Erwerb und Entwicklung Ihrer Krypto-Bestände." },
+      { title: "Gutachten für Verfahren", content: "Unsere Analysen sind so aufbereitet, dass Gerichte, Staatsanwaltschaften und Gegenseite sie nachvollziehen können." },
     ]}
-    ctaTitle="Vertrauliche Erstberatung."
-    ctaBody="Ob Mittelherkunftsnachweis, Rückführung entwendeter Krypto-Werte oder Vorbereitung eines Verfahrens — wir prüfen Ihren Sachverhalt diskret und nennen Ihnen die belastbaren Handlungsoptionen."
+    ctaTitle="Wo ist Ihr Vermögen geblieben?"
+    ctaBody="Schicken Sie uns Wallet-Adressen und Transaktions-IDs. Wir sagen Ihnen, was die Spur verrät."
   />
 );
 

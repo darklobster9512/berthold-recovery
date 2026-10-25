@@ -1,51 +1,29 @@
 import { KompetenzLayout } from "@/components/KompetenzLayout";
+import img from "@/assets/crypto-hero-bg.jpg";
 
 const BlogPostCeoFraud2 = () => (
   <KompetenzLayout
+    image={img}
     breadcrumbLabel="Cybercrime"
-    title={<>Cybercrime.</>}
-    heroLead="Strafrechtliche und zivilrechtliche Aufarbeitung digitaler Delikte — verbunden mit eigener Blockchain-Forensik zur Sicherung und Rückführung entwendeter Krypto-Werte."
-    introStatement="Juristische und technische Analyse in einer Hand."
+    title={<>Wenn der Angriff<br /><em className="text-secondary">digital</em> kommt.</>}
+    heroLead="Phishing, Fake-Plattformen, gehackte Konten, Erpressung: Wir handeln schnell, sichern Spuren und holen zurück, was sich zurückholen lässt."
+    introStatement="Bei Cyberbetrug entscheiden oft die ersten 48 Stunden."
     introBody={
       <>
-        <p>
-          Cybercrime ist heute eine der häufigsten Ursachen erheblicher Vermögensschäden — bei Unternehmen ebenso wie bei Privatpersonen. Anlagebetrug über vermeintliche Krypto-Plattformen, CEO Fraud, Phishing, Ransomware und Identitätsdiebstahl gehören längst zum Tagesgeschäft organisierter Tätergruppen.
-        </p>
-        <p>
-          Wir begleiten die gesamte rechtliche Aufarbeitung: Beweissicherung, Strafanzeige, zivilrechtliche Durchsetzung und — wo Krypto-Werte betroffen sind — die forensische Nachverfolgung der Geldflüsse bis zur Empfänger-Börse. In den ersten Stunden nach einem Vorfall entscheidet sich häufig, ob Vermögenswerte noch erreichbar sind. Wir nehmen Ihren Sachverhalt umgehend auf, sichern Beweise und leiten die nötigen Schritte ein.
-        </p>
+        <p>Täter im Netz sind organisiert, international und schnell. Opfer fühlen sich dagegen häufig allein gelassen — von Banken, Plattformen und manchmal auch von Behörden.</p>
+        <p>Wir übernehmen die Koordination: Strafanzeige, Sicherungsanträge, Kommunikation mit Zahlungsdienstleistern und Börsen, zivilrechtliche Rückforderung. Alles aus einer Hand.</p>
+        <p>Unsere Datenanalysten verfolgen Geldflüsse über Konten und Blockchains hinweg. So entstehen Ansatzpunkte, wo andere längst aufgegeben haben.</p>
       </>
     }
-    focusHeadline="Prävention, Reaktion, Rückführung."
+    focusHeadline="Unsere Antwort auf digitale Delikte."
     focusItems={[
-      {
-        title: "Prävention – Cyber Resilienz",
-        content:
-          "Mit NIS2 (NISG 2024) und dem Cyber Resilience Act steigen die regulatorischen Anforderungen an Unternehmen erheblich. Wir begleiten Sie bei Gap-Analyse, Umsetzung der organisatorischen und technischen Pflichten sowie der Dokumentation gegenüber Aufsichtsbehörden.",
-      },
-      {
-        title: "Ransomware – Incident Response",
-        content:
-          "Bei Ransomware-Angriffen koordinieren wir gemeinsam mit erfahrenen IT-Forensikern die Incident Response — von der Eindämmung über die rechtliche Bewertung einer etwaigen Lösegeldforderung bis zur Meldung an Datenschutz- und Aufsichtsbehörden. Bei Krypto-Lösegeldzahlungen verfolgen wir die Transaktionen on-chain, um spätere Rückführungen vorzubereiten.",
-      },
-      {
-        title: "Anlagebetrug – Datenmissbrauch",
-        content:
-          "Vermeintlich lukrative Krypto-Investments, gefälschte Trading-Plattformen und der Missbrauch persönlicher Daten zählen zu den häufigsten Schadensbildern. Wir analysieren die Geldflüsse — bei Krypto-Zahlungen on-chain bis zur Empfänger-Börse — und leiten Auskunfts-, Einfrierungs- und Herausgabeverfahren ein.",
-      },
-      {
-        title: "Hass im Netz",
-        content:
-          "Hasspostings, Beleidigungen in sozialen Medien und Cybermobbing sind rechtswidrig. Wir betreiben die Identifizierung der Verantwortlichen, leiten Straf- und Unterlassungsverfahren ein und setzen Ihre zivil- und medienrechtlichen Ansprüche konsequent durch.",
-      },
-      {
-        title: "Asset- und Krypto-Tracing",
-        content:
-          "Als zertifizierte Blockchain-Forensiker rekonstruieren wir Krypto-Transaktionsketten und ordnen Wallets realen Gegenparteien zu. Diese Analyse ist die Grundlage für die Rückholung entwendeter Krypto-Werte — in Strafverfahren ebenso wie in zivilrechtlichen Streitigkeiten, Insolvenzen und Erbsachen.",
-      },
+      { title: "Anlagebetrug und Fake-Trading", content: "Gefälschte Broker und Krypto-Plattformen locken mit Traumrenditen. Wir dokumentieren den Betrug, verfolgen die Gelder und machen Ansprüche gegen Beteiligte geltend." },
+      { title: "CEO-Fraud und Zahlungsumleitung", content: "Gefälschte Rechnungen oder Chefanweisungen: Wir stoppen Zahlungen, wo es noch möglich ist, und prüfen die Haftung von Banken und Dienstleistern." },
+      { title: "Hacking, Datenklau und Erpressung", content: "Bei kompromittierten Konten oder Ransomware begleiten wir Sofortmaßnahmen, Meldepflichten und die rechtliche Aufarbeitung." },
+      { title: "Strafanzeige und Opfervertretung", content: "Wir formulieren Anzeigen, die Ermittler weiterbringen, nehmen Akteneinsicht und vertreten Sie als Nebenkläger." },
     ]}
-    ctaTitle="Diskrete Soforthilfe."
-    ctaBody="Wir nehmen Ihren Sachverhalt unverzüglich auf, sichern Beweise und koordinieren das Zusammenspiel von Strafverfolgung, Krypto-Börsen und Finanzinstituten — mit dem Ziel, entwendete Vermögenswerte einzufrieren und zurückzuführen."
+    ctaTitle="Betroffen? Warten Sie nicht."
+    ctaBody="Je früher wir eingreifen, desto mehr lässt sich sichern. Rufen Sie an oder schreiben Sie uns — vertraulich und zunächst kostenfrei."
   />
 );
 

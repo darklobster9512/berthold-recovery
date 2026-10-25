@@ -1,64 +1,29 @@
 import { KompetenzLayout } from "@/components/KompetenzLayout";
+import img from "@/assets/partner-coinbase-meeting.jpg";
 
 const BlogPostPrivateClients = () => (
   <KompetenzLayout
-    breadcrumbLabel="Private Clients"
-    title={<>Private Clients &<br />Family Offices.</>}
-    heroLead="Diskrete, vorausschauende Vermögens- und Nachfolgeplanung — inklusive der besonderen Anforderungen digitaler Vermögenswerte."
-    introStatement="Langfristige Begleitung. Familiäres Augenmaß."
+    image={img}
+    breadcrumbLabel="Private Clients & Family Offices"
+    title={<>Vermögen begleiten.<br /><em className="text-secondary">Über Generationen.</em></>}
+    heroLead="Für Unternehmerfamilien, vermögende Privatpersonen und Family Offices sind wir der diskrete Ansprechpartner für alle rechtlichen Fragen."
+    introStatement="Diskretion ist bei uns keine Leistung, sondern Grundhaltung."
     introBody={
       <>
-        <p>
-          Wir beraten Privatpersonen und Family Offices in allen Fragen der langfristigen Vermögens- und Nachfolgeplanung — diskret, vorausschauend und mit Blick auf die familiäre Gesamtsituation.
-        </p>
-        <p>
-          Unser Fokus liegt auf der rechtssicheren Gestaltung von Testamenten, Schenkungen, Vorsorgevollmachten und Ehe-/Partnerschaftsverträgen sowie der gesellschaftsrechtlichen Strukturierung von Familienvermögen. Zunehmend gehören dazu auch digitale Vermögenswerte: Krypto-Bestände bedürfen einer eigenen Nachlassplanung — von der Zugangs- und Schlüsselverwahrung bis zur dokumentierten Mittelherkunft.
-        </p>
-        <p>
-          Im Konfliktfall agieren wir zunächst als Mediatoren. Lässt sich eine außergerichtliche Lösung nicht erzielen, vertreten wir Sie konsequent vor Gericht.
-        </p>
+        <p>Großes Vermögen bringt komplexe Fragen mit sich: Wie wird es strukturiert, geschützt und weitergegeben? Wer haftet, wenn Investments schiefgehen?</p>
+        <p>Wir koordinieren die rechtliche Seite und arbeiten eng mit Steuerberatern, Banken und Vermögensverwaltern zusammen. Ein fester Partner behält dabei den Überblick.</p>
+        <p>Zunehmend gehören auch digitale Werte zum Familienvermögen. Wir wissen, wie man sie sicher verwahrt, vererbt und bewertet.</p>
       </>
     }
-    focusHeadline="Vorsorge, Übergabe, Schutz."
+    focusHeadline="Was Familien uns anvertrauen."
     focusItems={[
-      {
-        title: "Nachfolgeplanung",
-        content:
-          "Eine vorausschauende Nachfolgeplanung sichert den geordneten Übergang Ihres Vermögens — einschließlich Beteiligungen, Immobilien und digitaler Assets wie Krypto-Beständen — in die nächste Generation.",
-      },
-      {
-        title: "Testamente",
-        content:
-          "Wir analysieren Ihre erbrechtliche Ausgangslage und gestalten Testamente, die Ihren Wünschen entsprechen — inklusive Regelungen zu Krypto-Wallets, Zugangsdaten und Verwahrlösungen.",
-      },
-      {
-        title: "Vorsorgevollmachten und Patientenverfügungen",
-        content:
-          "Vorsorgevollmachten und Patientenverfügungen sichern Ihre Selbstbestimmung im Fall einer Entscheidungsunfähigkeit. Wir bestimmen mit Ihnen bevollmächtigte Personen und formulieren medizinische Vorgaben rechtssicher und durchsetzbar.",
-      },
-      {
-        title: "Schenkungsverträge unter Lebenden und auf den Todesfall",
-        content:
-          "Wir gestalten Schenkungen steuerlich optimiert und konfliktvermeidend — und berücksichtigen dabei die zunehmende Praxis, auch Krypto-Vermögenswerte frühzeitig zu übertragen.",
-      },
-      {
-        title: "Partnerschafts- und Eheverträge",
-        content:
-          "Partnerschafts- und Eheverträge schaffen rechtliche Klarheit über Güterstand, Vermögenszuordnung und Versorgungsregelungen — und damit Sicherheit für beide Seiten.",
-      },
-      {
-        title: "Interfamiliäre Übertragung von Kapitalanlagen, Unternehmen und Immobilien",
-        content:
-          "Wir begleiten Übertragungen zu Lebzeiten — vom Übertragungsvertrag bis zu begleitenden Nießbrauch- und Versorgungsregelungen.",
-      },
-      {
-        title: "Gesellschafts- und erbrechtliche Nachfolgegestaltung",
-        content:
-          "Wir verbinden gesellschafts- und erbrechtliche Gestaltung zu einem stimmigen Gesamtkonzept — von der Holding-Struktur über Familienpoolverträge bis zur Übertragung digitaler Vermögenswerte.",
-      },
+      { title: "Vermögensstrukturierung", content: "Holding, Stiftung, Familiengesellschaft: Wir finden die passende Struktur für Schutz, Steuerung und Nachfolge." },
+      { title: "Nachfolge und Testament", content: "Unternehmensnachfolge, Testamente, Erbverträge und die Lösung von Erbstreitigkeiten." },
+      { title: "Investments und Haftung", content: "Prüfung von Beteiligungen und die Durchsetzung von Ansprüchen, wenn Berater oder Partner Fehler gemacht haben." },
+      { title: "Digitale Vermögenswerte", content: "Verwahrung, Dokumentation und Übertragung von Kryptowerten — rechtlich sauber und praxistauglich." },
     ]}
-    ctaTitle="Vermögen geordnet weiterführen."
-    ctaBody="Wir entwickeln mit Ihnen eine Struktur, die familiäre, steuerliche und juristische Anforderungen verbindet — diskret, generationsübergreifend, dokumentiert."
+    ctaTitle="Ein vertrauliches Gespräch, wann immer es passt."
+    ctaBody="Gern auch außerhalb der Bürozeiten oder bei Ihnen vor Ort."
   />
 );
 

@@ -1,61 +1,28 @@
 import { KompetenzLayout } from "@/components/KompetenzLayout";
+import img from "@/assets/editorial-justice.jpg";
 
 const BlogPostProzessfuehrung = () => (
   <KompetenzLayout
+    image={img}
     breadcrumbLabel="Prozessführung"
-    title={<>Prozess­führung.</>}
-    heroLead="Komplexe Wirtschafts-, Anleger- und Krypto-Verfahren — national und grenzüberschreitend, gerichtlich und außergerichtlich."
-    introStatement="Stringente Durchsetzung. Internationale Reichweite."
+    title={<>Streiten mit Plan.<br /><em className="text-secondary">Gewinnen mit Geduld.</em></>}
+    heroLead="Wir führen Verfahren vor staatlichen Gerichten und Schiedsgerichten — und prüfen vorher genau, ob sich der Weg lohnt."
+    introStatement="Der beste Prozess ist der, den man gut vorbereitet — oder gar nicht führen muss."
     introBody={
       <>
-        <p>
-          Wir vertreten Mandant:innen vor sämtlichen Gerichten und Behörden — von komplexen Wirtschaftsverfahren über Anlegerprozesse bis zur grenzüberschreitenden Durchsetzung von Ansprüchen.
-        </p>
-        <p>
-          Eine außergerichtliche Lösung ist häufig die effizienteste. Lässt sich diese nicht erzielen, führen wir das Verfahren stringent und prozesserfahren — auch in Konstellationen, in denen Krypto-Vermögenswerte eine Rolle spielen: bei der Sicherung digitaler Assets, der Durchsetzung von Auskunfts- und Herausgabeansprüchen gegenüber Krypto-Börsen oder bei der Vollstreckung im internationalen Rahmen.
-        </p>
+        <p>Ein Rechtsstreit kostet Zeit, Geld und Nerven. Darum beginnen wir jeden Fall mit einer nüchternen Analyse: Wie stark sind die Argumente, wie solvent ist die Gegenseite, welche Alternativen gibt es?</p>
+        <p>Wenn verhandelt werden muss, verhandeln wir hart. Wenn geklagt werden muss, klagen wir gründlich — in Deutschland und, mit Partnern, auch international.</p>
       </>
     }
-    focusHeadline="Verfahren, die wir führen."
+    focusHeadline="Unser Werkzeugkasten im Streit."
     focusItems={[
-      {
-        title: "Immobilien- und Bauprozesse",
-        content:
-          "Bauverzögerungen, Mängel, Kostenüberschreitungen, Gewährleistungsthematiken sowie Miet- und Wohnungseigentümerstreitigkeiten — wir setzen die Rechte unserer Mandant:innen gerichtlich und außergerichtlich durch.",
-      },
-      {
-        title: "Miet- und wohnrechtliche Streitigkeiten",
-        content:
-          "Wir setzen miet- und wohnrechtliche Anliegen — Mietzinsminderung, Schadenersatz, Kündigungen — erfolgreich durch.",
-      },
-      {
-        title: "Allgemeine zivilrechtliche Verfahren",
-        content:
-          "Vertragsstreitigkeiten, Schadensersatz, Forderungseinzüge, Haftungsfragen: Mandant:innen vertrauen auf unsere Expertise für die Durchsetzung ihrer Rechte.",
-      },
-      {
-        title: "Anleger- und Krypto-Verfahren",
-        content:
-          "Wir vertreten geschädigte Anleger:innen bei Ansprüchen aus fehlerhafter Beratung, Prospekthaftung sowie bei Schäden aus Krypto-Investments und betrügerischen Trading-Plattformen — einschließlich der forensischen Nachverfolgung der Geldflüsse on-chain.",
-      },
-      {
-        title: "Gesellschafterstreitigkeiten",
-        content:
-          "Wenn eine effektive Zusammenarbeit unter Mitgesellschaftern nicht mehr möglich ist, ist eine rasche Lösungsfindung essenziell. Wir agieren streiterfahren, aber lösungsorientiert.",
-      },
-      {
-        title: "Datenschutzverletzungen",
-        content:
-          "Ob vor der Datenschutzbehörde oder dem Zivilgericht: Wir haben Erfahrung in der Durchsetzung wie in der Abwehr von Ansprüchen aus Datenschutzverletzungen.",
-      },
-      {
-        title: "Versicherungsrechtliche Streitigkeiten",
-        content:
-          "Sach-, Haftpflicht-, Unfall-, Rechtsschutz- und Lebensversicherungen: Wir vertreten Versicherungsnehmer, Makler und Agenten — außergerichtlich wie gerichtlich.",
-      },
+      { title: "Prozessstrategie und Risikoanalyse", content: "Kosten, Dauer, Erfolgsaussichten: Sie wissen vor dem ersten Schriftsatz, worauf Sie sich einlassen." },
+      { title: "Zivil- und Wirtschaftsprozesse", content: "Vertragsstreit, Schadensersatz, Haftung — durch alle Instanzen." },
+      { title: "Eilverfahren und Vermögenssicherung", content: "Arrest, einstweilige Verfügung und Kontopfändung, wenn Vermögen zu verschwinden droht." },
+      { title: "Vergleich und Mediation", content: "Wo eine Einigung mehr bringt als ein Urteil, verhandeln wir sie für Sie." },
     ]}
-    ctaTitle="Verfahren prüfen lassen."
-    ctaBody="Wir bewerten Ihre Erfolgsaussichten und entwickeln eine belastbare Prozessstrategie — gerichtlich, behördlich oder im Verhandlungsweg."
+    ctaTitle="Steht ein Rechtsstreit im Raum?"
+    ctaBody="Lassen Sie Ihre Chancen prüfen, bevor Fristen ablaufen."
   />
 );
 
