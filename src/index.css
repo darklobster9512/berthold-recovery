@@ -1,0 +1,206 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Design system – "Navy Trust". All colors HSL. */
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 62% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 62% 12%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 62% 12%;
+
+    /* Navy Trust palette */
+    --primary: 222 62% 15%;            /* #0f1b3d */
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 220 28% 92%;
+    --primary-dark: 222 62% 10%;
+
+    --secondary: 218 32% 26%;          /* #1e3a5f */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 220 25% 96%;
+    --muted-foreground: 222 20% 38%;
+
+    --accent: 211 47% 43%;             /* #3b6fa0 steel blue */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 70% 38%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 18% 88%;
+    --input: 220 18% 88%;
+    --ring: 222 62% 15%;
+
+    --radius: 0.25rem;
+
+    /* Neutralized legacy tokens so existing references look calm */
+    --gradient-primary: linear-gradient(180deg, hsl(222 62% 15%), hsl(222 62% 12%));
+    --gradient-light: linear-gradient(180deg, hsl(220 25% 98%), hsl(220 25% 95%));
+    --gradient-glass: hsl(0 0% 100% / 0.04);
+    --gradient-mystery: hsl(222 62% 15% / 0.04);
+
+    --shadow-modern: 0 1px 0 hsl(222 62% 15% / 0.08);
+    --shadow-card: 0 1px 0 hsl(222 62% 15% / 0.08);
+    --shadow-glass: 0 1px 0 hsl(222 62% 15% / 0.08);
+
+    --border-glass: hsl(0 0% 100% / 0.18);
+
+    --text-glow: none;
+    --text-glow-strong: none;
+    --glow-pulse: none;
+    --glow-pulse-strong: none;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 222 30% 25%;
+    --sidebar-primary: 222 62% 15%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 25% 96%;
+    --sidebar-accent-foreground: 222 62% 15%;
+    --sidebar-border: 220 18% 88%;
+    --sidebar-ring: 222 62% 15%;
+  }
+
+  .dark {
+    --background: 222 62% 8%;
+    --foreground: 220 25% 95%;
+    --card: 222 62% 10%;
+    --card-foreground: 220 25% 95%;
+    --popover: 222 62% 10%;
+    --popover-foreground: 220 25% 95%;
+    --primary: 220 25% 95%;
+    --primary-foreground: 222 62% 12%;
+    --primary-light: 222 40% 18%;
+    --primary-dark: 220 25% 80%;
+    --secondary: 218 32% 26%;
+    --secondary-foreground: 220 25% 95%;
+    --muted: 222 30% 14%;
+    --muted-foreground: 220 16% 70%;
+    --accent: 211 47% 60%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 222 30% 18%;
+    --input: 222 30% 18%;
+    --ring: 220 25% 95%;
+    --gradient-primary: linear-gradient(180deg, hsl(222 62% 12%), hsl(222 62% 8%));
+    --gradient-light: linear-gradient(180deg, hsl(222 30% 14%), hsl(222 30% 12%));
+    --gradient-glass: hsl(0 0% 100% / 0.04);
+    --gradient-mystery: hsl(0 0% 100% / 0.04);
+    --shadow-modern: 0 1px 0 hsl(0 0% 0% / 0.4);
+    --shadow-card: 0 1px 0 hsl(0 0% 0% / 0.4);
+    --shadow-glass: 0 1px 0 hsl(0 0% 0% / 0.4);
+    --border-glass: hsl(0 0% 100% / 0.12);
+    --text-glow: none;
+    --text-glow-strong: none;
+    --glow-pulse: none;
+    --glow-pulse-strong: none;
+    --sidebar-background: 222 62% 10%;
+    --sidebar-foreground: 220 25% 95%;
+    --sidebar-primary: 220 25% 95%;
+    --sidebar-primary-foreground: 222 62% 12%;
+    --sidebar-accent: 222 30% 14%;
+    --sidebar-accent-foreground: 220 25% 95%;
+    --sidebar-border: 222 30% 18%;
+    --sidebar-ring: 220 25% 95%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    font-family: 'IBM Plex Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "ss01", "cv11";
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
+    letter-spacing: -0.01em;
+  }
+
+  /* Override generic Tailwind font-bold use where serif headings shouldn't go too heavy */
+  h1 { font-weight: 700; }
+  h2, h3 { font-weight: 700; }
+
+  /* Disable legacy animation that no longer fits the design language */
+  .animate-glow-pulse,
+  .animate-pulse {
+    animation: none !important;
+  }
+}
+
+@layer utilities {
+  @keyframes accordion-down {
+    from { height: 0; opacity: 0; }
+    to { height: var(--radix-accordion-content-height); opacity: 1; }
+  }
+  @keyframes accordion-up {
+    from { height: var(--radix-accordion-content-height); opacity: 1; }
+    to { height: 0; opacity: 0; }
+  }
+  @keyframes fade-in {
+    0% { opacity: 0; transform: translateY(8px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fade-out {
+    0% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(8px); }
+  }
+  @keyframes scale-in {
+    0% { transform: scale(0.98); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  @keyframes scale-out {
+    from { transform: scale(1); opacity: 1; }
+    to { transform: scale(0.98); opacity: 0; }
+  }
+  @keyframes slide-in-right {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(0); }
+  }
+  @keyframes slide-out-right {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(100%); }
+  }
+
+  .animate-accordion-down { animation: accordion-down 0.2s ease-out; }
+  .animate-accordion-up { animation: accordion-up 0.2s ease-out; }
+  .animate-fade-in { animation: fade-in 0.5s ease-out both; }
+  .animate-fade-out { animation: fade-out 0.3s ease-out; }
+  .animate-scale-in { animation: scale-in 0.25s ease-out; }
+  .animate-scale-out { animation: scale-out 0.2s ease-out; }
+  .animate-slide-in-right { animation: slide-in-right 0.3s ease-out; }
+  .animate-slide-out-right { animation: slide-out-right 0.3s ease-out; }
+  .animate-enter { animation: fade-in 0.4s ease-out, scale-in 0.25s ease-out; }
+  .animate-exit { animation: fade-out 0.25s ease-out, scale-out 0.2s ease-out; }
+
+  .story-link {
+    @apply relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-px after:bottom-0 after:left-0 after:bg-current after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
+  }
+
+  .hover-scale {
+    @apply transition-transform duration-200 hover:-translate-y-0.5;
+  }
+
+  .pulse { animation: none; }
+
+  .editorial-rule {
+    @apply h-px w-full bg-border;
+  }
+
+  .eyebrow {
+    @apply text-xs uppercase tracking-[0.18em] font-medium text-muted-foreground;
+  }
+}
