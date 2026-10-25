@@ -12,13 +12,26 @@ import penImg from "@/assets/contact-hero-bg.jpg";
 import loungeImg from "@/assets/partner-coinbase-meeting.jpg";
 import meetingImg from "@/assets/partner-bka-cooperation.jpg";
 
+import teamBerthold from "@/assets/team/berthold.jpg";
+import teamLindner from "@/assets/team/lindner.jpg";
+import teamHartmann from "@/assets/team/hartmann.jpg";
+import teamBrandt from "@/assets/team/brandt.jpg";
+import teamSchreiber from "@/assets/team/schreiber.jpg";
+import teamAlbrecht from "@/assets/team/albrecht.jpg";
+import teamEngel from "@/assets/team/engel.jpg";
+import teamNeumann from "@/assets/team/neumann.jpg";
+import teamReinhardt from "@/assets/team/reinhardt.jpg";
+
 const team = [
-  { name: "Dr. Holger Berthold", role: "Rechtsanwalt · Gründungspartner", focus: "Cybercrime, Datenschutz, Kapitalmarkt, Kryptonachverfolgung", img: "/lovable-uploads/2cad25d9-8d15-482b-bc38-5b1378991be6.png" },
-  { name: "Dr. Maximilian Krause", role: "Rechtsanwalt", focus: "Prozessführung, Datenschutz, Kapitalmarktrecht", img: "/lovable-uploads/b4127816-793a-42ef-b5e4-34987580a428.png" },
-  { name: "Dr. Alexander Voigt", role: "Rechtsanwalt", focus: "Immobilienrecht, Prozessführung, Datenschutz", img: "/lovable-uploads/49592374-fd61-4f95-b984-a0cbeeaad8f5.png" },
-  { name: "Dr. Sebastian Werner", role: "Rechtsanwalt", focus: "Immobilienrecht, Streitbeilegung, Cybercrime", img: "/lovable-uploads/709d1496-f015-4b38-b331-9cb17b1b6eaa.png" },
-  { name: "Julian Maier", role: "Blockchain- und Datenanalyse", focus: "", img: "/lovable-uploads/fb9c5d6b-b0d1-44b0-9835-4301827237bb.png" },
-  { name: "Clara Hoffmann", role: "Mandatsbetreuung", focus: "", img: "/lovable-uploads/eb203c07-90e7-479d-8fd8-fdaa83fcce97.png" },
+  { name: "Dr. Holger Berthold", role: "Rechtsanwalt · Gründungspartner", focus: "Cybercrime, Kryptonachverfolgung", img: teamBerthold },
+  { name: "Dr. Katharina Lindner", role: "Rechtsanwältin · Partnerin", focus: "Kapitalmarktrecht, Anlegerschutz", img: teamLindner },
+  { name: "Prof. Dr. Wolfgang Hartmann", role: "Of Counsel", focus: "Gesellschafts- & Unternehmensrecht", img: teamHartmann },
+  { name: "Dr. Felix Brandt", role: "Rechtsanwalt · Partner", focus: "Prozessführung", img: teamBrandt },
+  { name: "Johanna Schreiber", role: "Rechtsanwältin", focus: "Datenschutz & Compliance", img: teamSchreiber },
+  { name: "Markus Albrecht", role: "Rechtsanwalt", focus: "Immobilienrecht", img: teamAlbrecht },
+  { name: "Dr. Sophie Engel", role: "Rechtsanwältin", focus: "Private Clients & Family Offices", img: teamEngel },
+  { name: "Lukas Neumann", role: "Rechtsanwalt", focus: "Cybercrime, Bankrecht", img: teamNeumann },
+  { name: "Tobias Reinhardt", role: "Blockchain- & Datenanalyse", focus: "Forensische Transaktionsanalyse", img: teamReinhardt },
 ];
 
 const rubriken = [
@@ -204,7 +217,7 @@ const Index = () => {
             {team.map((m) => (
               <figure key={m.name}>
                 <div className="aspect-[4/5] overflow-hidden bg-card mb-3 md:mb-5">
-                  <img src={m.img} alt={m.name} loading="lazy" className="w-full h-full object-cover sepia-[.25]" />
+                  <img src={m.img} alt={m.name} loading="lazy" width={832} height={1040} className="w-full h-full object-cover sepia-[.15]" />
                 </div>
                 <figcaption className="border-t border-primary pt-3 md:pt-4">
                   <p className="font-serif text-base md:text-xl text-primary">{m.name}</p>
