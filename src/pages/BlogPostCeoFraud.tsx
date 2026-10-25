@@ -7,7 +7,7 @@ const BlogPostCeoFraud = () => (
     rubric="Unternehmen"
     title={<>Die gefälschte<br /><em className="text-secondary">Chefanweisung.</em></>}
     standfirst="Eine E-Mail vom Geschäftsführer, eine dringende Überweisung, absolute Diskretion: So beginnt CEO-Fraud. Was Unternehmen in den ersten Stunden tun sollten."
-    date="16. Juli 2025"
+    date="9. Oktober 2026"
     readTime="6 Min."
     author="Korte & Partner"
     image={img}

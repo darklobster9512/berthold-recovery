@@ -3,11 +3,21 @@ import { Link } from "react-router-dom";
 import { EditorialHero } from "@/components/EditorialHero";
 import { Footer } from "@/components/Footer";
 import { useSettings } from "@/hooks/useSettings";
+import cryptoImg from "@/assets/crypto-hero-bg.jpg";
+import filesImg from "@/assets/partner-bka-cooperation.jpg";
+import penImg from "@/assets/contact-hero-bg.jpg";
+import laptopImg from "@/assets/partner-binance-collaboration.jpg";
+import justiceImg from "@/assets/editorial-justice.jpg";
+import confImg from "@/assets/partner-iosco-summit.jpg";
 
+/** All journal posts, newest first. Used by journal overview, home page and article sidebars. */
 export const journalPosts = [
-  { to: "/blog-post/krypto-betrugsopfer-bekommt-869-bitcoin-zurueck", rubric: "Fallbericht", title: "8,69 Bitcoin finden ihren Weg zurück" },
-  { to: "/blog-post/ceo-fraud-und-ueberweisungsbetrug", rubric: "Unternehmen", title: "Die gefälschte Chefanweisung" },
-  { to: "/blog-post/ogh-kreditgebuehr-unzulaessig", rubric: "Rechtsprechung", title: "Kreditgebühr auf dem Prüfstand" },
+  { to: "/blog-post/falsche-krypto-plattformen-erkennen", rubric: "Ratgeber · Krypto", title: "Falsche Krypto-Plattformen erkennen", text: "Professionelle Websites, echte Gesichter, erfundene Gewinne. Woran Sie Anlagebetrug vor der ersten Einzahlung erkennen.", img: laptopImg, date: "23. Oktober 2026", time: "7 Min." },
+  { to: "/blog-post/sms-phishing-haftung-bank", rubric: "Rechtsprechung · Bankrecht", title: "Phishing per SMS: Haftet die Bank?", text: "Eine gefälschte Nachricht, ein Klick, das Konto leer. Wann Banken den Schaden ersetzen müssen.", img: justiceImg, date: "16. Oktober 2026", time: "6 Min." },
+  { to: "/blog-post/nis2-geschaeftsfuehrer", rubric: "Compliance", title: "NIS2: Was Geschäftsführer jetzt wissen müssen", text: "Neue Pflichten zur Cybersicherheit, persönliche Haftung der Leitung. Ein Überblick für Unternehmen.", img: confImg, date: "12. Oktober 2026", time: "8 Min." },
+  { to: "/blog-post/ceo-fraud-und-ueberweisungsbetrug", rubric: "Unternehmen · Cybercrime", title: "Die gefälschte Chefanweisung", text: "CEO-Fraud trifft Unternehmen jeder Größe. Was in den ersten Stunden nach der Fehlüberweisung zählt.", img: filesImg, date: "9. Oktober 2026", time: "6 Min." },
+  { to: "/blog-post/krypto-betrugsopfer-bekommt-869-bitcoin-zurueck", rubric: "Fallbericht · Krypto", title: "8,69 Bitcoin finden ihren Weg zurück", text: "Rund 800.000 Euro galten als verloren. Wie Blockchain-Forensik und juristische Ausdauer den Fall gedreht haben.", img: cryptoImg, date: "2. Oktober 2026", time: "8 Min." },
+  { to: "/blog-post/ogh-kreditgebuehr-unzulaessig", rubric: "Rechtsprechung · Bankrecht", title: "Kreditgebühr auf dem Prüfstand", text: "Gebündelte Bearbeitungsgebühren sind intransparent. Wer jetzt Geld zurückfordern kann.", img: penImg, date: "21. September 2026", time: "6 Min." },
 ];
 
 interface Props {

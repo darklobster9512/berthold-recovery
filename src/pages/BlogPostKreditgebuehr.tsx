@@ -7,7 +7,7 @@ const BlogPostKreditgebuehr = () => (
     rubric="Rechtsprechung"
     title={<>Kreditgebühr<br /><em className="text-secondary">auf dem Prüfstand.</em></>}
     standfirst="Der Oberste Gerichtshof erklärt gebündelte Bearbeitungsgebühren für intransparent. Für viele Kreditnehmer heißt das: Geld zurück — sogar bei längst getilgten Krediten."
-    date="7. Juli 2025"
+    date="21. September 2026"
     readTime="6 Min."
     author="Korte & Partner"
     image={img}
