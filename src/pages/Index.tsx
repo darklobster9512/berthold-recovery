@@ -1,83 +1,54 @@
 import { Button } from "@/components/ui/button";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { ArrowRight, Star } from "lucide-react";
-import { useEffect, useState } from "react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import Autoplay from "embla-carousel-autoplay";
-import { NewsCarousel } from "@/components/NewsCarousel";
-import { Header } from "@/components/Header";
+import { Header, kompetenzen } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { useSettings } from "@/hooks/useSettings";
-
-
-
-const AnimatedCounter = ({ end, duration = 1800, suffix = "" }: { end: number; duration?: number; suffix?: string }) => {
-  const [count, setCount] = useState(0);
-  const [hasStarted, setHasStarted] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting && !hasStarted) {
-          setHasStarted(true);
-          let startTime: number;
-          const step = (timestamp: number) => {
-            if (!startTime) startTime = timestamp;
-            const progress = Math.min((timestamp - startTime) / duration, 1);
-            const eased = 1 - Math.pow(1 - progress, 4);
-            setCount(Math.floor(eased * end));
-            if (progress < 1) requestAnimationFrame(step);
-            else setCount(end);
-          };
-          requestAnimationFrame(step);
-        }
-      },
-      { threshold: 0.2 }
-    );
-    const element = document.getElementById(`counter-${end}`);
-    if (element) observer.observe(element);
-    return () => observer.disconnect();
-  }, [end, duration, hasStarted]);
-
-  return (
-    <span id={`counter-${end}`} className="font-serif text-5xl lg:text-6xl text-primary-foreground">
-      {count.toLocaleString()}
-      {suffix}
-    </span>
-  );
-};
+import heroImg from "@/assets/hero-library.jpg";
+import justiceImg from "@/assets/editorial-justice.jpg";
+import cryptoImg from "@/assets/crypto-hero-bg.jpg";
+import penImg from "@/assets/contact-hero-bg.jpg";
+import loungeImg from "@/assets/partner-coinbase-meeting.jpg";
+import meetingImg from "@/assets/partner-bka-cooperation.jpg";
 
 const team = [
-  { name: "Dr. Thomas Korte", role: "Rechtsanwalt", focus: "Cybercrime · Datenschutz · Kapitalmarkt · Kryptonachverfolgung", img: "/lovable-uploads/2cad25d9-8d15-482b-bc38-5b1378991be6.png" },
-  { name: "Clara Hoffmann", role: "Teamassistentin", focus: "", img: "/lovable-uploads/eb203c07-90e7-479d-8fd8-fdaa83fcce97.png" },
-  { name: "Dr. Maximilian Krause", role: "Rechtsanwalt", focus: "Prozessführung · Datenschutz · Kapitalmarktrecht", img: "/lovable-uploads/b4127816-793a-42ef-b5e4-34987580a428.png" },
-  { name: "Julian Maier", role: "Blockchain- / Datenanalyst", focus: "", img: "/lovable-uploads/fb9c5d6b-b0d1-44b0-9835-4301827237bb.png" },
-  { name: "Dr. Alexander Voigt", role: "Rechtsanwalt", focus: "Immobilienrecht · Prozessführung · Datenschutz", img: "/lovable-uploads/49592374-fd61-4f95-b984-a0cbeeaad8f5.png" },
-  { name: "Dr. Sebastian Werner", role: "Rechtsanwalt", focus: "Immobilienrecht · Streitbeilegung · Cybercrime", img: "/lovable-uploads/709d1496-f015-4b38-b331-9cb17b1b6eaa.png" },
+  { name: "Dr. Thomas Korte", role: "Rechtsanwalt · Gründungspartner", focus: "Cybercrime, Datenschutz, Kapitalmarkt, Kryptonachverfolgung", img: "/lovable-uploads/2cad25d9-8d15-482b-bc38-5b1378991be6.png" },
+  { name: "Dr. Maximilian Krause", role: "Rechtsanwalt", focus: "Prozessführung, Datenschutz, Kapitalmarktrecht", img: "/lovable-uploads/b4127816-793a-42ef-b5e4-34987580a428.png" },
+  { name: "Dr. Alexander Voigt", role: "Rechtsanwalt", focus: "Immobilienrecht, Prozessführung, Datenschutz", img: "/lovable-uploads/49592374-fd61-4f95-b984-a0cbeeaad8f5.png" },
+  { name: "Dr. Sebastian Werner", role: "Rechtsanwalt", focus: "Immobilienrecht, Streitbeilegung, Cybercrime", img: "/lovable-uploads/709d1496-f015-4b38-b331-9cb17b1b6eaa.png" },
+  { name: "Julian Maier", role: "Blockchain- und Datenanalyse", focus: "", img: "/lovable-uploads/fb9c5d6b-b0d1-44b0-9835-4301827237bb.png" },
+  { name: "Clara Hoffmann", role: "Mandatsbetreuung", focus: "", img: "/lovable-uploads/eb203c07-90e7-479d-8fd8-fdaa83fcce97.png" },
 ];
 
-const partnerLogos = [
-  { name: "Cybercrime Komplettschutz", logo: "/lovable-uploads/da91dba8-4542-49e2-a65f-f3c47c7a5afd.png" },
-  { name: "Polizei Nordrhein-Westfalen", logo: "/lovable-uploads/1834d8de-5216-4084-be7f-b4973552d4e2.png" },
-  { name: "Bundeskriminalamt", logo: "/lovable-uploads/b2f48b3f-04a9-45fa-93e8-b4a2979906d0.png" },
-  { name: "Coinbase", logo: "/lovable-uploads/40855976-8084-4aa6-8ab3-40a1b0d75ab6.png" },
-  { name: "Binance", logo: "/lovable-uploads/a353d06a-d600-40b4-8ac2-e8fae21230d5.png" },
-  { name: "IOSCO", logo: "/lovable-uploads/7cf1155a-1e93-404a-bb7f-b70fbba16ab9.png" },
+const rubriken = [
+  { to: "/kompetenz/cybercrime", label: "Cybercrime", text: "Wenn Betrug, Datendiebstahl oder Erpressung digital geschehen, handeln wir straf- und zivilrechtlich zugleich.", img: cryptoImg, span: "md:col-span-2 md:row-span-2" },
+  { to: "/kompetenz/kryptonachverfolgung-und-mittelherkunftsnachweis", label: "Kryptonachverfolgung", text: "Transaktionen lesen, Wege rekonstruieren, Herkunft belegen.", span: "" },
+  { to: "/kompetenz/wertpapier-und-kapitalmarktrecht", label: "Kapitalmarktrecht", text: "Anlegerschutz, Aufsicht und Produktfragen aus einer Hand.", span: "" },
+  { to: "/kompetenz/private-clients-family-offices", label: "Private Clients", text: "Diskrete Begleitung von Familien, Unternehmern und Vermögen.", img: loungeImg, span: "md:col-span-2" },
+  { to: "/kompetenz/prozessfuhrung", label: "Prozessführung", text: "Streit mit Plan — vor Gericht und davor.", span: "" },
+  { to: "/kompetenz/immobilienrecht", label: "Immobilienrecht", text: "Von der Transaktion bis zum Rechtsstreit um Grund und Boden.", span: "" },
+  { to: "/kompetenz/gesellschafts-und-unternehmensrecht", label: "Gesellschaftsrecht", text: "Struktur, Governance und Konflikte unter Gesellschaftern.", img: penImg, span: "md:col-span-2" },
+  { to: "/kompetenz/datenschutz-und-compliance", label: "Datenschutz & Compliance", text: "Regeln, die tragen — und Antworten, wenn etwas passiert.", span: "md:col-span-2" },
 ];
 
-const kompetenzen = [
-  { num: "01", title: "Cybercrime", desc: "Strafrechtliche und zivilrechtliche Begleitung bei digitalen Delikten." },
-  { num: "02", title: "Kryptonachverfolgung", desc: "Forensische Analyse von Wallet-Strukturen und Mittelherkunftsnachweis." },
-  { num: "03", title: "Kapitalmarktrecht", desc: "Wertpapier-, Anlegerschutz- und Bankrecht in komplexen Konstellationen." },
-  { num: "04", title: "Private Clients", desc: "Beratung vermögender Privatpersonen und Family Offices." },
-  { num: "05", title: "Prozessführung", desc: "Effiziente Durchsetzung Ihrer Ansprüche vor Gerichten im In- und Ausland." },
-  { num: "06", title: "Immobilienrecht", desc: "Begleitung anspruchsvoller Transaktionen und Streitigkeiten." },
+const journal = [
+  { to: "/blog-post/krypto-betrugsopfer-bekommt-869-bitcoin-zurueck", rubric: "Fallbericht", title: "869 Bitcoin zurück beim Geschädigten", text: "Wie Blockchain-Analyse, schnelle Sicherungsanträge und Ausdauer einen scheinbar verlorenen Fall gedreht haben.", img: cryptoImg },
+  { to: "/blog-post/ceo-fraud-und-ueberweisungsbetrug", rubric: "Unternehmen", title: "Die gefälschte Chefanweisung", text: "CEO-Fraud trifft Mittelständler besonders hart. Was in den ersten Stunden zählt.", img: meetingImg },
+  { to: "/blog-post/ogh-kreditgebuehr-unzulaessig", rubric: "Rechtsprechung", title: "Kreditgebühr auf dem Prüfstand", text: "Ein Höchstgericht kippt eine verbreitete Bankgebühr. Wer jetzt Geld zurückfordern kann.", img: penImg },
 ];
 
-const testimonials = [
-  { name: "Michael S.", time: "vor 2 Wochen", text: "Hervorragende Beratung bei meinem Krypto-Betrugsfall. Das Team hat mich professionell durch den gesamten Prozess begleitet und konnte tatsächlich einen großen Teil meiner verlorenen Investition zurückholen." },
-  { name: "Sarah M.", time: "vor 1 Monat", text: "Kompetente und verständliche Beratung. Die Anwälte kennen sich sehr gut mit Blockchain-Technologie aus und konnten mir bei einem komplexen ICO-Betrugsfall helfen." },
-  { name: "Thomas K.", time: "vor 3 Wochen", text: "Schnelle und effiziente Hilfe bei einem Wallet-Hack. Das Team arbeitet sehr strukturiert und transparent. Kann ich nur weiterempfehlen!" },
+const facts = [
+  ["12+", "Jahre Praxis"],
+  ["1.400", "betreute Mandate"],
+  ["8", "Rechtsgebiete"],
+  ["24 h", "Rückmeldung"],
+];
+
+const chapters = [
+  ["I", "Das erste Gespräch", "Sie schildern, wir hören zu. Am Ende wissen Sie, ob und wie wir helfen können — ohne Kosten."],
+  ["II", "Die Analyse", "Wir sichten Unterlagen, prüfen Zahlungsströme und bewerten Chancen und Risiken offen."],
+  ["III", "Die Strategie", "Ein schriftlicher Plan mit Schritten, Zeitrahmen und transparenter Kostenaussage."],
+  ["IV", "Die Umsetzung", "Wir verhandeln, sichern und klagen — und halten Sie bei jedem Schritt auf dem Laufenden."],
 ];
 
 const Index = () => {
@@ -86,318 +57,178 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Header />
 
-      {/* Hero — Cinematic Full-Bleed */}
-      <section className="relative bg-primary text-primary-foreground min-h-[88vh] flex flex-col overflow-hidden">
-        <video
-          src="/video.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="metadata"
-          className="absolute inset-0 w-full h-full object-cover"
-          aria-label="Korte & Partner"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/85 via-primary/55 to-primary/30" />
-        <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-primary/40" />
-
-        <div className="relative z-10 flex-1 flex flex-col justify-end">
-          <div className="container mx-auto px-6 lg:px-12 max-w-7xl pt-40 pb-20 lg:pb-24">
-            <p className="text-[11px] font-sans tracking-[0.3em] uppercase text-primary-foreground/70 mb-8">
-              Korte &amp; Partner <span className="mx-2 opacity-50">—</span> Crypto Recovery &amp; Wirtschaftsrecht
-            </p>
-
-            <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl leading-[1.08] font-normal max-w-4xl mb-6 text-primary-foreground">
-              Wir holen Ihre Krypto-Werte zurück
+      {/* 1. Cover */}
+      <section className="container mx-auto px-6 max-w-7xl py-12">
+        <div className="grid lg:grid-cols-12 gap-10">
+          <div className="lg:col-span-8">
+            <img src={heroImg} alt="Kanzleibibliothek von Korte & Partner" width={1600} height={1104} className="w-full h-[300px] md:h-[480px] object-cover" />
+            <p className="kicker mt-8 mb-5">Titelgeschichte</p>
+            <h1 className="font-serif text-4xl md:text-6xl leading-[1.05] text-primary">
+              Recht, das Vermögen <em className="text-secondary">schützt</em> — analog wie digital.
             </h1>
-
-            <div className="h-px w-24 bg-sky-400/40 mb-8" />
-
-            <p className="font-sans text-xs md:text-sm tracking-[0.28em] uppercase text-primary-foreground/70 mb-10 flex flex-wrap items-center gap-x-3 gap-y-2">
-              <span>rechtlich</span>
-              <span className="text-primary-foreground/30">|</span>
-              <span>international</span>
-              <span className="text-primary-foreground/30">|</span>
-              <span>nachweisbar</span>
+            <p className="mt-6 font-serif italic text-xl text-foreground/70 leading-relaxed max-w-3xl">
+              Korte &amp; Partner verbindet klassische Wirtschaftskanzlei mit technischem Verständnis für Blockchain, Zahlungsströme und Cyberangriffe. Für Privatpersonen ebenso wie für Unternehmen.
             </p>
-
-            <p className="font-sans text-base lg:text-lg text-primary-foreground/80 max-w-2xl leading-relaxed mb-12">
-              Spezialisierte Kanzlei für die forensische Nachverfolgung und rechtliche
-              Rückführung gestohlener Krypto-Assets. Wir verbinden Blockchain-Analyse
-              mit internationaler Prozessführung — für Privatmandanten, Family Offices
-              und Unternehmen.
-            </p>
-
-            <div className="flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-10">
+            <div className="mt-8 flex flex-col sm:flex-row gap-4">
               <Link to="/kontakt">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="rounded-none h-14 px-10 text-xs font-semibold tracking-[0.2em] uppercase border-primary-foreground/70 bg-transparent text-primary-foreground hover:bg-primary-foreground hover:text-primary transition-colors"
-                >
-                  Mandat anfragen
+                <Button size="lg" className="rounded-none bg-primary text-primary-foreground hover:bg-secondary h-12 px-8 w-full sm:w-auto">
+                  Kostenfreies Erstgespräch <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
-
-              <a
-                href="#kompetenzen"
-                className="inline-flex items-center gap-3 text-xs font-semibold tracking-[0.2em] uppercase text-primary-foreground/80 hover:text-primary-foreground transition-colors"
-              >
-                Unsere Kompetenzen
-                <ArrowRight className="h-4 w-4" />
-              </a>
-
-              {phoneEnabled && (
-                <div className="flex flex-col sm:border-l sm:border-primary-foreground/20 sm:pl-6">
-                  <span className="text-[10px] uppercase tracking-widest text-primary-foreground/50 mb-1 font-sans">
-                    Ansprechpartner
-                  </span>
-                  <a href={`tel:${phone}`} className="text-primary-foreground font-medium hover:text-primary-foreground/80 transition-colors">
-                    {phone}
-                  </a>
-                </div>
-              )}
+              <Link to="/blog">
+                <Button size="lg" variant="outline" className="rounded-none border-primary text-primary hover:bg-muted h-12 px-8 w-full sm:w-auto">Zum Journal</Button>
+              </Link>
             </div>
           </div>
 
-          <div className="relative z-10 border-t border-primary-foreground/15">
-            <div className="container mx-auto px-6 lg:px-12 max-w-7xl py-5 flex flex-wrap items-center gap-x-10 gap-y-2 text-[10px] uppercase tracking-[0.25em] text-primary-foreground/60 font-sans">
-              <span>Seit 2014</span>
-              <span className="opacity-40">·</span>
-              <span>500+ Recovery-Mandate</span>
-              <span className="opacity-40">·</span>
-              <span>Blockchain-Forensik</span>
-              <span className="opacity-40">·</span>
-              <span>International tätig</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
-
-      {/* Manifest */}
-      <section className="border-b border-border">
-        <div className="container mx-auto px-6 max-w-7xl py-24">
-          <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
-            <div className="lg:col-span-4">
-              <p className="eyebrow mb-6">Success as a Service</p>
-              <h2 className="font-serif text-3xl lg:text-4xl leading-tight">
-                Langfristiger Wegbegleiter,<br />nicht nur Vertreter.
-              </h2>
-            </div>
-            <div className="lg:col-span-7 lg:col-start-6">
-              <p className="text-lg leading-relaxed text-foreground/80">
-                Wir verstehen uns nicht „nur" als Rechtsvertreter im klassischen Sinn, sondern als langfristiger
-                Wegbegleiter und Partner. Mandant:innen sollen von unserer Arbeit tatsächlich profitieren — wir legen
-                den Fokus auf individuelle Bedürfnisse und finden gemeinsam maßgeschneiderte Lösungen.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats */}
-      <section className="bg-primary text-primary-foreground">
-        <div className="container mx-auto px-6 max-w-7xl py-20">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-6">
-            {[
-              { v: 15, s: "+", l: "Jahre Fachexpertise" },
-              { v: 50, s: " Mio+", l: "Euro verfolgtes Schadensvolumen" },
-              { v: 13, s: "", l: "Topmotivierte Mitarbeiter:innen" },
-              { v: 1000, s: "+", l: "Erfolgreich abgewickelte Verfahren" },
-            ].map((stat, i) => (
-              <div key={i} className="lg:border-l border-primary-foreground/15 lg:pl-6 first:lg:border-l-0 first:lg:pl-0">
-                <div className="mb-3"><AnimatedCounter end={stat.v} suffix={stat.s} /></div>
-                <p className="text-xs uppercase tracking-[0.18em] text-primary-foreground/55 max-w-[180px] leading-relaxed">
-                  {stat.l}
-                </p>
+          <aside className="lg:col-span-4 lg:border-l lg:border-border lg:pl-10">
+            <p className="kicker mb-6">In dieser Ausgabe</p>
+            <ol className="divide-y divide-border">
+              {kompetenzen.map((k, i) => (
+                <li key={k.to}>
+                  <Link to={k.to} className="group flex items-baseline gap-4 py-4">
+                    <span className="font-serif italic text-accent text-2xl w-8">{i + 1}</span>
+                    <span className="font-serif text-lg text-primary group-hover:text-secondary flex-1">{k.label}</span>
+                    <ArrowUpRight className="h-4 w-4 text-muted-foreground group-hover:text-secondary" />
+                  </Link>
+                </li>
+              ))}
+            </ol>
+            {phoneEnabled && (
+              <div className="mt-8 bg-primary text-primary-foreground p-6">
+                <p className="text-[11px] uppercase tracking-[0.24em] text-accent mb-2">Direkter Draht</p>
+                <a href={`tel:${phone}`} className="font-serif text-2xl hover:text-accent">{phone}</a>
+                <p className="text-sm text-primary-foreground/60 mt-2">Mo–Fr, 8 bis 19 Uhr</p>
               </div>
-            ))}
+            )}
+          </aside>
+        </div>
+      </section>
+
+      {/* 2. Leitartikel */}
+      <section className="bg-card border-y border-border">
+        <div className="container mx-auto px-6 max-w-7xl py-20 grid lg:grid-cols-12 gap-12 items-start">
+          <div className="lg:col-span-4">
+            <img src={justiceImg} alt="Gesetzbücher und Waage" loading="lazy" width={912} height={1200} className="w-full h-[460px] object-cover" />
+          </div>
+          <div className="lg:col-span-8">
+            <p className="kicker mb-5">Leitartikel</p>
+            <h2 className="font-serif text-3xl md:text-5xl leading-tight text-primary mb-10">Warum wir anders arbeiten.</h2>
+            <div className="md:columns-2 gap-10 text-[17px] leading-relaxed text-foreground/85 space-y-5">
+              <p className="dropcap">Wer betrogen wurde oder vor einer schweren wirtschaftlichen Entscheidung steht, braucht keine Floskeln, sondern eine ehrliche Einschätzung. Darum sagen wir früh, was realistisch ist — und was nicht.</p>
+              <p>Unsere Anwältinnen und Anwälte arbeiten eng mit eigenen Datenanalysten zusammen. So entsteht ein Bild, das juristische Argumente und technische Spuren zusammenführt.</p>
+              <p>Wir bleiben bewusst überschaubar. Jedes Mandat hat feste Ansprechpartner, die den Fall von Anfang bis Ende kennen. Kurze Wege, klare Absprachen, nachvollziehbare Kosten.</p>
+              <p>Und wir denken über den Einzelfall hinaus: Wo es sinnvoll ist, bündeln wir Ansprüche, kooperieren mit Behörden und nutzen internationale Netzwerke.</p>
+            </div>
+            <blockquote className="mt-12 border-t-4 border-double border-primary pt-8 font-serif text-2xl md:text-3xl italic text-secondary leading-snug">
+              „Gute Beratung beginnt mit dem Satz, den der Mandant nicht hören will — und endet mit einem Plan, der funktioniert."
+              <footer className="mt-4 not-italic text-sm font-sans uppercase tracking-[0.2em] text-muted-foreground">Dr. Thomas Korte</footer>
+            </blockquote>
           </div>
         </div>
       </section>
 
-      {/* Kompetenzen */}
-      <section className="border-b border-border">
-        <div className="container mx-auto px-6 max-w-7xl py-24">
-          <div className="grid lg:grid-cols-12 gap-10 mb-16">
-            <div className="lg:col-span-5">
-              <p className="eyebrow mb-6">Kompetenzen</p>
-              <h2 className="font-serif text-3xl lg:text-5xl leading-tight">
-                Spezialisiert. Diskret. Wirksam.
-              </h2>
-            </div>
-            <div className="lg:col-span-6 lg:col-start-7 flex items-end">
-              <p className="text-base text-foreground/70 leading-relaxed">
-                Acht Praxisfelder, ein gemeinsamer Anspruch: rechtliche Exzellenz in
-                wirtschaftlich anspruchsvollen Mandaten.
-              </p>
-            </div>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 border-t border-border">
-            {kompetenzen.map((k) => (
-              <div key={k.num} className="border-b border-r border-border last:border-r-0 [&:nth-child(3n)]:border-r-0 p-8 hover:bg-muted/40 transition-colors">
-                <p className="font-serif text-sm text-accent mb-6">{k.num}</p>
-                <h3 className="font-serif text-2xl mb-3 leading-tight">{k.title}</h3>
-                <p className="text-sm text-foreground/70 leading-relaxed">{k.desc}</p>
+      {/* 3. Rubriken */}
+      <section className="container mx-auto px-6 max-w-7xl py-20">
+        <div className="flex items-end justify-between border-b-4 border-double border-primary pb-4 mb-10">
+          <h2 className="font-serif text-3xl md:text-4xl text-primary">Rubriken</h2>
+          <span className="text-[11px] uppercase tracking-[0.24em] text-muted-foreground">Acht Rechtsgebiete</span>
+        </div>
+        <div className="grid md:grid-cols-4 auto-rows-[minmax(220px,auto)] gap-6">
+          {rubriken.map((r) => (
+            <Link key={r.to} to={r.to} className={`group relative overflow-hidden border border-border bg-card flex flex-col ${r.span}`}>
+              {r.img && <img src={r.img} alt={r.label} loading="lazy" className="w-full flex-1 min-h-[180px] object-cover transition-transform duration-700 group-hover:scale-[1.03]" />}
+              <div className="p-6">
+                <p className="text-[11px] uppercase tracking-[0.24em] text-secondary mb-2">{r.label}</p>
+                <p className="font-serif text-lg leading-snug text-primary group-hover:text-secondary">{r.text}</p>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* News */}
-      <section className="border-b border-border bg-muted/30">
-        <div className="container mx-auto px-6 max-w-7xl py-24">
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
-            <div>
-              <p className="eyebrow mb-4">Kanzlei News</p>
-              <h2 className="font-serif text-3xl lg:text-4xl leading-tight max-w-2xl">
-                Aktuelle Entwicklungen und Erfolgsgeschichten
-              </h2>
-            </div>
-            <Link to="/blog" className="text-sm font-medium story-link self-start lg:self-end">
-              Alle Beiträge →
             </Link>
-          </div>
-          <NewsCarousel />
+          ))}
+        </div>
+      </section>
+
+      {/* 4. Facts */}
+      <section className="bg-primary text-primary-foreground">
+        <div className="container mx-auto px-6 max-w-7xl py-10 grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-primary-foreground/15">
+          {facts.map(([n, l]) => (
+            <div key={l} className="text-center px-4">
+              <p className="font-serif text-4xl md:text-5xl text-accent">{n}</p>
+              <p className="mt-2 text-[11px] uppercase tracking-[0.24em] text-primary-foreground/70">{l}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 5. Journal */}
+      <section className="container mx-auto px-6 max-w-7xl py-20">
+        <div className="flex items-end justify-between border-b-4 border-double border-primary pb-4 mb-10">
+          <h2 className="font-serif text-3xl md:text-4xl text-primary">Aus dem Journal</h2>
+          <Link to="/blog" className="text-[11px] uppercase tracking-[0.24em] text-secondary story-link">Alle Beiträge</Link>
+        </div>
+        <div className="grid md:grid-cols-3 gap-10 md:divide-x md:divide-border">
+          {journal.map((j, i) => (
+            <Link key={j.to} to={j.to} className={`group ${i > 0 ? "md:pl-10" : ""}`}>
+              <img src={j.img} alt={j.title} loading="lazy" className="w-full h-56 object-cover mb-5" />
+              <p className="text-[11px] uppercase tracking-[0.24em] text-secondary mb-2">{j.rubric}</p>
+              <h3 className="font-serif text-2xl leading-snug text-primary group-hover:text-secondary mb-3">{j.title}</h3>
+              <p className="text-foreground/70 leading-relaxed">{j.text}</p>
+            </Link>
+          ))}
         </div>
       </section>
 
       {/* Team */}
-      <section id="team" className="border-b border-border">
-        <div className="container mx-auto px-6 max-w-7xl py-24">
-          <div className="grid lg:grid-cols-12 gap-10 mb-16">
-            <div className="lg:col-span-5">
-              <p className="eyebrow mb-6">Team</p>
-              <h2 className="font-serif text-3xl lg:text-5xl leading-tight">
-                Die Köpfe<br />hinter der Kanzlei.
-              </h2>
-            </div>
-            <div className="lg:col-span-6 lg:col-start-7 flex items-end">
-              <p className="text-base text-foreground/70 leading-relaxed">
-                Ein interdisziplinäres Team aus Anwältinnen, Anwälten und Blockchain-Analysten —
-                spezialisiert auf die Schnittstelle von Recht und digitaler Wirtschaft.
-              </p>
-            </div>
+      <section id="team" className="bg-muted">
+        <div className="container mx-auto px-6 max-w-7xl py-20">
+          <div className="text-center mb-14">
+            <p className="kicker mb-5">Impressum der Köpfe</p>
+            <h2 className="font-serif text-3xl md:text-5xl text-primary">Wer an Ihrem Fall arbeitet.</h2>
           </div>
-
-          <Carousel
-            opts={{ align: "start", loop: true }}
-            plugins={[Autoplay({ delay: 4500 })]}
-            className="w-full"
-          >
-            <CarouselContent className="-ml-6">
-              {team.map((m) => (
-                <CarouselItem key={m.name} className="pl-6 basis-full md:basis-1/2 lg:basis-1/3">
-                  <div>
-                    <div className="aspect-[4/5] overflow-hidden mb-6 bg-muted">
-                      <img src={m.img} alt={m.name} className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" />
-                    </div>
-                    <h3 className="font-serif text-xl mb-1">{m.name}</h3>
-                    <p className="text-sm text-foreground/60 mb-3">{m.role}</p>
-                    {m.focus && <p className="text-sm text-foreground/70 leading-relaxed">{m.focus}</p>}
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="hidden md:flex -left-4 h-11 w-11 rounded-none border-border bg-background text-foreground" />
-            <CarouselNext className="hidden md:flex -right-4 h-11 w-11 rounded-none border-border bg-background text-foreground" />
-          </Carousel>
-        </div>
-      </section>
-
-      {/* Awards & Testimonials */}
-      <section className="border-b border-border bg-muted/30">
-        <div className="container mx-auto px-6 max-w-7xl py-24">
-          <div className="grid lg:grid-cols-12 gap-12">
-            <div className="lg:col-span-5 space-y-10">
-              <div>
-                <p className="eyebrow mb-6">Auszeichnungen</p>
-                <h2 className="font-serif text-3xl lg:text-4xl leading-tight">
-                  Ausgezeichnete Kompetenz.
-                </h2>
-                <p className="text-base text-foreground/70 mt-5 leading-relaxed">
-                  Unsere Expertise wird regelmäßig von führenden Bewertungsportalen und Fachmagazinen anerkannt.
-                </p>
-              </div>
-              <div className="space-y-4">
-                <div className="bg-background border border-border p-5">
-                  <img src="/lovable-uploads/9a06dfc4-8617-4f69-97cd-82310bdeaa2e.png" alt="anwalt.de 5.0 Sterne Bewertung" className="w-full h-auto" />
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-14">
+            {team.map((m) => (
+              <figure key={m.name}>
+                <div className="aspect-[4/5] overflow-hidden bg-card mb-5">
+                  <img src={m.img} alt={m.name} loading="lazy" className="w-full h-full object-cover sepia-[.25]" />
                 </div>
-                <div className="bg-background border border-border p-5">
-                  <img src="/lovable-uploads/f083500d-33a2-4506-9c64-bace4f2b1753.png" alt="Verschiedene Auszeichnungen 2024/2025" className="w-full h-auto" />
-                </div>
-              </div>
-            </div>
-
-            <div className="lg:col-span-6 lg:col-start-7">
-              <p className="eyebrow mb-6">Mandantenstimmen</p>
-              <div className="space-y-px bg-border border border-border">
-                {testimonials.map((t) => (
-                  <div key={t.name} className="bg-background p-7">
-                    <div className="flex items-center gap-1 mb-4">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="h-3.5 w-3.5 fill-accent text-accent" />
-                      ))}
-                      <span className="text-xs text-foreground/60 ml-2 tracking-wide">5,0</span>
-                    </div>
-                    <p className="font-serif text-lg leading-relaxed text-foreground/90 mb-5">
-                      „{t.text}"
-                    </p>
-                    <div className="text-xs uppercase tracking-[0.15em] text-foreground/55">
-                      {t.name} — {t.time}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+                <figcaption className="border-t border-primary pt-4">
+                  <p className="font-serif text-xl text-primary">{m.name}</p>
+                  <p className="text-[11px] uppercase tracking-[0.2em] text-secondary mt-1">{m.role}</p>
+                  {m.focus && <p className="text-sm text-foreground/70 mt-3">{m.focus}</p>}
+                </figcaption>
+              </figure>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Partner Logos */}
-      <section className="border-b border-border">
-        <div className="container mx-auto px-6 max-w-7xl py-16">
-          <p className="eyebrow text-center mb-10">Vertrauensvolle Partnerschaften</p>
-          <Carousel
-            opts={{ align: "start", loop: true }}
-            plugins={[Autoplay({ delay: 3000 })]}
-            className="w-full"
-          >
-            <CarouselContent>
-              {partnerLogos.map((partner) => (
-                <CarouselItem key={partner.name} className="basis-1/2 md:basis-1/3 lg:basis-1/5">
-                  <div className="flex items-center justify-center h-20 px-4 grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all">
-                    <img src={partner.logo} alt={partner.name} className="max-h-full max-w-full object-contain" />
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-          </Carousel>
+      {/* 6. Chapters */}
+      <section className="container mx-auto px-6 max-w-7xl py-20">
+        <div className="text-center mb-14">
+          <p className="kicker mb-5">So läuft ein Mandat</p>
+          <h2 className="font-serif text-3xl md:text-5xl text-primary">In vier Kapiteln zum Ergebnis.</h2>
+        </div>
+        <div className="grid md:grid-cols-4 gap-px bg-border border border-border">
+          {chapters.map(([n, t, d]) => (
+            <div key={n} className="bg-background p-8">
+              <p className="font-serif italic text-5xl text-accent mb-6">{n}</p>
+              <h3 className="font-serif text-xl text-primary mb-3">{t}</h3>
+              <p className="text-foreground/70 leading-relaxed text-sm">{d}</p>
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* Final CTA */}
+      {/* 7. CTA */}
       <section className="bg-primary text-primary-foreground">
-        <div className="container mx-auto px-6 max-w-7xl py-24">
-          <div className="grid lg:grid-cols-12 gap-10 items-center">
-            <div className="lg:col-span-8">
-              <h2 className="font-serif text-3xl lg:text-5xl leading-tight">
-                Vertraulich. Persönlich.<br />Innerhalb von 60 Minuten.
-              </h2>
-              <p className="text-primary-foreground/70 mt-6 max-w-xl">
-                Beschreiben Sie uns Ihren Fall — wir melden uns mit einer ersten Einschätzung zurück.
-              </p>
-            </div>
-            <div className="lg:col-span-4 flex lg:justify-end">
-              <Link to="/kontakt">
-                <Button size="lg" className="rounded-none bg-primary-foreground text-primary hover:bg-primary-foreground/90 h-14 px-8">
-                  Erstberatung anfragen <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
-            </div>
+        <div className="container mx-auto px-6 max-w-5xl py-24 text-center">
+          <p className="text-[11px] uppercase tracking-[0.3em] text-accent mb-6">Ihr nächster Schritt</p>
+          <h2 className="font-serif text-4xl md:text-6xl leading-tight">Erzählen Sie uns Ihren Fall.</h2>
+          <p className="mt-6 text-primary-foreground/70 max-w-2xl mx-auto leading-relaxed">Das erste Gespräch ist kostenfrei und vertraulich. Wir melden uns innerhalb eines Werktages.</p>
+          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-6">
+            <Link to="/kontakt">
+              <Button size="lg" className="rounded-none bg-accent text-accent-foreground hover:bg-primary-foreground h-14 px-10">Anfrage senden <ArrowRight className="ml-2 h-4 w-4" /></Button>
+            </Link>
+            {phoneEnabled && <a href={`tel:${phone}`} className="font-serif text-xl hover:text-accent">{phone}</a>}
           </div>
         </div>
       </section>
