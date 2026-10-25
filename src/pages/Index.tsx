@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Header, kompetenzen } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { useSettings } from "@/hooks/useSettings";
+import { journalPosts } from "@/components/ArticleLayout";
 import heroImg from "@/assets/hero-library.jpg";
 import justiceImg from "@/assets/editorial-justice.jpg";
 import cryptoImg from "@/assets/crypto-hero-bg.jpg";
@@ -31,11 +32,7 @@ const rubriken = [
   { to: "/kompetenz/datenschutz-und-compliance", label: "Datenschutz & Compliance", text: "Regeln, die tragen — und Antworten, wenn etwas passiert.", span: "md:col-span-2" },
 ];
 
-const journal = [
-  { to: "/blog-post/krypto-betrugsopfer-bekommt-869-bitcoin-zurueck", rubric: "Fallbericht", title: "869 Bitcoin zurück beim Geschädigten", text: "Wie Blockchain-Analyse, schnelle Sicherungsanträge und Ausdauer einen scheinbar verlorenen Fall gedreht haben.", img: cryptoImg },
-  { to: "/blog-post/ceo-fraud-und-ueberweisungsbetrug", rubric: "Unternehmen", title: "Die gefälschte Chefanweisung", text: "CEO-Fraud trifft Mittelständler besonders hart. Was in den ersten Stunden zählt.", img: meetingImg },
-  { to: "/blog-post/ogh-kreditgebuehr-unzulaessig", rubric: "Rechtsprechung", title: "Kreditgebühr auf dem Prüfstand", text: "Ein Höchstgericht kippt eine verbreitete Bankgebühr. Wer jetzt Geld zurückfordern kann.", img: penImg },
-];
+const journal = journalPosts.slice(0, 3);
 
 const facts = [
   ["12+", "Jahre Praxis"],

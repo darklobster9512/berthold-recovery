@@ -1,15 +1,7 @@
 import { Link } from "react-router-dom";
 import { Footer } from "@/components/Footer";
 import { EditorialHero } from "@/components/EditorialHero";
-import cryptoImg from "@/assets/crypto-hero-bg.jpg";
-import meetingImg from "@/assets/partner-bka-cooperation.jpg";
-import penImg from "@/assets/contact-hero-bg.jpg";
-
-const posts = [
-  { to: "/blog-post/krypto-betrugsopfer-bekommt-869-bitcoin-zurueck", rubric: "Fallbericht · Krypto", title: "8,69 Bitcoin finden ihren Weg zurück", text: "Rund 800.000 Euro galten als verloren. Wie Blockchain-Forensik und juristische Ausdauer den Fall gedreht haben.", img: cryptoImg, date: "7. Juli 2025", time: "8 Min." },
-  { to: "/blog-post/ceo-fraud-und-ueberweisungsbetrug", rubric: "Unternehmen · Cybercrime", title: "Die gefälschte Chefanweisung", text: "CEO-Fraud trifft Unternehmen jeder Größe. Was in den ersten Stunden nach der Fehlüberweisung zählt.", img: meetingImg, date: "16. Juli 2025", time: "6 Min." },
-  { to: "/blog-post/ogh-kreditgebuehr-unzulaessig", rubric: "Rechtsprechung · Bankrecht", title: "Kreditgebühr auf dem Prüfstand", text: "Gebündelte Bearbeitungsgebühren sind intransparent. Wer jetzt Geld zurückfordern kann.", img: penImg, date: "7. Juli 2025", time: "6 Min." },
-];
+import { journalPosts as posts } from "@/components/ArticleLayout";
 
 const Blog = () => {
   const [lead, ...rest] = posts;
@@ -33,12 +25,12 @@ const Blog = () => {
           </div>
         </Link>
 
-        <div className="grid md:grid-cols-2 gap-12 pt-14 md:divide-x md:divide-border">
-          {rest.map((p, i) => (
-            <Link key={p.to} to={p.to} className={`group ${i > 0 ? "md:pl-12" : ""}`}>
-              <img src={p.img} alt={p.title} loading="lazy" className="w-full h-64 object-cover mb-6" />
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-14 pt-14">
+          {rest.map((p) => (
+            <Link key={p.to} to={p.to} className="group">
+              <img src={p.img} alt={p.title} loading="lazy" className="w-full h-56 object-cover mb-6" />
               <p className="text-[11px] uppercase tracking-[0.24em] text-secondary mb-2">{p.rubric}</p>
-              <h2 className="font-serif text-2xl md:text-3xl leading-snug text-primary group-hover:text-secondary">{p.title}</h2>
+              <h2 className="font-serif text-2xl leading-snug text-primary group-hover:text-secondary">{p.title}</h2>
               <p className="mt-3 text-foreground/70 leading-relaxed">{p.text}</p>
               <p className="mt-4 text-[11px] uppercase tracking-[0.2em] text-muted-foreground">{p.date} · {p.time}</p>
             </Link>
