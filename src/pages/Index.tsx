@@ -21,7 +21,7 @@ const team = [
 ];
 
 const rubriken = [
-  { to: "/kompetenz/cybercrime", label: "Cybercrime", text: "Wenn Betrug, Datendiebstahl oder Erpressung digital geschehen, handeln wir straf- und zivilrechtlich zugleich.", img: cryptoImg, span: "md:col-span-2 md:row-span-2" },
+  { to: "/kompetenz/cybercrime", label: "Cybercrime", text: "Wenn Betrug, Datendiebstahl oder Erpressung digital geschehen, handeln wir straf- und zivilrechtlich zugleich.", img: cryptoImg, span: "md:col-span-2" },
   { to: "/kompetenz/kryptonachverfolgung-und-mittelherkunftsnachweis", label: "Kryptonachverfolgung", text: "Transaktionen lesen, Wege rekonstruieren, Herkunft belegen.", span: "" },
   { to: "/kompetenz/wertpapier-und-kapitalmarktrecht", label: "Kapitalmarktrecht", text: "Anlegerschutz, Aufsicht und Produktfragen aus einer Hand.", span: "" },
   { to: "/kompetenz/private-clients-family-offices", label: "Private Clients", text: "Diskrete Begleitung von Familien, Unternehmern und Vermögen.", img: loungeImg, span: "md:col-span-2" },
@@ -134,10 +134,10 @@ const Index = () => {
           <h2 className="font-serif text-3xl md:text-4xl text-primary">Rubriken</h2>
           <span className="text-[11px] uppercase tracking-[0.24em] text-muted-foreground">Acht Rechtsgebiete</span>
         </div>
-        <div className="grid md:grid-cols-4 auto-rows-[minmax(220px,auto)] gap-6">
+        <div className="grid md:grid-cols-4 gap-6">
           {rubriken.map((r) => (
             <Link key={r.to} to={r.to} className={`group relative overflow-hidden border border-border bg-card flex flex-col ${r.span}`}>
-              {r.img && <img src={r.img} alt={r.label} loading="lazy" className="w-full flex-1 min-h-[180px] object-cover transition-transform duration-700 group-hover:scale-[1.03]" />}
+              {r.img && <img src={r.img} alt={r.label} loading="lazy" className="w-full h-56 object-cover transition-transform duration-700 group-hover:scale-[1.03]" />}
               <div className="p-6">
                 <p className="text-[11px] uppercase tracking-[0.24em] text-secondary mb-2">{r.label}</p>
                 <p className="font-serif text-lg leading-snug text-primary group-hover:text-secondary">{r.text}</p>
