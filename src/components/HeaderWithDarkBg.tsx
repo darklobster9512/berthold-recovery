@@ -1,6 +1,6 @@
-import { Header } from "@/components/Header";
+import { Header } from "./Header";
 
-// Backwards-compat: the new Header is solid by default.
-const HeaderWithDarkBg = () => <Header />;
+// Legal pages: same masthead header (espresso top strip provides the dark accent).
+export const HeaderWithDarkBg = () => <Header />;
 
-export { HeaderWithDarkBg };
+export default HeaderWithDarkBg;
