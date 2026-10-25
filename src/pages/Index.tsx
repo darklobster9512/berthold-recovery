@@ -134,16 +134,33 @@ const Index = () => {
           <h2 className="font-serif text-3xl md:text-4xl text-primary">Rubriken</h2>
           <span className="text-[11px] uppercase tracking-[0.24em] text-muted-foreground">Acht Rechtsgebiete</span>
         </div>
-        <div className="grid md:grid-cols-4 gap-6">
-          {rubriken.map((r) => (
-            <Link key={r.to} to={r.to} className={`group relative overflow-hidden border border-border bg-card flex flex-col ${r.span}`}>
-              {r.img && <img src={r.img} alt={r.label} loading="lazy" className="w-full h-56 object-cover transition-transform duration-700 group-hover:scale-[1.03]" />}
-              <div className="p-6">
-                <p className="text-[11px] uppercase tracking-[0.24em] text-secondary mb-2">{r.label}</p>
-                <p className="font-serif text-lg leading-snug text-primary group-hover:text-secondary">{r.text}</p>
-              </div>
-            </Link>
-          ))}
+        <div className="grid lg:grid-cols-12 gap-8">
+          <div className="lg:col-span-7 grid grid-cols-2 gap-6">
+            {rubriken.filter((r) => r.img).map((r, i) => (
+              <Link key={r.to} to={r.to} className={`group relative overflow-hidden border border-border ${i === 0 ? "col-span-2 h-80" : "col-span-2 sm:col-span-1 h-64"}`}>
+                <img src={r.img} alt={r.label} loading="lazy" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 p-6">
+                  <p className="text-[11px] uppercase tracking-[0.24em] text-accent mb-2">{r.label}</p>
+                  <p className={`font-serif leading-snug text-primary-foreground ${i === 0 ? "text-2xl" : "text-lg"}`}>{r.text}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+          <ol className="lg:col-span-5 border-t border-primary flex flex-col">
+            {rubriken.filter((r) => !r.img).map((r, i) => (
+              <li key={r.to} className="flex-1 border-b border-border">
+                <Link to={r.to} className="group h-full flex items-start gap-5 py-5">
+                  <span className="font-serif italic text-secondary w-10 shrink-0 pt-1">{["I.", "II.", "III.", "IV.", "V."][i]}</span>
+                  <span className="flex-1">
+                    <span className="block font-serif text-xl text-primary group-hover:text-secondary">{r.label}</span>
+                    <span className="block mt-1 text-foreground/70 leading-relaxed">{r.text}</span>
+                  </span>
+                  <span className="text-secondary pt-1 transition-transform group-hover:translate-x-1">→</span>
+                </Link>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 
