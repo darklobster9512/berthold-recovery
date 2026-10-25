@@ -19,7 +19,7 @@ const SectionHeader = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn("text-center mb-12", className)}
+    className={cn("text-center mb-14 pb-10 border-b-4 border-double border-primary", className)}
     {...props}
   />
 ))
@@ -32,7 +32,7 @@ const SectionTitle = React.forwardRef<
   <h2
     ref={ref}
     className={cn(
-      "text-3xl lg:text-4xl font-bold text-foreground mb-4",
+      "font-serif text-4xl lg:text-6xl text-primary mb-5",
       className
     )}
     {...props}
@@ -47,7 +47,7 @@ const SectionDescription = React.forwardRef<
   <p
     ref={ref}
     className={cn(
-      "text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed",
+      "font-serif italic text-lg text-foreground/70 max-w-3xl mx-auto leading-relaxed",
       className
     )}
     {...props}

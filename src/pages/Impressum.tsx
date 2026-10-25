@@ -11,9 +11,9 @@ const Impressum = () => {
     <div className="min-h-screen bg-background">
       <HeaderWithDarkBg />
       
-      <main className="pt-24">
+      <main className="pt-4">
         <Section className="py-12">
-          <div className="container mx-auto px-4 max-w-4xl">
+          <div className="container mx-auto px-6 max-w-3xl">
             <SectionHeader>
               <SectionTitle>Impressum</SectionTitle>
               <SectionDescription>
@@ -24,7 +24,7 @@ const Impressum = () => {
             <div className="space-y-8 text-left">
               {/* Anwaltskanzlei */}
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground">Anwaltskanzlei</h3>
+                <h3 className="font-serif text-2xl mb-4 text-primary">Anwaltskanzlei</h3>
                 <div className="space-y-2 text-muted-foreground">
                   <p className="font-medium text-foreground">Korte & Partner</p>
                   <p>Domstraße 15</p>
@@ -37,7 +37,7 @@ const Impressum = () => {
 
               {/* Kontakt */}
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground">Kontakt</h3>
+                <h3 className="font-serif text-2xl mb-4 text-primary">Kontakt</h3>
                 <div className="space-y-2 text-muted-foreground">
                   {phoneEnabled && <p><span className="font-medium">Telefon:</span> <PhoneDisplay /></p>}
                   <p><span className="font-medium">E-Mail:</span> info@kortekanzlei.de</p>
@@ -48,7 +48,7 @@ const Impressum = () => {
 
               {/* Geschäftsführung */}
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground">Geschäftsführung</h3>
+                <h3 className="font-serif text-2xl mb-4 text-primary">Geschäftsführung</h3>
                 <p className="text-muted-foreground">Dr. Thomas Korte</p>
               </div>
 
@@ -56,7 +56,7 @@ const Impressum = () => {
 
               {/* Registereintrag */}
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground">Registereintrag</h3>
+                <h3 className="font-serif text-2xl mb-4 text-primary">Registereintrag</h3>
                 <div className="space-y-2 text-muted-foreground">
                   <p><span className="font-medium">Registergericht:</span> Amtsgericht Hamburg</p>
                   <p><span className="font-medium">Registernummer:</span> PR 317</p>
@@ -67,7 +67,7 @@ const Impressum = () => {
 
               {/* Umsatzsteuer-ID */}
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground">Umsatzsteuer-Identifikationsnummer</h3>
+                <h3 className="font-serif text-2xl mb-4 text-primary">Umsatzsteuer-Identifikationsnummer</h3>
                 <p className="text-muted-foreground">
                   <span className="font-medium">USt-IdNr.:</span> DE317391938
                 </p>
@@ -77,7 +77,7 @@ const Impressum = () => {
 
               {/* Berufsrechtliche Angaben */}
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground">Berufsrechtliche Angaben</h3>
+                <h3 className="font-serif text-2xl mb-4 text-primary">Berufsrechtliche Angaben</h3>
                 <div className="space-y-3 text-muted-foreground">
                   <p><span className="font-medium">Berufsbezeichnung:</span> Rechtsanwalt (verliehen in Deutschland)</p>
                   <p><span className="font-medium">Zuständige Rechtsanwaltskammer:</span> Hanseatische Rechtsanwaltskammer Hamburg</p>
@@ -101,7 +101,7 @@ const Impressum = () => {
 
               {/* Berufshaftpflichtversicherung */}
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground">Berufshaftpflichtversicherung</h3>
+                <h3 className="font-serif text-2xl mb-4 text-primary">Berufshaftpflichtversicherung</h3>
                 <div className="space-y-2 text-muted-foreground">
                   <p><span className="font-medium">Versicherer:</span> HDI Versicherung AG</p>
                   <p><span className="font-medium">Räumlicher Geltungsbereich:</span> Europa</p>
@@ -113,7 +113,7 @@ const Impressum = () => {
 
               {/* Aufsichtsbehörde */}
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground">Aufsichtsbehörde</h3>
+                <h3 className="font-serif text-2xl mb-4 text-primary">Aufsichtsbehörde</h3>
                 <div className="space-y-2 text-muted-foreground">
                   <p>Hanseatische Rechtsanwaltskammer Hamburg</p>
                   <p>Valentinskamp 88</p>
@@ -132,7 +132,7 @@ const Impressum = () => {
 
               {/* Streitschlichtung */}
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground">Streitschlichtung</h3>
+                <h3 className="font-serif text-2xl mb-4 text-primary">Streitschlichtung</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: 
                   <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline ml-1">
@@ -150,7 +150,7 @@ const Impressum = () => {
 
               {/* Haftung für Inhalte */}
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground">Haftung für Inhalte</h3>
+                <h3 className="font-serif text-2xl mb-4 text-primary">Haftung für Inhalte</h3>
                 <div className="space-y-4 text-muted-foreground text-sm">
                   <p>
                     Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten 
@@ -173,7 +173,7 @@ const Impressum = () => {
 
               {/* Haftung für Links */}
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground">Haftung für Links</h3>
+                <h3 className="font-serif text-2xl mb-4 text-primary">Haftung für Links</h3>
                 <div className="space-y-4 text-muted-foreground text-sm">
                   <p>
                     Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen 
@@ -195,7 +195,7 @@ const Impressum = () => {
 
               {/* Urheberrecht */}
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground">Urheberrecht</h3>
+                <h3 className="font-serif text-2xl mb-4 text-primary">Urheberrecht</h3>
                 <div className="space-y-4 text-muted-foreground text-sm">
                   <p>
                     Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen 

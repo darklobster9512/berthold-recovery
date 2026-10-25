@@ -8,9 +8,9 @@ const Datenschutz = () => {
     <div className="min-h-screen bg-background">
       <HeaderWithDarkBg />
       
-      <main className="pt-24">
+      <main className="pt-4">
         <Section className="py-12">
-          <div className="container mx-auto px-4 max-w-4xl">
+          <div className="container mx-auto px-6 max-w-3xl">
             <SectionHeader>
               <SectionTitle>Datenschutzerklärung</SectionTitle>
               <SectionDescription>
@@ -21,7 +21,7 @@ const Datenschutz = () => {
             <div className="space-y-8 text-left">
               {/* Verantwortlicher */}
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground">1. Verantwortlicher</h3>
+                <h3 className="font-serif text-2xl mb-4 text-primary">1. Verantwortlicher</h3>
                 <div className="space-y-2 text-muted-foreground">
                   <p className="font-medium text-foreground">Korte & Partner</p>
                   <p>Domstraße 15</p>
@@ -35,7 +35,7 @@ const Datenschutz = () => {
 
               {/* Datenschutzbeauftragter */}
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground">2. Datenschutzbeauftragter</h3>
+                <h3 className="font-serif text-2xl mb-4 text-primary">2. Datenschutzbeauftragter</h3>
                 <p className="text-muted-foreground">
                   Für Fragen zum Datenschutz wenden Sie sich bitte an unseren Datenschutzbeauftragten 
                   unter datenschutz@kortekanzlei.de
@@ -46,9 +46,9 @@ const Datenschutz = () => {
 
               {/* Datenverarbeitung auf dieser Website */}
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground">3. Datenverarbeitung auf dieser Website</h3>
+                <h3 className="font-serif text-2xl mb-4 text-primary">3. Datenverarbeitung auf dieser Website</h3>
                 
-                <h4 className="text-lg font-medium mb-3 text-foreground">3.1 Server-Log-Dateien</h4>
+                <h4 className="font-serif text-lg mb-3 text-secondary">3.1 Server-Log-Dateien</h4>
                 <div className="space-y-4 text-muted-foreground text-sm mb-6">
                   <p>
                     Der Provider der Seiten erhebt und speichert automatisch Informationen in 
@@ -69,7 +69,7 @@ const Datenschutz = () => {
                   </p>
                 </div>
 
-                <h4 className="text-lg font-medium mb-3 text-foreground">3.2 Cookies</h4>
+                <h4 className="font-serif text-lg mb-3 text-secondary">3.2 Cookies</h4>
                 <div className="space-y-4 text-muted-foreground text-sm mb-6">
                   <p>
                     Die Internetseiten verwenden teilweise so genannte Cookies. Cookies richten auf 
@@ -89,7 +89,7 @@ const Datenschutz = () => {
                   </p>
                 </div>
 
-                <h4 className="text-lg font-medium mb-3 text-foreground">3.3 Kontaktformular und E-Mail-Kontakt</h4>
+                <h4 className="font-serif text-lg mb-3 text-secondary">3.3 Kontaktformular und E-Mail-Kontakt</h4>
                 <div className="space-y-4 text-muted-foreground text-sm">
                   <p>
                     Wenn Sie uns per Kontaktformular oder E-Mail Anfragen zukommen lassen, werden 
@@ -111,7 +111,7 @@ const Datenschutz = () => {
 
               {/* Mandantendaten */}
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground">4. Verarbeitung von Mandantendaten</h3>
+                <h3 className="font-serif text-2xl mb-4 text-primary">4. Verarbeitung von Mandantendaten</h3>
                 <div className="space-y-4 text-muted-foreground text-sm">
                   <p>
                     Bei der Beratung und Vertretung unserer Mandanten verarbeiten wir personenbezogene 
@@ -138,7 +138,7 @@ const Datenschutz = () => {
 
               {/* Betroffenenrechte */}
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground">5. Ihre Rechte als Betroffener</h3>
+                <h3 className="font-serif text-2xl mb-4 text-primary">5. Ihre Rechte als Betroffener</h3>
                 <div className="space-y-4 text-muted-foreground text-sm">
                   <p>Sie haben folgende Rechte:</p>
                   
@@ -185,7 +185,7 @@ const Datenschutz = () => {
 
               {/* Beschwerderecht */}
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground">6. Beschwerderecht</h3>
+                <h3 className="font-serif text-2xl mb-4 text-primary">6. Beschwerderecht</h3>
                 <div className="space-y-4 text-muted-foreground text-sm">
                   <p>
                     Sie haben das Recht, sich bei einer Aufsichtsbehörde über die Verarbeitung 
@@ -206,7 +206,7 @@ const Datenschutz = () => {
 
               {/* SSL-Verschlüsselung */}
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground">7. SSL-Verschlüsselung</h3>
+                <h3 className="font-serif text-2xl mb-4 text-primary">7. SSL-Verschlüsselung</h3>
                 <p className="text-muted-foreground text-sm">
                   Diese Seite nutzt aus Gründen der Sicherheit und zum Schutz der Übertragung 
                   vertraulicher Inhalte eine SSL-Verschlüsselung. Eine verschlüsselte Verbindung 
@@ -219,7 +219,7 @@ const Datenschutz = () => {
 
               {/* Aktualität */}
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground">8. Aktualität der Datenschutzerklärung</h3>
+                <h3 className="font-serif text-2xl mb-4 text-primary">8. Aktualität der Datenschutzerklärung</h3>
                 <p className="text-muted-foreground text-sm">
                   Diese Datenschutzerklärung ist aktuell gültig und hat den Stand Januar 2025. 
                   Durch die Weiterentwicklung unserer Website und Angebote darüber oder aufgrund 

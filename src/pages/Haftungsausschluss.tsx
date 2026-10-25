@@ -8,9 +8,9 @@ const Haftungsausschluss = () => {
     <div className="min-h-screen bg-background">
       <HeaderWithDarkBg />
       
-      <main className="pt-24">
+      <main className="pt-4">
         <Section className="py-12">
-          <div className="container mx-auto px-4 max-w-4xl">
+          <div className="container mx-auto px-6 max-w-3xl">
             <SectionHeader>
               <SectionTitle>Haftungsausschluss</SectionTitle>
               <SectionDescription>
@@ -21,7 +21,7 @@ const Haftungsausschluss = () => {
             <div className="space-y-8 text-left">
               {/* Allgemeine Hinweise */}
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground">1. Allgemeine Hinweise und Rechtsinformationen</h3>
+                <h3 className="font-serif text-2xl mb-4 text-primary">1. Allgemeine Hinweise und Rechtsinformationen</h3>
                 <div className="space-y-4 text-muted-foreground text-sm">
                   <p>
                     Die Rechtsanwaltskanzlei Korte & Partner stellt auf dieser Website 
@@ -45,7 +45,7 @@ const Haftungsausschluss = () => {
 
               {/* Keine Rechtsberatung */}
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground">2. Keine Rechtsberatung</h3>
+                <h3 className="font-serif text-2xl mb-4 text-primary">2. Keine Rechtsberatung</h3>
                 <div className="space-y-4 text-muted-foreground text-sm">
                   <p>
                     Die auf dieser Website bereitgestellten Informationen dienen ausschließlich 
@@ -68,7 +68,7 @@ const Haftungsausschluss = () => {
 
               {/* Haftungsausschluss für Inhalte */}
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground">3. Haftungsausschluss für Inhalte</h3>
+                <h3 className="font-serif text-2xl mb-4 text-primary">3. Haftungsausschluss für Inhalte</h3>
                 <div className="space-y-4 text-muted-foreground text-sm">
                   <p>
                     Die Kanzlei übernimmt keine Haftung für die Richtigkeit, Vollständigkeit oder 
@@ -90,7 +90,7 @@ const Haftungsausschluss = () => {
 
               {/* Externe Links */}
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground">4. Haftungsausschluss für externe Links</h3>
+                <h3 className="font-serif text-2xl mb-4 text-primary">4. Haftungsausschluss für externe Links</h3>
                 <div className="space-y-4 text-muted-foreground text-sm">
                   <p>
                     Unsere Website enthält Links zu externen Websites Dritter, auf deren Inhalte 
@@ -117,7 +117,7 @@ const Haftungsausschluss = () => {
 
               {/* Technische Hinweise */}
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground">5. Technische Hinweise und Verfügbarkeit</h3>
+                <h3 className="font-serif text-2xl mb-4 text-primary">5. Technische Hinweise und Verfügbarkeit</h3>
                 <div className="space-y-4 text-muted-foreground text-sm">
                   <p>
                     Wir übernehmen keine Gewähr für die ständige Verfügbarkeit der Website. 
@@ -140,7 +140,7 @@ const Haftungsausschluss = () => {
 
               {/* Urheberrecht */}
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground">6. Urheberrecht und Schutzrechte</h3>
+                <h3 className="font-serif text-2xl mb-4 text-primary">6. Urheberrecht und Schutzrechte</h3>
                 <div className="space-y-4 text-muted-foreground text-sm">
                   <p>
                     Alle auf dieser Website veröffentlichten Inhalte (Texte, Bilder, Grafiken, 
@@ -165,7 +165,7 @@ const Haftungsausschluss = () => {
 
               {/* Anwendbares Recht */}
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground">7. Anwendbares Recht und Gerichtsstand</h3>
+                <h3 className="font-serif text-2xl mb-4 text-primary">7. Anwendbares Recht und Gerichtsstand</h3>
                 <div className="space-y-4 text-muted-foreground text-sm">
                   <p>
                     Für sämtliche Rechtsbeziehungen der Parteien gilt das Recht der Bundesrepublik 
@@ -184,7 +184,7 @@ const Haftungsausschluss = () => {
 
               {/* Salvatorische Klausel */}
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground">8. Salvatorische Klausel</h3>
+                <h3 className="font-serif text-2xl mb-4 text-primary">8. Salvatorische Klausel</h3>
                 <p className="text-muted-foreground text-sm">
                   Sollten einzelne Bestimmungen dieses Haftungsausschlusses unwirksam sein oder 
                   werden, bleibt davon die Wirksamkeit der übrigen Bestimmungen unberührt. 
@@ -197,7 +197,7 @@ const Haftungsausschluss = () => {
 
               {/* Kontakt */}
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground">Kontakt bei Rechtsfragen</h3>
+                <h3 className="font-serif text-2xl mb-4 text-primary">Kontakt bei Rechtsfragen</h3>
                 <div className="space-y-2 text-muted-foreground">
                   <p className="font-medium text-foreground">Korte & Partner</p>
                   <p>Domstraße 15</p>
