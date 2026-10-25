@@ -29,9 +29,9 @@ export const Header = () => {
       <div className="bg-primary text-primary-foreground/80">
         <div className="container mx-auto max-w-7xl px-6 h-9 flex items-center justify-between text-[11px] tracking-[0.18em] uppercase">
           <span className="hidden sm:inline">{today}</span>
-          <span className="sm:hidden">Hamburg</span>
+          <span className="sm:hidden">Berlin</span>
           <div className="flex items-center gap-6">
-            <span className="hidden md:inline">Domstraße 15 · Hamburg</span>
+            <span className="hidden md:inline">Friedrichstraße 186 · Berlin</span>
             {phoneEnabled && <a href={`tel:${phone}`} className="hover:text-accent transition-colors">{phone}</a>}
           </div>
         </div>
@@ -43,7 +43,7 @@ export const Header = () => {
           <span className="hidden lg:block w-48 text-[11px] uppercase tracking-[0.24em] text-muted-foreground">Rechtsanwälte · Seit 2014</span>
           <Link to="/" className="text-center">
             <span className="block font-serif text-3xl md:text-4xl lg:text-5xl tracking-tight text-primary">
-              Korte <span className="italic text-secondary">&amp;</span> Partner
+              Berthold <span className="italic text-secondary">&amp;</span> Partner
             </span>
             <span className="hidden md:block mt-2 text-[10px] uppercase tracking-[0.4em] text-muted-foreground">Wirtschaft · Vermögen · Digitales Recht</span>
           </Link>
@@ -64,7 +64,7 @@ export const Header = () => {
               </SheetTrigger>
               <SheetContent side="right" className="w-[320px] bg-background border-l border-border">
                 <div className="flex flex-col gap-6 mt-8">
-                  <SheetClose asChild><Link to="/" className="font-serif text-2xl">Korte <span className="italic text-secondary">&amp;</span> Partner</Link></SheetClose>
+                  <SheetClose asChild><Link to="/" className="font-serif text-2xl">Berthold <span className="italic text-secondary">&amp;</span> Partner</Link></SheetClose>
                   <Accordion type="single" collapsible className="w-full">
                     <AccordionItem value="rub" className="border-border">
                       <AccordionTrigger className="text-sm">Rechtsgebiete</AccordionTrigger>

@@ -24,7 +24,7 @@ const Haftungsausschluss = () => {
                 <h3 className="font-serif text-2xl mb-4 text-primary">1. Allgemeine Hinweise und Rechtsinformationen</h3>
                 <div className="space-y-4 text-muted-foreground text-sm">
                   <p>
-                    Die Rechtsanwaltskanzlei Korte & Partner stellt auf dieser Website 
+                    Die Rechtsanwaltskanzlei Berthold & Partner stellt auf dieser Website 
                     allgemeine Informationen zur Verfügung. Diese Informationen stellen keine 
                     Rechtsberatung dar und können eine individuelle anwaltliche Beratung nicht ersetzen.
                   </p>
@@ -174,7 +174,7 @@ const Haftungsausschluss = () => {
                   </p>
                   <p>
                     Bei Vollkaufleuten, juristischen Personen des öffentlichen Rechts oder 
-                    öffentlich-rechtlichen Sondervermögen ist Hamburg ausschließlicher Gerichtsstand 
+                    öffentlich-rechtlichen Sondervermögen ist Berlin ausschließlicher Gerichtsstand 
                     für alle sich aus dem Vertragsverhältnis ergebenden Streitigkeiten.
                   </p>
                 </div>
@@ -199,10 +199,10 @@ const Haftungsausschluss = () => {
               <div>
                 <h3 className="font-serif text-2xl mb-4 text-primary">Kontakt bei Rechtsfragen</h3>
                 <div className="space-y-2 text-muted-foreground">
-                  <p className="font-medium text-foreground">Korte & Partner</p>
-                  <p>Domstraße 15</p>
-                  <p>20095 Hamburg</p>
-                  <p><span className="font-medium">E-Mail:</span> info@kortekanzlei.de</p>
+                  <p className="font-medium text-foreground">Berthold & Partner</p>
+                  <p>Friedrichstraße 186</p>
+                  <p>10117 Berlin</p>
+                  <p><span className="font-medium">E-Mail:</span> info@berthold-partner.de</p>
                   <p className="text-xs mt-4 p-3 bg-amber-50 dark:bg-amber-950 rounded border-l-4 border-amber-400">
                     <strong>Wichtiger Hinweis:</strong> Für eine verbindliche Rechtsberatung 
                     kontaktieren Sie uns bitte direkt. Die Informationen auf dieser Website 

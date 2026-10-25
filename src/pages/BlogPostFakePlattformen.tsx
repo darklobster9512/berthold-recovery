@@ -9,7 +9,7 @@ const BlogPostFakePlattformen = () => (
     standfirst="Hochwertige Websites, freundliche Berater, steigende Kontostände. Betrügerische Handelsplattformen sind kaum noch von echten zu unterscheiden. Diese Warnzeichen sollten Sie kennen, bevor Sie Geld überweisen."
     date="23. Oktober 2026"
     readTime="7 Min."
-    author="Korte & Partner"
+    author="Berthold & Partner"
     image={img}
     infoTitle="Fünf typische Warnzeichen"
     info={

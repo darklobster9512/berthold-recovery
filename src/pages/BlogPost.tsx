@@ -9,7 +9,7 @@ const BlogPost = () => (
     standfirst="Rund 800.000 Euro galten als verloren. Blockchain-Forensik, gute Zusammenarbeit mit den Ermittlern und juristische Hartnäckigkeit brachten das Vermögen zurück."
     date="2. Oktober 2026"
     readTime="8 Min."
-    author="Korte & Partner"
+    author="Berthold & Partner"
     image={img}
     infoTitle="Der Fall in Zahlen"
     info={
@@ -42,7 +42,7 @@ const BlogPost = () => (
 
     <h2>Was wir daraus lernen</h2>
     <p>Die Zusammenarbeit mit dem Landeskriminalamt Tirol, dem Bundeskriminalamt und der Staatsanwaltschaft Innsbruck war vorbildlich. Saubere Beweisketten und präzise Argumente haben ein Ergebnis möglich gemacht, das keineswegs selbstverständlich ist.</p>
-    <p>Für Betroffene heißt das: Nicht aufgeben. Alle Transaktionen und Chats sichern, sofort spezialisierte Hilfe holen und die Spur professionell verfolgen lassen. Ansprechpartner für solche Fälle sind bei uns Dr. Thomas Korte und Dr. Maximilian Krause.</p>
+    <p>Für Betroffene heißt das: Nicht aufgeben. Alle Transaktionen und Chats sichern, sofort spezialisierte Hilfe holen und die Spur professionell verfolgen lassen. Ansprechpartner für solche Fälle sind bei uns Dr. Holger Berthold und Dr. Maximilian Krause.</p>
   </ArticleLayout>
 );
 

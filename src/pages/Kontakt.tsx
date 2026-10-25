@@ -61,7 +61,7 @@ export default function Kontakt() {
 
   // Set page title and handle job parameter
   useEffect(() => {
-    document.title = 'Kontakt | Korte & Partner';
+    document.title = 'Kontakt | Berthold & Partner';
     
     // Check for job query parameter and prefill message
     const searchParams = new URLSearchParams(location.search);
@@ -234,7 +234,7 @@ Mit freundlichen Grüßen`;
           topic: data.topic,
           damage_amount: data.damage_amount || null,
           message: data.message,
-          source: 'kortekanzlei.de',
+          source: 'berthold-partner.de',
         }),
       });
 
@@ -296,13 +296,13 @@ Mit freundlichen Grüßen`;
         <aside className="lg:col-span-4 space-y-10">
           <div>
             <p className="kicker mb-5">Die Kanzlei</p>
-            <address className="not-italic font-serif text-2xl leading-snug text-primary">Korte &amp; Partner<br />Domstraße 15<br />20095 Hamburg</address>
+            <address className="not-italic font-serif text-2xl leading-snug text-primary">Berthold &amp; Partner<br />Friedrichstraße 186<br />10117 Berlin</address>
           </div>
           <div className="border-t border-border pt-8 space-y-4">
             {phoneEnabled && (
               <div><p className={label}>Telefon</p><a href={`tel:${phone}`} className="font-serif text-xl text-primary hover:text-secondary">{phone}</a></div>
             )}
-            <div><p className={label}>E-Mail</p><a href="mailto:info@kortekanzlei.de" className="font-serif text-xl text-primary hover:text-secondary">info@kortekanzlei.de</a></div>
+            <div><p className={label}>E-Mail</p><a href="mailto:info@berthold-partner.de" className="font-serif text-xl text-primary hover:text-secondary">info@berthold-partner.de</a></div>
             <div><p className={label}>Erreichbarkeit</p><p className="text-foreground/80">Montag bis Freitag, 8 – 19 Uhr</p></div>
           </div>
           <div className="bg-primary text-primary-foreground p-7">

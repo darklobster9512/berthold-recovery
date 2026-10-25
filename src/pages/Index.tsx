@@ -13,7 +13,7 @@ import loungeImg from "@/assets/partner-coinbase-meeting.jpg";
 import meetingImg from "@/assets/partner-bka-cooperation.jpg";
 
 const team = [
-  { name: "Dr. Thomas Korte", role: "Rechtsanwalt · Gründungspartner", focus: "Cybercrime, Datenschutz, Kapitalmarkt, Kryptonachverfolgung", img: "/lovable-uploads/2cad25d9-8d15-482b-bc38-5b1378991be6.png" },
+  { name: "Dr. Holger Berthold", role: "Rechtsanwalt · Gründungspartner", focus: "Cybercrime, Datenschutz, Kapitalmarkt, Kryptonachverfolgung", img: "/lovable-uploads/2cad25d9-8d15-482b-bc38-5b1378991be6.png" },
   { name: "Dr. Maximilian Krause", role: "Rechtsanwalt", focus: "Prozessführung, Datenschutz, Kapitalmarktrecht", img: "/lovable-uploads/b4127816-793a-42ef-b5e4-34987580a428.png" },
   { name: "Dr. Alexander Voigt", role: "Rechtsanwalt", focus: "Immobilienrecht, Prozessführung, Datenschutz", img: "/lovable-uploads/49592374-fd61-4f95-b984-a0cbeeaad8f5.png" },
   { name: "Dr. Sebastian Werner", role: "Rechtsanwalt", focus: "Immobilienrecht, Streitbeilegung, Cybercrime", img: "/lovable-uploads/709d1496-f015-4b38-b331-9cb17b1b6eaa.png" },
@@ -58,13 +58,13 @@ const Index = () => {
       <section className="container mx-auto px-6 max-w-7xl py-8 md:py-12">
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-10">
           <div className="lg:col-span-8 flex flex-col">
-            <img src={heroImg} alt="Kanzleibibliothek von Korte & Partner" width={1600} height={1104} className="order-last lg:order-none mt-8 lg:mt-0 w-full h-[220px] md:h-[480px] object-cover" />
+            <img src={heroImg} alt="Kanzleibibliothek von Berthold & Partner" width={1600} height={1104} className="order-last lg:order-none mt-8 lg:mt-0 w-full h-[220px] md:h-[480px] object-cover" />
             <p className="kicker lg:mt-8 mb-4 md:mb-5">Titelgeschichte</p>
             <h1 className="font-serif text-[2.1rem] md:text-6xl leading-[1.08] text-primary">
               Recht, das Vermögen <em className="text-secondary">schützt</em> — analog wie digital.
             </h1>
             <p className="mt-5 md:mt-6 font-serif italic text-lg md:text-xl text-foreground/70 leading-relaxed max-w-3xl">
-              Korte &amp; Partner verbindet klassische Wirtschaftskanzlei mit technischem Verständnis für Blockchain, Zahlungsströme und Cyberangriffe. Für Privatpersonen ebenso wie für Unternehmen.
+              Berthold &amp; Partner verbindet klassische Wirtschaftskanzlei mit technischem Verständnis für Blockchain, Zahlungsströme und Cyberangriffe. Für Privatpersonen ebenso wie für Unternehmen.
             </p>
             <div className="mt-7 md:mt-8 flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Link to="/kontakt">
@@ -119,7 +119,7 @@ const Index = () => {
             </div>
             <blockquote className="mt-8 md:mt-12 border-t-4 border-double border-primary pt-6 md:pt-8 font-serif text-xl md:text-3xl italic text-secondary leading-snug">
               „Gute Beratung beginnt mit dem Satz, den der Mandant nicht hören will — und endet mit einem Plan, der funktioniert."
-              <footer className="mt-4 not-italic text-sm font-sans uppercase tracking-[0.2em] text-muted-foreground">Dr. Thomas Korte</footer>
+              <footer className="mt-4 not-italic text-sm font-sans uppercase tracking-[0.2em] text-muted-foreground">Dr. Holger Berthold</footer>
             </blockquote>
           </div>
         </div>

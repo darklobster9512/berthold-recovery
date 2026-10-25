@@ -28,7 +28,7 @@ const AGB = () => {
                 <div className="space-y-4 text-muted-foreground text-sm">
                   <p>
                     Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Leistungen der 
-                    Rechtsanwaltskanzlei Korte & Partner, Domstraße 15, 20095 Hamburg, 
+                    Rechtsanwaltskanzlei Berthold & Partner, Friedrichstraße 186, 10117 Berlin, 
                     nachfolgend "Kanzlei" genannt.
                   </p>
                   <p>
@@ -219,7 +219,7 @@ const AGB = () => {
                 <h3 className="font-serif text-2xl mb-4 text-primary">§ 10 Schlussbestimmungen</h3>
                 <div className="space-y-4 text-muted-foreground text-sm">
                   <p>
-                    Es gilt deutsches Recht. Erfüllungsort und Gerichtsstand ist Hamburg, 
+                    Es gilt deutsches Recht. Erfüllungsort und Gerichtsstand ist Berlin, 
                     sofern der Mandant Vollkaufmann, juristische Person des öffentlichen 
                     Rechts oder öffentlich-rechtliches Sondervermögen ist.
                   </p>
@@ -239,11 +239,11 @@ const AGB = () => {
               <div>
                 <h3 className="font-serif text-2xl mb-4 text-primary">Kontakt bei Fragen</h3>
                 <div className="space-y-2 text-muted-foreground">
-                  <p className="font-medium text-foreground">Korte & Partner</p>
-                  <p>Domstraße 15</p>
-                  <p>20095 Hamburg</p>
+                  <p className="font-medium text-foreground">Berthold & Partner</p>
+                  <p>Friedrichstraße 186</p>
+                  <p>10117 Berlin</p>
                   {phoneEnabled && <p><span className="font-medium">Telefon:</span> <PhoneDisplay /></p>}
-                  <p><span className="font-medium">E-Mail:</span> info@kortekanzlei.de</p>
+                  <p><span className="font-medium">E-Mail:</span> info@berthold-partner.de</p>
                 </div>
               </div>
 

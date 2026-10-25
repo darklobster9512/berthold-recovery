@@ -9,7 +9,7 @@ const BlogPostNis2 = () => (
     standfirst="Mit der Umsetzung der europäischen NIS2-Richtlinie fallen deutlich mehr Unternehmen unter strenge Pflichten zur Cybersicherheit. Neu ist vor allem: Die Verantwortung liegt ausdrücklich bei der Geschäftsleitung."
     date="12. Oktober 2026"
     readTime="8 Min."
-    author="Korte & Partner"
+    author="Berthold & Partner"
     image={img}
     infoTitle="Die Kernpflichten im Überblick"
     info={

@@ -9,7 +9,7 @@ const BlogPostSmsPhishing = () => (
     standfirst="Eine täuschend echte Nachricht, ein Klick auf den Link, und kurz darauf ist das Konto leer. Ob Betroffene auf dem Schaden sitzen bleiben, hängt vor allem von einer Frage ab: War das Verhalten grob fahrlässig?"
     date="16. Oktober 2026"
     readTime="6 Min."
-    author="Korte & Partner"
+    author="Berthold & Partner"
     image={img}
     infoTitle="Sofort tun nach einem Phishing-Angriff"
     info={

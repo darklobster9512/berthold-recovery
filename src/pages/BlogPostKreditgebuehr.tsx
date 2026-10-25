@@ -9,7 +9,7 @@ const BlogPostKreditgebuehr = () => (
     standfirst="Der Oberste Gerichtshof erklärt gebündelte Bearbeitungsgebühren für intransparent. Für viele Kreditnehmer heißt das: Geld zurück — sogar bei längst getilgten Krediten."
     date="21. September 2026"
     readTime="6 Min."
-    author="Korte & Partner"
+    author="Berthold & Partner"
     image={img}
     infoTitle="Diese Begriffe im Vertrag suchen"
     info={
@@ -36,7 +36,7 @@ const BlogPostKreditgebuehr = () => (
     <p>Entscheidend ist, ob die Gebühren klar nachvollziehbar sind oder dieselbe Leistung doppelt berechnet wurde.</p>
 
     <h2>Unser Angebot</h2>
-    <p>Wir prüfen Ihren Kreditvertrag kostenlos und unverbindlich und sagen Ihnen, ob sich eine Rückforderung lohnt. Ihre Ansprechpartner sind Dr. Thomas Korte und Dr. Maximilian Krause.</p>
+    <p>Wir prüfen Ihren Kreditvertrag kostenlos und unverbindlich und sagen Ihnen, ob sich eine Rückforderung lohnt. Ihre Ansprechpartner sind Dr. Holger Berthold und Dr. Maximilian Krause.</p>
   </ArticleLayout>
 );
 
