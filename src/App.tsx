@@ -9,6 +9,9 @@ import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import BlogPostCeoFraud from "./pages/BlogPostCeoFraud";
 import BlogPostCeoFraud2 from "./pages/BlogPostCeoFraud2";
+import BlogPostSmsPhishing from "./pages/BlogPostSmsPhishing";
+import BlogPostFakePlattformen from "./pages/BlogPostFakePlattformen";
+import BlogPostNis2 from "./pages/BlogPostNis2";
 import BlogPostKreditgebuehr from "./pages/BlogPostKreditgebuehr";
 import BlogPostGesellschaftsrecht from "./pages/BlogPostGesellschaftsrecht";
 import BlogPostDatenschutz from "./pages/BlogPostDatenschutz";
@@ -56,6 +59,9 @@ function AppContent() {
         <Route path="/kompetenz/kryptonachverfolgung-und-mittelherkunftsnachweis" element={<BlogPostKryptonachverfolgung />} />
         <Route path="/kompetenz/cybercrime" element={<BlogPostCeoFraud2 />} />
         <Route path="/blog-post/ogh-kreditgebuehr-unzulaessig" element={<BlogPostKreditgebuehr />} />
+        <Route path="/blog-post/sms-phishing-haftung-bank" element={<BlogPostSmsPhishing />} />
+        <Route path="/blog-post/falsche-krypto-plattformen-erkennen" element={<BlogPostFakePlattformen />} />
+        <Route path="/blog-post/nis2-geschaeftsfuehrer" element={<BlogPostNis2 />} />
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />
       </Routes>

@@ -7,7 +7,7 @@ const BlogPost = () => (
     rubric="Fallbericht"
     title={<>8,69 Bitcoin finden<br /><em className="text-secondary">ihren Weg zurück.</em></>}
     standfirst="Rund 800.000 Euro galten als verloren. Blockchain-Forensik, gute Zusammenarbeit mit den Ermittlern und juristische Hartnäckigkeit brachten das Vermögen zurück."
-    date="7. Juli 2025"
+    date="2. Oktober 2026"
     readTime="8 Min."
     author="Korte & Partner"
     image={img}
@@ -17,7 +17,7 @@ const BlogPost = () => (
         <li><strong>2022:</strong> rund 350.000 € über Coinbase, Bitpanda und Nexo investiert</li>
         <li><strong>8,69 BTC</strong> bis zu einer Börsenadresse zurückverfolgt</li>
         <li><strong>über 100.000 €</strong> Verlust durch Zwangsumtausch verhindert</li>
-        <li><strong>Wert bei Rückgabe:</strong> ca. 800.000 € (Juli 2025)</li>
+        <li><strong>Wert bei Rückgabe:</strong> ca. 800.000 € (September 2026)</li>
       </ul>
     }
   >
