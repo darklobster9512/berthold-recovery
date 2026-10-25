@@ -11,9 +11,9 @@ const AGB = () => {
     <div className="min-h-screen bg-background">
       <HeaderWithDarkBg />
       
-      <main className="pt-24">
+      <main className="pt-4">
         <Section className="py-12">
-          <div className="container mx-auto px-4 max-w-4xl">
+          <div className="container mx-auto px-6 max-w-3xl">
             <SectionHeader>
               <SectionTitle>Allgemeine Geschäftsbedingungen</SectionTitle>
               <SectionDescription>
@@ -24,7 +24,7 @@ const AGB = () => {
             <div className="space-y-8 text-left">
               {/* Geltungsbereich */}
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground">§ 1 Geltungsbereich</h3>
+                <h3 className="font-serif text-2xl mb-4 text-primary">§ 1 Geltungsbereich</h3>
                 <div className="space-y-4 text-muted-foreground text-sm">
                   <p>
                     Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Leistungen der 
@@ -43,7 +43,7 @@ const AGB = () => {
 
               {/* Vertragsschluss */}
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground">§ 2 Vertragsschluss</h3>
+                <h3 className="font-serif text-2xl mb-4 text-primary">§ 2 Vertragsschluss</h3>
                 <div className="space-y-4 text-muted-foreground text-sm">
                   <p>
                     Ein Mandatsverhältnis kommt durch schriftliche Vereinbarung oder durch 
@@ -61,7 +61,7 @@ const AGB = () => {
 
               {/* Leistungsumfang */}
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground">§ 3 Leistungsumfang</h3>
+                <h3 className="font-serif text-2xl mb-4 text-primary">§ 3 Leistungsumfang</h3>
                 <div className="space-y-4 text-muted-foreground text-sm">
                   <p>
                     Der Umfang der anwaltlichen Tätigkeit bestimmt sich nach der jeweiligen 
@@ -81,7 +81,7 @@ const AGB = () => {
 
               {/* Vergütung */}
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground">§ 4 Vergütung</h3>
+                <h3 className="font-serif text-2xl mb-4 text-primary">§ 4 Vergütung</h3>
                 <div className="space-y-4 text-muted-foreground text-sm">
                   <p>
                     Die Vergütung richtet sich nach dem Rechtsanwaltsvergütungsgesetz (RVG), 
@@ -104,7 +104,7 @@ const AGB = () => {
 
               {/* Mitwirkungspflichten */}
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground">§ 5 Mitwirkungspflichten des Mandanten</h3>
+                <h3 className="font-serif text-2xl mb-4 text-primary">§ 5 Mitwirkungspflichten des Mandanten</h3>
                 <div className="space-y-4 text-muted-foreground text-sm">
                   <p>
                     Der Mandant ist verpflichtet, die für die Bearbeitung erforderlichen 
@@ -128,7 +128,7 @@ const AGB = () => {
 
               {/* Verschwiegenheit */}
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground">§ 6 Verschwiegenheit und Datenschutz</h3>
+                <h3 className="font-serif text-2xl mb-4 text-primary">§ 6 Verschwiegenheit und Datenschutz</h3>
                 <div className="space-y-4 text-muted-foreground text-sm">
                   <p>
                     Die Kanzlei unterliegt der anwaltlichen Verschwiegenheitspflicht nach § 43a BRAO. 
@@ -150,7 +150,7 @@ const AGB = () => {
 
               {/* Haftung */}
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground">§ 7 Haftung</h3>
+                <h3 className="font-serif text-2xl mb-4 text-primary">§ 7 Haftung</h3>
                 <div className="space-y-4 text-muted-foreground text-sm">
                   <p>
                     Die Kanzlei haftet für Schäden nur bei Vorsatz und grober Fahrlässigkeit. 
@@ -172,7 +172,7 @@ const AGB = () => {
 
               {/* Kündigung */}
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground">§ 8 Kündigung</h3>
+                <h3 className="font-serif text-2xl mb-4 text-primary">§ 8 Kündigung</h3>
                 <div className="space-y-4 text-muted-foreground text-sm">
                   <p>
                     Das Mandatsverhältnis kann von beiden Seiten jederzeit gekündigt werden. 
@@ -194,7 +194,7 @@ const AGB = () => {
 
               {/* Website-Nutzung */}
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground">§ 9 Nutzung der Website</h3>
+                <h3 className="font-serif text-2xl mb-4 text-primary">§ 9 Nutzung der Website</h3>
                 <div className="space-y-4 text-muted-foreground text-sm">
                   <p>
                     Die Inhalte unserer Website dienen ausschließlich der allgemeinen Information. 
@@ -216,7 +216,7 @@ const AGB = () => {
 
               {/* Schlussbestimmungen */}
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground">§ 10 Schlussbestimmungen</h3>
+                <h3 className="font-serif text-2xl mb-4 text-primary">§ 10 Schlussbestimmungen</h3>
                 <div className="space-y-4 text-muted-foreground text-sm">
                   <p>
                     Es gilt deutsches Recht. Erfüllungsort und Gerichtsstand ist Hamburg, 
@@ -237,7 +237,7 @@ const AGB = () => {
 
               {/* Kontakt */}
               <div>
-                <h3 className="text-xl font-semibold mb-4 text-foreground">Kontakt bei Fragen</h3>
+                <h3 className="font-serif text-2xl mb-4 text-primary">Kontakt bei Fragen</h3>
                 <div className="space-y-2 text-muted-foreground">
                   <p className="font-medium text-foreground">Korte & Partner</p>
                   <p>Domstraße 15</p>

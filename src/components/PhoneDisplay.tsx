@@ -8,7 +8,7 @@ export const PhoneDisplay = () => {
   }
   
   return (
-    <a href={`tel:${phone}`} className="text-gray-300 hover:text-white transition-colors">
+    <a href={`tel:${phone}`} className="text-secondary hover:text-primary transition-colors">
       {phone}
     </a>
   );

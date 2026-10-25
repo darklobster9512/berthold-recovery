@@ -1,160 +1,49 @@
-import { Section } from "@/components/ui/section";
-import { Calendar, Clock, User } from "lucide-react";
-import { Footer } from "@/components/Footer";
-import { PhoneLink } from "@/components/PhoneLink";
-import { EditorialHero } from "@/components/EditorialHero";
+import { ArticleLayout, PullQuote } from "@/components/ArticleLayout";
+import img from "@/assets/crypto-hero-bg.jpg";
 
-const BlogPost = () => {
-  return (
-    <div className="min-h-screen bg-background">
-      <EditorialHero
-        eyebrow="Korte & Partner — Insights"
-        breadcrumb={[
-          { label: "Home", href: "/" },
-          { label: "News", href: "/blog" },
-          { label: "Krypto-Recovery" },
-        ]}
-        title={<>Krypto-Betrugsopfer<br />bekommt 8,69 Bitcoin zurück.</>}
-        lead="Ein österreichisches Betrugsopfer erhielt kürzlich 8,69 Bitcoin zurück — ein Wert von rund 800.000 EUR (Stand Juli 2025)."
-        meta={
-          <>
-            <span className="flex items-center gap-2"><Calendar className="w-3.5 h-3.5" />7. Juli 2025</span>
-            <span className="flex items-center gap-2"><Clock className="w-3.5 h-3.5" />8 min Lesezeit</span>
-            <span className="flex items-center gap-2"><User className="w-3.5 h-3.5" />Korte & Partner</span>
-          </>
-        }
-      />
+const BlogPost = () => (
+  <ArticleLayout
+    self="/blog-post/krypto-betrugsopfer-bekommt-869-bitcoin-zurueck"
+    rubric="Fallbericht"
+    title={<>8,69 Bitcoin finden<br /><em className="text-secondary">ihren Weg zurück.</em></>}
+    standfirst="Rund 800.000 Euro galten als verloren. Blockchain-Forensik, gute Zusammenarbeit mit den Ermittlern und juristische Hartnäckigkeit brachten das Vermögen zurück."
+    date="7. Juli 2025"
+    readTime="8 Min."
+    author="Korte & Partner"
+    image={img}
+    infoTitle="Der Fall in Zahlen"
+    info={
+      <ul className="space-y-2">
+        <li><strong>2022:</strong> rund 350.000 € über Coinbase, Bitpanda und Nexo investiert</li>
+        <li><strong>8,69 BTC</strong> bis zu einer Börsenadresse zurückverfolgt</li>
+        <li><strong>über 100.000 €</strong> Verlust durch Zwangsumtausch verhindert</li>
+        <li><strong>Wert bei Rückgabe:</strong> ca. 800.000 € (Juli 2025)</li>
+      </ul>
+    }
+  >
+    <p>Am Anfang stand ein freundlicher Kontakt in einer Dating-App. Am Ende stand ein Mandant, der glaubte, sein Erspartes nie wiederzusehen. Dass es anders kam, verdankt er schnellem Handeln und einer lückenlosen Spurensuche auf der Blockchain.</p>
 
-      {/* Article Content - transparent background */}
-      <Section className="py-16">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <div className="prose prose-lg max-w-none">
-              <p className="text-lg text-muted-foreground mb-8 italic border-l-4 border-primary pl-6">
-                Möglich wurde dies durch die Zusammenarbeit zwischen unserer Kanzlei Korte & Partner, den Strafverfolgungsbehörden und dem gezielten Einsatz von Blockchain-Forensik. Wir berichten über einen Fall, der zeigt, wie effektiver Rechtsschutz im digitalen Raum aussehen kann – und welche juristischen Herausforderungen es zu meistern galt.
-              </p>
+    <h2>Das Muster: „Pig Butchering"</h2>
+    <p>Der Begriff stammt aus China und beschreibt eine perfide Strategie: Das Opfer wird über Wochen „gemästet" — mit Aufmerksamkeit, Vertrauen und scheinbaren Gewinnen auf einer manipulierten Trading-Plattform. Erst wenn große Summen eingezahlt sind, schnappt die Falle zu. Auszahlungen werden blockiert oder an immer neue „Gebühren" geknüpft.</p>
+    <p>Warnsignale gibt es fast immer: Renditen, die zu gut klingen, emotionaler Druck, Gespräche ausschließlich über WhatsApp oder Telegram und die Bitte, „nur noch einmal" nachzuzahlen.</p>
 
-              <h2 className="text-3xl font-bold mt-12 mb-6 text-foreground">Was ist ein PigButchering Scam?</h2>
-              <p className="mb-6 text-foreground">
-                Ein Pig Butchering Scam ist eine Form des Anlagebetrugs, bei dem Täter gezielt Vertrauen aufbauen, um Opfer zur Investition großer Geldsummen zu verleiten. Der Begriff stammt aus China und beschreibt das „Mästen" eines Opfers, bevor es „geschlachtet" wird – also alles verliert.
-              </p>
-              <p className="mb-6 text-foreground">
-                Die Täter nehmen über Dating-Apps oder soziale Medien Kontakt auf und geben sich als erfolgreiche Investoren aus. Über manipulierte Trading-Apps oder Webseiten täuschen sie hohe Gewinne vor. Das Opfer wird schrittweise zu immer größeren Einzahlungen verleitet. Sobald hohe Summen investiert wurden, werden Auszahlungen blockiert oder mit Gebühren verhindert.
-              </p>
+    <h2>Die Spur im Netz</h2>
+    <p>Unser Mandant hatte 2022 auf Anweisung der Täter rund 350.000 Euro über mehrere Krypto-Börsen in Bitcoin getauscht und an die vermeintliche Plattform überwiesen. Als die versprochenen Auszahlungen ausblieben, wandte er sich an uns.</p>
+    <p>Mit eigener Forensik-Software verfolgten wir die Coins von Wallet zu Wallet — bis zu einer Adresse bei einer großen internationalen Börse. Diese Analyse übernehmen wir selbst, das spart Zeit und Kosten.</p>
 
-              <div className="bg-accent/30 p-6 rounded-lg my-8">
-                <h4 className="font-semibold mb-3">Typische Warnzeichen:</h4>
-                <ul className="space-y-2">
-                  <li>• Unrealistische Renditeversprechen</li>
-                  <li>• Emotionale Bindung und Manipulation</li>
-                  <li>• Druck zu weiteren Zahlungen</li>
-                  <li>• Kommunikation über Messenger wie WhatsApp oder Telegram</li>
-                </ul>
-              </div>
+    <PullQuote>„Die Blockchain ist ein öffentliches Kassenbuch. Wer es lesen kann, findet Ansatzpunkte."</PullQuote>
 
-              <h2 className="text-3xl font-bold mt-12 mb-6 text-foreground">Nachverfolgung Kryptowährung – Schlüssel zum Erfolg bei der Rückholung</h2>
-              <p className="mb-6 text-foreground">
-                Über Anleitung der Betrüger überwies unser Mandant im Jahr 2022 rd EUR 350.000,00 auf diverse Krypto-Exchanges (Coinbase, Bitpanda, Nexo) um diese dort in Bitcoin zu wechseln und an eine vermeintliche Handelsplattform zu transferieren. Nachdem er trotz mehrfacher Zusicherung die versprochenen Auszahlungen nicht erhielt sondern vielmehr aufgefordert wurde weiteres Geld einzuzahlen wandte sich das Opfer an die auf CyberCrime und Nachverfolgung von Kryptowährungen spezialisierten Rechtsanwälte von Korte & Partner sowie an die Kriminalpolizei.
-              </p>
-              <p className="mb-8 text-foreground">
-                Durch gezielte Nachverfolgung der Kryptowährung auf der Blockchain war es möglich, den Weg der gestohlenen Assets zu rekonstruieren. Mithilfe modernster forensischer Tools und Know-how im Bereich der Blockchainanalyse konnten die BTC von den Wallets des Opfers zu einer Adresse bei der Kryptohandelsbörse Binance nachverfolgt werden.
-              </p>
+    <h2>Sicherstellung durch die Staatsanwaltschaft</h2>
+    <p>Auf Basis unserer Analyse fragte die Kriminalpolizei direkt bei der Börse an und ließ das Guthaben einfrieren. Die Staatsanwaltschaft Innsbruck ordnete anschließend die Sicherstellung von 8,69532127 BTC an. Die Coins wurden auf ein Wallet des Cybercrime Competence Centers im Bundeskriminalamt übertragen.</p>
 
-              {/* Bitcoin Tracking Diagram */}
-              <div className="my-12">
-                <img 
-                  src="/lovable-uploads/681b548e-7cfe-4c26-b050-76226bf9cead.png"
-                  alt="Nachverfolgung Bitcoin - Blockchain-Forensik Diagramm"
-                  className="w-full rounded-lg shadow-lg"
-                />
-                <p className="text-center text-sm text-muted-foreground mt-4 italic">
-                  Nachverfolgung Bitcoin: Die Spur der Kryptowährung auf der Blockchain
-                </p>
-              </div>
+    <h2>Der juristische Kampf um den Wert</h2>
+    <p>Danach begann der eigentliche Hürdenlauf. Die Behörde wollte die Bitcoin in Euro umtauschen. Zum damaligen Kurs hätte unser Mandant dadurch über 100.000 Euro verloren. Wir haben den Umtausch gerichtlich verhindert.</p>
+    <p>Mit der Strafprozessreform 2024 wurde es möglich, beschlagnahmte Kryptowerte schon im Ermittlungsverfahren herauszugeben — auch ohne dass die Täter gefasst sind. Unseren Antrag auf vorzeitige Ausfolgung stellten wir unmittelbar nach Inkrafttreten.</p>
 
-              <div className="bg-primary/10 p-6 rounded-lg my-8">
-                <p className="font-medium text-center">
-                  💡 Die Nachverfolgung der Krypto-Assets auf der Blockchain nehmen wir selbst vor – damit sparen wir Zeit und Kosten
-                </p>
-              </div>
-
-              <h2 className="text-3xl font-bold mt-12 mb-6 text-foreground">Sicherstellung / Beschlagnahme durch Staatsanwaltschaft</h2>
-              <p className="mb-6 text-foreground">
-                Auf Grundlage der erfolgten Nachverfolgung der BTC richtete die Kriminalpolizei unmittelbar eine direkte Anfrage an die Kryptohandelsbörse die die inkriminierten Vermögenswerte erhalten hatte und ließ die sich auf dem Konto befindlichen Gelder vorläufig einfrieren. Seitens der Staatsanwaltschaft Innsbruck wurde daraufhin eine sogenannte Sicherstellungsanordnung erlassen und die Beschlagnahme der dem Opfer betrügerisch herausgelockten Bitcoin angeordnet.
-              </p>
-
-              {/* Legal Document */}
-              <div className="my-12">
-                <img 
-                  src="/lovable-uploads/bbde2e85-c4fa-4b33-a468-08b4ef5956a9.png"
-                  alt="Sicherstellungsanordnung der Staatsanwaltschaft Innsbruck"
-                  className="w-full rounded-lg shadow-lg"
-                />
-                <p className="text-center text-sm text-muted-foreground mt-4 italic">
-                  Sicherstellungsanordnung der Staatsanwaltschaft Innsbruck über 8,69532127 BTC
-                </p>
-              </div>
-
-              <p className="mb-6 text-foreground">
-                Die Bitcoin des Opfers wurden daraufhin auf ein Wallet des Bundeskriminalamts – Cybercrime Competence Center (C4) übertragen.
-              </p>
-
-              <h2 className="text-3xl font-bold mt-12 mb-6 text-foreground">Rechtliche Herausforderungen – Warum ist die Beiziehung von auf CyberCrime spezialisierten Anwälten sinnvoll?</h2>
-              <p className="mb-6 text-foreground">
-                Der weitere juristische Weg von der Beschlagnahme bis zur Wiedererlangung der Verfügungsmacht über die Bitcoin war steinig und von zahlreichen juristischen Hürden geprägt. Zunächst beabsichtigte die Staatsanwaltschaft, die sichergestellten Bitcoin in Euro umzutauschen. Dies entsprach jedoch nicht dem Wunsch unseres Mandanten.
-              </p>
-              <p className="mb-6 text-foreground">
-                Hätte die Staatsanwaltschaft die Bitcoin zum Zeitpunkt der Beschlagnahme in EUR gewechselt, hätte das Opfer einen <strong>Verlust von über EUR 100.000,00</strong> erlitten. Durch konsequentes und argumentativ fundiertes Vorgehen konnten wir den Wechsel der beschlagnahmten Bitcoin in EUR gerichtlich verhindern.
-              </p>
-              <p className="mb-6 text-foreground">
-                Mit Inkrafttreten des Strafprozessrechtsänderungsgesetzes 2024 wurden die gesetzlichen Voraussetzungen geschaffen, um bereits im Ermittlungsverfahren (ohne Ausforschung und Verurteilung des Täters) eine vorzeitige Ausfolgung von beschlagnahmten Kryptowährungen zu ermöglichen. In der Folge stellten wir einen entsprechenden Antrag gemäß der neuen Rechtslage.
-              </p>
-
-              <h2 className="text-3xl font-bold mt-12 mb-6 text-foreground">Zusammenarbeit mit Behörden: Ein Erfolgsmodell</h2>
-              <p className="mb-6 text-foreground">
-                Besonders hervorzuheben ist die konstruktive Kooperation mit dem Landeskriminalamt Tirol, dem Bundeskriminalamt Cybercrime Competence Center (C4) sowie der Staatsanwaltschaft Innsbruck. Durch klare Kommunikation, gut dokumentierte Beweisketten und exakte rechtliche Argumentation wurde ein Ergebnis erzielt, das in dieser Form keineswegs selbstverständlich ist.
-              </p>
-              <p className="mb-8 text-foreground">
-                Ein möglichst effizient gehaltener Austausch zwischen Opfer, Rechtsanwalt, Polizei und Staatsanwaltschaft ist notwendig um im Kampf gegen die Cyberkriminalität erfolgreich zu sein.
-              </p>
-
-              <h2 className="text-3xl font-bold mt-12 mb-6 text-foreground">Fazit – Was tun bei Krypto Betrug?</h2>
-              <p className="mb-6 text-foreground">
-                Viele Betroffene von Krypto-Betrug geben die Hoffnung zu früh auf. Unser Fall zeigt: Wer rasch handelt, einen spezialisierten CyberCrime Anwalt kontaktiert und auf fundierte Nachverfolgung setzt, hat Chancen auf Rückholung.
-              </p>
-
-              <div className="bg-gradient-to-r from-primary/10 to-secondary/10 p-8 rounded-lg my-8">
-                <h3 className="text-xl font-bold mb-4">Wenn Sie Opfer eines ähnlichen Betrugs geworden sind:</h3>
-                <ol className="space-y-3">
-                  <li><strong>1.</strong> Dokumentieren Sie alle Transaktionen und Kommunikationsverläufe.</li>
-                  <li><strong>2.</strong> Kontaktieren Sie umgehend einen erfahrenen Rechtsanwalt für CyberCrime / Online Betrug.</li>
-                  <li><strong>3.</strong> Lassen Sie die Nachverfolgung der Kryptowährung durch Experten durchführen.</li>
-                </ol>
-              </div>
-
-              <div className="mt-12 p-8 bg-card border rounded-lg">
-                <h3 className="text-xl font-bold mb-4">Ihre Experten für CyberCrime & Kryptowährung</h3>
-                <p className="mb-4">
-                  Als CyberCrime Anwälte mit Spezialisierung auf die Nachverfolgung von Kryptowährungen unterstützen wir Sie umfassend – juristisch fundiert, schnell und effizient.
-                </p>
-                <p className="text-sm text-muted-foreground">
-                  Für weitere Informationen und individuelle Beratung stehen Ihnen <strong>Dr. Thomas Korte</strong> und <strong>Dr. Maximilian Krause</strong> jederzeit zur Verfügung.
-                </p>
-                <div className="mt-4 flex flex-wrap gap-4">
-                  <a href="mailto:info@kortekanzlei.de" className="text-primary hover:underline font-medium">
-                    info@kortekanzlei.de
-                  </a>
-                  <PhoneLink />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </Section>
-
-      <Footer />
-    </div>
-  );
-};
+    <h2>Was wir daraus lernen</h2>
+    <p>Die Zusammenarbeit mit dem Landeskriminalamt Tirol, dem Bundeskriminalamt und der Staatsanwaltschaft Innsbruck war vorbildlich. Saubere Beweisketten und präzise Argumente haben ein Ergebnis möglich gemacht, das keineswegs selbstverständlich ist.</p>
+    <p>Für Betroffene heißt das: Nicht aufgeben. Alle Transaktionen und Chats sichern, sofort spezialisierte Hilfe holen und die Spur professionell verfolgen lassen. Ansprechpartner für solche Fälle sind bei uns Dr. Thomas Korte und Dr. Maximilian Krause.</p>
+  </ArticleLayout>
+);
 
 export default BlogPost;

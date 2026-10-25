@@ -1,209 +1,91 @@
-import { Section } from "@/components/ui/section";
-import { CheckCircle, ArrowRight, Phone } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Header } from "@/components/Header";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { EditorialHero } from "@/components/EditorialHero";
-import partnerBkaImage from "@/assets/partner-bka-cooperation.jpg";
-import partnerCoinbaseImage from "@/assets/partner-coinbase-meeting.jpg";
-import partnerBinanceImage from "@/assets/partner-binance-collaboration.jpg";
-import partnerIoscoImage from "@/assets/partner-iosco-summit.jpg";
+import bkaImg from "@/assets/partner-bka-cooperation.jpg";
+import coinbaseImg from "@/assets/partner-coinbase-meeting.jpg";
+import binanceImg from "@/assets/partner-binance-collaboration.jpg";
+import ioscoImg from "@/assets/partner-iosco-summit.jpg";
+import heroImg from "@/assets/partner-iosco-summit.jpg";
 
-const UnserePartner = () => {
-  const partners = [
-    {
-      name: "Bundeskriminalamt (BKA)",
-      logo: "/lovable-uploads/b2f48b3f-04a9-45fa-93e8-b4a2979906d0.png",
-      category: "Strafverfolgung",
-      description: "Deutschlands zentrale Ermittlungsbehörde für Cybercrime und Kryptowährungsdelikte",
-      story: "Seit 2019 arbeiten wir eng mit dem Bundeskriminalamt zusammen, um Opfern von Krypto-Betrug zu helfen. Durch unsere Partnerschaft haben wir bereits über 150 Millionen Euro an gestohlenen Kryptowährungen zurückverfolgt und beschlagnahmt. Das BKA schätzt unsere forensische Expertise bei der Blockchain-Analyse und wir unterstützen sie bei komplexen internationalen Ermittlungen. Gemeinsam haben wir mehrere große Darknet-Marktplätze zerschlagen und Betrügernetzwerke aufgedeckt.",
-      achievements: [
-        "150+ Millionen Euro zurückverfolgt",
-        "45 internationale Ermittlungen unterstützt",
-        "12 Darknet-Marktplätze geschlossen",
-        "300+ Opfer entschädigt"
-      ],
-      image: "/lovable-uploads/b1bb97a0-3f6c-454d-8e4e-f6573e76af70.png"
-    },
-    {
-      name: "Coinbase",
-      logo: "/lovable-uploads/40855976-8084-4aa6-8ab3-40a1b0d75ab6.png",
-      category: "Krypto-Exchange",
-      description: "Größte Kryptowährungsbörse der USA mit über 100 Millionen Nutzern weltweit",
-      story: "Unsere strategische Partnerschaft mit Coinbase ermöglicht es uns, bei verdächtigen Transaktionen schnell zu reagieren. Als einer der wenigen Anwaltskanzleien haben wir direkten Zugang zu Coinbase's Compliance-Team und können eingefrorene Vermögenswerte unserer Mandanten innerhalb von 48 Stunden identifizieren. Diese einzigartige Kooperation hat bereits 80 Millionen Euro für Betrugsopfer zurückgeholt. Coinbase vertraut auf unsere rechtliche Expertise bei grenzüberschreitenden Fällen.",
-      achievements: [
-        "80 Millionen Euro zurückgeholt",
-        "500+ erfolgreiche Asset-Freezes",
-        "24h Reaktionszeit bei Notfällen",
-        "Direkter Compliance-Zugang"
-      ],
-      image: "/lovable-uploads/bf80d9d0-5e0f-4d66-b6cb-e3fff7d7cc81.png"
-    },
-    {
-      name: "Binance",
-      logo: "/lovable-uploads/a353d06a-d600-40b4-8ac2-e8fae21230d5.png",
-      category: "Krypto-Exchange",
-      description: "Weltgrößte Kryptowährungsbörse mit modernsten Sicherheitsprotokollen",
-      story: "Binance ist unser wichtigster Partner bei der Verfolgung internationaler Krypto-Betrugsfälle. Durch unsere bevorzugte Partnerschaft können wir Binance's Advanced Tracing Tools nutzen und haben Zugang zu ihrem globalen Investigation Team. Gemeinsam haben wir ein revolutionäres Frühwarnsystem entwickelt, das verdächtige Transaktionen in Echtzeit erkennt. Diese Zusammenarbeit hat bereits über 200 Millionen Euro an gestohlenen Kryptowährungen eingefroren und zurückgeführt.",
-      achievements: [
-        "200+ Millionen Euro eingefroren",
-        "Real-time Fraud Detection",
-        "Global Investigation Access",
-        "1000+ Mandanten unterstützt"
-      ],
-      image: "/lovable-uploads/8eadc01d-8c41-4213-b472-60333894bf20.png"
-    },
-    {
-      name: "IOSCO",
-      logo: "/lovable-uploads/7cf1155a-1e93-404a-bb7f-b70fbba16ab9.png",
-      category: "Regulierung",
-      description: "Internationale Organisation der Wertpapieraufsichtsbehörden aus 130 Ländern",
-      story: "Als eine der ersten Kanzleien wurden wir von IOSCO als Beratungspartner für Kryptowährungsregulierung anerkannt. Wir unterstützen IOSCO bei der Entwicklung internationaler Standards für Krypto-Asset-Recovery und haben maßgeblich an den IOSCO-Richtlinien für grenzüberschreitende Ermittlungen mitgewirkt. Diese privilegierte Position ermöglicht es uns, für unsere Mandanten regulatorische Unterstützung in über 95% der weltweiten Märkte zu mobilisieren.",
-      achievements: [
-        "95% weltweite Marktabdeckung",
-        "Regulatorische Standards mitentwickelt",
-        "130 Länder Netzwerk-Zugang",
-        "Bevorzugter Beratungsstatus"
-      ],
-      image: "/lovable-uploads/2655fc4c-f436-4ab5-b230-31c66c479f13.png"
-    }
-  ];
+const partners = [
+  {
+    name: "Bundeskriminalamt",
+    rubric: "Strafverfolgung",
+    img: bkaImg,
+    headline: "Wenn Ermittler und Forensiker an einem Tisch sitzen.",
+    text: "Seit 2019 tauschen wir uns eng mit dem Bundeskriminalamt aus. Unsere Blockchain-Analysen fließen in internationale Ermittlungen ein — und helfen dabei, gestohlene Kryptowerte zu sichern und an Geschädigte zurückzuführen.",
+    facts: ["über 150 Mio. € zurückverfolgt", "45 internationale Ermittlungen unterstützt", "12 Darknet-Marktplätze geschlossen", "300+ Geschädigte entschädigt"],
+  },
+  {
+    name: "Coinbase",
+    rubric: "Krypto-Börse",
+    img: coinbaseImg,
+    headline: "Kurze Wege zur Compliance einer der größten Börsen.",
+    text: "Bei verdächtigen Transaktionen zählt Zeit. Der direkte Draht zum Compliance-Team erlaubt es uns, eingefrorene Vermögenswerte unserer Mandanten rasch zu identifizieren und die nächsten Schritte einzuleiten.",
+    facts: ["80 Mio. € zurückgeholt", "500+ Kontosperrungen erwirkt", "24 h Reaktionszeit im Notfall", "Direkter Compliance-Kontakt"],
+  },
+  {
+    name: "Binance",
+    rubric: "Krypto-Börse",
+    img: binanceImg,
+    headline: "Globale Spurensuche bei grenzüberschreitendem Betrug.",
+    text: "Viele Betrugsfälle führen über die weltgrößte Kryptobörse. Durch die Zusammenarbeit mit deren Ermittlungsteam erkennen wir verdächtige Bewegungen früher und können schneller reagieren.",
+    facts: ["200+ Mio. € eingefroren", "Erkennung in Echtzeit", "Weltweiter Ermittlungszugang", "1.000+ Mandanten unterstützt"],
+  },
+  {
+    name: "IOSCO",
+    rubric: "Aufsicht",
+    img: ioscoImg,
+    headline: "Mitreden, wenn internationale Standards entstehen.",
+    text: "Die internationale Vereinigung der Wertpapieraufsichtsbehörden vereint Regulierer aus 130 Ländern. Wir bringen unsere Praxiserfahrung bei der Entwicklung von Standards für grenzüberschreitende Krypto-Verfahren ein.",
+    facts: ["95 % weltweite Marktabdeckung", "Standards mitentwickelt", "Netzwerk in 130 Ländern", "Beratender Status"],
+  },
+];
 
-  return (
-    <div className="min-h-screen bg-background">
-      <EditorialHero
-        eyebrow="Korte & Partner — Netzwerk"
-        breadcrumb={[
-          { label: "Home", href: "/" },
-          { label: "Unsere Partner" },
-        ]}
-        title={<>Unser<br />Netzwerk.</>}
-        lead="Etablierte Kooperationen mit Strafverfolgungsbehörden, Krypto-Börsen und Aufsichtsorganisationen."
-      />
+const UnserePartner = () => (
+  <div className="min-h-screen bg-background">
+    <EditorialHero
+      eyebrow="Netzwerk"
+      breadcrumb={[{ label: "Titelseite", href: "/" }, { label: "Netzwerk" }]}
+      title={<>Niemand gewinnt<br /><em className="text-secondary">allein.</em></>}
+      lead="Wer digitale Vermögenswerte zurückholen will, braucht Verbündete: Ermittler, Börsen und Aufsichtsbehörden. Hier stellen wir sie vor."
+      image={heroImg}
+    />
 
-
-      {/* Global Network Section */}
-      <Section className="py-16 bg-gradient-to-br from-primary via-primary/90 to-primary/80 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent"></div>
-        <div className="relative z-10">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-center">
-              <div className="col-span-1 md:col-span-1">
-                <h2 className="text-2xl lg:text-3xl font-bold text-white text-center">
-                  Internationales Netzwerk
-                </h2>
-              </div>
-              <div className="col-span-1 md:col-span-3">
-                <p className="text-lg lg:text-xl text-white leading-relaxed text-left">
-                  Die Rückführung digitaler Vermögenswerte erfordert ein Zusammenspiel aus rechtlicher Expertise, technischer Forensik und etablierten Kontakten zu Strafverfolgungsbehörden, Krypto-Börsen und internationalen Aufsichtsorganisationen. Unsere Kooperationspartner unterstützen uns dabei, auch in grenzüberschreitenden Verfahren handlungsfähig zu bleiben.
-                </p>
-              </div>
-            </div>
+    <section className="container mx-auto px-6 max-w-7xl py-16">
+      {partners.map((p, i) => (
+        <article key={p.name} className="grid lg:grid-cols-12 gap-10 py-14 border-b border-border last:border-b-0">
+          <div className={`lg:col-span-6 ${i % 2 ? "lg:order-2" : ""}`}>
+            <img src={p.img} alt={p.name} loading="lazy" width={1200} height={800} className="w-full h-[360px] object-cover" />
           </div>
-        </div>
-      </Section>
-
-      {/* Partners Sections */}
-      {partners.map((partner, index) => (
-        <Section key={partner.name} className={`py-20 ${index % 2 === 0 ? 'bg-gray-50' : 'bg-gray-100'}`}>
-          <div className="container mx-auto px-4">
-            <div className={`grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto ${index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''}`}>
-              
-              {/* Content */}
-              <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
-                <div className="flex items-center gap-4 mb-6">
-                  <img 
-                    src={partner.logo} 
-                    alt={`${partner.name} Logo`}
-                    className="h-16 w-auto object-contain"
-                  />
-                  <div>
-                    <h3 className="text-3xl font-bold text-foreground mb-2">{partner.name}</h3>
-                    <span className="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">
-                      {partner.category}
-                    </span>
-                  </div>
-                </div>
-                
-                <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                  {partner.description}
-                </p>
-                
-                <div className="mb-8">
-                  <h4 className="text-2xl font-bold mb-4 text-foreground">Unsere Partnerschaft</h4>
-                  <p className="text-lg text-muted-foreground leading-relaxed">
-                    {partner.story}
-                  </p>
-                </div>
-                
-                {/* Achievements */}
-                <div className="space-y-3">
-                  <h5 className="text-lg font-semibold text-foreground mb-4">Erfolge und Kennzahlen</h5>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    {partner.achievements.map((achievement, achievementIndex) => (
-                      <div key={achievementIndex} className="flex items-center gap-3 py-2">
-                        <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
-                        <span className="text-base font-medium text-foreground">{achievement}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-              
-              {/* Image */}
-              <div className={`${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
-                <div className="relative group">
-                  <img 
-                    src={partner.image} 
-                    alt={`Partnerschaft mit ${partner.name}`}
-                    className="w-full h-[400px] object-cover rounded-2xl shadow-2xl group-hover:shadow-3xl transition-all duration-500"
-                  />
-                </div>
-              </div>
-            </div>
+          <div className="lg:col-span-6 flex flex-col justify-center">
+            <p className="kicker mb-4">{p.rubric} · {p.name}</p>
+            <h2 className="font-serif text-3xl md:text-4xl leading-tight text-primary">{p.headline}</h2>
+            <p className="mt-5 text-[17px] leading-relaxed text-foreground/80">{p.text}</p>
+            <dl className="mt-8 grid grid-cols-2 gap-px bg-border border border-border">
+              {p.facts.map((f) => (
+                <div key={f} className="bg-card p-4 text-sm text-primary font-serif">{f}</div>
+              ))}
+            </dl>
           </div>
-        </Section>
+        </article>
       ))}
+    </section>
 
-      {/* Call to Action Section */}
-      <Section className="py-16 bg-gradient-to-br from-primary via-primary/90 to-primary/80 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent"></div>
-        <div className="relative z-10">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center max-w-6xl mx-auto">
-              <div className="col-span-1 md:col-span-2">
-                <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-white">
-                  Vertrauliche Erstberatung
-                </h2>
-                <p className="text-lg lg:text-xl text-white leading-relaxed">
-                  Unser Netzwerk ist ein Baustein — entscheidend ist die rechtliche und forensische Bearbeitung Ihres Falls. Wir prüfen Ihren Sachverhalt diskret und nennen Ihnen die belastbaren Handlungsoptionen.
-                </p>
-              </div>
-              <div className="col-span-1 md:col-span-1">
-                <div className="flex flex-col gap-4">
-                  <Link to="/kontakt">
-                    <Button size="lg" className="bg-white/20 hover:bg-white/30 text-white font-semibold px-8 py-3 border border-white/20 backdrop-blur-sm w-full">
-                      <Phone className="h-5 w-5 mr-2" />
-                      Erstberatung anfragen
-                    </Button>
-                  </Link>
-                  <Button size="lg" variant="outline" className="bg-transparent hover:bg-white/10 text-white border-white/30 font-semibold px-8 py-3">
-                    <ArrowRight className="h-5 w-5 mr-2" />
-                    Mehr erfahren
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </Section>
+    <section className="bg-primary text-primary-foreground">
+      <div className="container mx-auto px-6 max-w-4xl py-20 text-center">
+        <h2 className="font-serif text-3xl md:text-5xl">Dieses Netzwerk arbeitet für Sie.</h2>
+        <p className="mt-5 text-primary-foreground/70">Schildern Sie uns Ihren Fall — wir prüfen, welche Kontakte weiterhelfen.</p>
+        <Link to="/kontakt" className="inline-block mt-8">
+          <Button size="lg" className="rounded-none bg-accent text-accent-foreground hover:bg-primary-foreground h-14 px-10">Kontakt aufnehmen <ArrowRight className="ml-2 h-4 w-4" /></Button>
+        </Link>
+      </div>
+    </section>
 
-      <Footer />
-    </div>
-  );
-};
+    <Footer />
+  </div>
+);
 
 export default UnserePartner;

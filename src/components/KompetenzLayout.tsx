@@ -1,11 +1,11 @@
 import { ReactNode } from "react";
 import { Link } from "react-router-dom";
-import { Header } from "@/components/Header";
+import { Header, kompetenzen } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { ArrowRight } from "lucide-react";
 import { useSettings } from "@/hooks/useSettings";
+import heroImage from "@/assets/hero-library.jpg";
 
 export interface FocusItem {
   title: string;
@@ -24,20 +24,22 @@ interface KompetenzLayoutProps {
   focusItems: FocusItem[];
   ctaTitle: string;
   ctaBody: string;
+  image?: string;
 }
 
 export const KompetenzLayout = ({
-  eyebrow = "Korte & Partner — Kompetenz",
+  eyebrow = "Rechtsgebiet",
   breadcrumbLabel,
   title,
   heroLead,
   introStatement,
   introBody,
-  focusEyebrow = "Schwerpunkte",
-  focusHeadline = "Unsere Leistungen im Detail.",
+  focusEyebrow = "Im Detail",
+  focusHeadline = "Was wir für Sie übernehmen.",
   focusItems,
   ctaTitle,
   ctaBody,
+  image = heroImage,
 }: KompetenzLayoutProps) => {
   const { phone, phoneEnabled } = useSettings();
 
@@ -45,160 +47,87 @@ export const KompetenzLayout = ({
     <div className="min-h-screen bg-background">
       <Header />
 
-      {/* Hero — Cinematic Full-Bleed (matches Index.tsx) */}
-      <section className="relative bg-primary text-primary-foreground min-h-[70vh] flex flex-col overflow-hidden">
-        <video
-          src="/video.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="metadata"
-          className="absolute inset-0 w-full h-full object-cover"
-          aria-label="Korte & Partner"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/85 via-primary/55 to-primary/30" />
-        <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-primary/40" />
+      <article>
+        {/* Article opener */}
+        <header className="container mx-auto px-6 max-w-5xl pt-14 pb-10 text-center">
+          <p className="text-[11px] uppercase tracking-[0.24em] text-muted-foreground mb-6">
+            <Link to="/" className="hover:text-secondary">Titelseite</Link> <span className="mx-2">/</span> {eyebrow} <span className="mx-2">/</span> <span className="text-secondary">{breadcrumbLabel}</span>
+          </p>
+          <h1 className="font-serif text-4xl md:text-6xl leading-[1.08] text-primary">{title}</h1>
+          {heroLead && (
+            <p className="mt-8 font-serif italic text-xl md:text-2xl text-foreground/70 leading-relaxed max-w-3xl mx-auto">{heroLead}</p>
+          )}
+        </header>
 
-        <div className="relative z-10 flex-1 flex flex-col justify-end">
-          <div className="container mx-auto px-6 lg:px-12 max-w-7xl pt-32 pb-16 lg:pb-20">
-            <Breadcrumb className="mb-8">
-              <BreadcrumbList>
-                <BreadcrumbItem>
-                  <BreadcrumbLink href="/" className="text-primary-foreground/60 hover:text-primary-foreground text-[11px] tracking-[0.25em] uppercase font-sans">Home</BreadcrumbLink>
-                </BreadcrumbItem>
-                <BreadcrumbSeparator className="text-primary-foreground/40" />
-                <BreadcrumbItem>
-                  <BreadcrumbLink href="/kompetenzen" className="text-primary-foreground/60 hover:text-primary-foreground text-[11px] tracking-[0.25em] uppercase font-sans">Kompetenzen</BreadcrumbLink>
-                </BreadcrumbItem>
-                <BreadcrumbSeparator className="text-primary-foreground/40" />
-                <BreadcrumbPage className="text-primary-foreground text-[11px] tracking-[0.25em] uppercase font-sans">{breadcrumbLabel}</BreadcrumbPage>
-              </BreadcrumbList>
-            </Breadcrumb>
+        <figure className="container mx-auto px-6 max-w-7xl">
+          <img src={image} alt={breadcrumbLabel} width={1600} height={1104} className="w-full h-[320px] md:h-[460px] object-cover" />
+          <figcaption className="mt-3 text-xs text-muted-foreground border-b border-border pb-3">Korte &amp; Partner · {breadcrumbLabel}</figcaption>
+        </figure>
 
-            <p className="text-[11px] font-sans tracking-[0.3em] uppercase text-primary-foreground/70 mb-8">
-              {eyebrow}
-            </p>
+        {/* Body: sidebar + two-column text */}
+        <section className="container mx-auto px-6 max-w-7xl py-16 grid lg:grid-cols-12 gap-12">
+          <aside className="lg:col-span-3 order-2 lg:order-1 space-y-8">
+            <div className="bg-muted p-6">
+              <p className="kicker mb-4">Auf einen Blick</p>
+              <ul className="space-y-3 text-sm">
+                {focusItems.map((f, i) => (
+                  <li key={f.title} className="flex gap-3"><span className="font-serif text-secondary">{String(i + 1).padStart(2, "0")}</span><span>{f.title}</span></li>
+                ))}
+              </ul>
+            </div>
+            <div className="border-t-4 border-double border-primary pt-6">
+              <p className="kicker mb-4">Weitere Rechtsgebiete</p>
+              <ul className="space-y-2 text-sm">
+                {kompetenzen.filter((k) => k.label !== breadcrumbLabel).map((k) => (
+                  <li key={k.to}><Link to={k.to} className="story-link text-foreground/75 hover:text-secondary">{k.label}</Link></li>
+                ))}
+              </ul>
+            </div>
+          </aside>
 
-            <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl leading-[1.08] font-normal max-w-4xl mb-6 text-primary-foreground">
-              {title}
-            </h1>
-
-            <div className="h-px w-24 bg-sky-400/40 mb-8" />
-
-            {heroLead && (
-              <p className="font-sans text-base lg:text-lg text-primary-foreground/80 max-w-2xl leading-relaxed mb-10">
-                {heroLead}
-              </p>
-            )}
-
-            <div className="flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-10">
-              <Link to="/kontakt">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="rounded-none h-14 px-10 text-xs font-semibold tracking-[0.2em] uppercase border-primary-foreground/70 bg-transparent text-primary-foreground hover:bg-primary-foreground hover:text-primary transition-colors"
-                >
-                  Mandat anfragen
-                </Button>
-              </Link>
-              {phoneEnabled && (
-                <div className="flex flex-col sm:border-l sm:border-primary-foreground/20 sm:pl-6">
-                  <span className="text-[10px] uppercase tracking-widest text-primary-foreground/50 mb-1 font-sans">
-                    Ansprechpartner
-                  </span>
-                  <a href={`tel:${phone}`} className="text-primary-foreground font-medium hover:text-primary-foreground/80 transition-colors">
-                    {phone}
-                  </a>
-                </div>
-              )}
+          <div className="lg:col-span-9 order-1 lg:order-2">
+            <blockquote className="font-serif text-2xl md:text-3xl leading-snug text-secondary border-l-2 border-accent pl-6 mb-10">
+              „{introStatement}"
+            </blockquote>
+            <div className="md:columns-2 gap-10 text-[17px] leading-relaxed text-foreground/85 space-y-5 [&>p:first-child]:dropcap">
+              {introBody}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Intro / Manifest */}
-      <section className="border-b border-border">
-        <div className="container mx-auto px-6 max-w-7xl py-24">
-          <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
-            <div className="lg:col-span-4">
-              <p className="eyebrow mb-6">Mandatsverständnis</p>
-              <h2 className="font-serif text-3xl lg:text-4xl leading-tight">
-                {introStatement}
-              </h2>
+        {/* Focus chapters */}
+        <section className="bg-card border-y border-border">
+          <div className="container mx-auto px-6 max-w-7xl py-20">
+            <div className="text-center mb-14">
+              <p className="kicker mb-5">{focusEyebrow}</p>
+              <h2 className="font-serif text-3xl md:text-5xl text-primary">{focusHeadline}</h2>
             </div>
-            <div className="lg:col-span-7 lg:col-start-6">
-              <div className="text-lg leading-relaxed text-foreground/80 space-y-6">
-                {introBody}
-              </div>
+            <div className="grid md:grid-cols-2 gap-px bg-border">
+              {focusItems.map((item, i) => (
+                <div key={item.title} className="bg-card p-8 lg:p-10">
+                  <p className="font-serif italic text-accent text-4xl mb-4">{["I", "II", "III", "IV", "V", "VI", "VII", "VIII"][i] ?? i + 1}</p>
+                  <h3 className="font-serif text-xl lg:text-2xl leading-snug mb-4 text-primary">{item.title}</h3>
+                  <div className="text-foreground/75 leading-relaxed">{item.content}</div>
+                </div>
+              ))}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </article>
 
-      {/* Schwerpunkte — numbered editorial grid */}
-      <section className="border-b border-border">
-        <div className="container mx-auto px-6 max-w-7xl py-24">
-          <div className="grid lg:grid-cols-12 gap-10 mb-16">
-            <div className="lg:col-span-5">
-              <p className="eyebrow mb-6">{focusEyebrow}</p>
-              <h2 className="font-serif text-3xl lg:text-5xl leading-tight">
-                {focusHeadline}
-              </h2>
-            </div>
-            <div className="lg:col-span-6 lg:col-start-7 flex items-end">
-              <p className="text-base text-foreground/70 leading-relaxed">
-                Klar abgegrenzte Leistungsfelder — kombinierbar, wo es das Mandat erfordert.
-              </p>
-            </div>
-          </div>
-
-          <div className="border-t border-border">
-            {focusItems.map((item, i) => (
-              <div
-                key={item.title}
-                className="grid lg:grid-cols-12 gap-6 lg:gap-10 border-b border-border py-10 hover:bg-muted/30 transition-colors group"
-              >
-                <div className="lg:col-span-2">
-                  <p className="font-serif text-sm text-accent">
-                    {String(i + 1).padStart(2, "0")}
-                  </p>
-                </div>
-                <div className="lg:col-span-4">
-                  <h3 className="font-serif text-2xl lg:text-3xl leading-tight">{item.title}</h3>
-                </div>
-                <div className="lg:col-span-6 text-foreground/75 leading-relaxed">
-                  {item.content}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Final CTA */}
-      <section className="bg-primary text-primary-foreground">
-        <div className="container mx-auto px-6 max-w-7xl py-24">
-          <div className="grid lg:grid-cols-12 gap-10 items-center">
-            <div className="lg:col-span-8">
-              <p className="text-[11px] font-sans tracking-[0.3em] uppercase text-primary-foreground/60 mb-6">
-                Erstberatung
-              </p>
-              <h2 className="font-serif text-3xl lg:text-5xl leading-tight">
-                {ctaTitle}
-              </h2>
-              <div className="h-px w-24 bg-sky-400/40 my-8" />
-              <p className="text-primary-foreground/70 max-w-2xl leading-relaxed">
-                {ctaBody}
-              </p>
-            </div>
-            <div className="lg:col-span-4 flex lg:justify-end">
-              <Link to="/kontakt">
-                <Button size="lg" className="rounded-none bg-primary-foreground text-primary hover:bg-primary-foreground/90 h-14 px-8">
-                  Erstberatung anfragen <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </Link>
-            </div>
+      {/* CTA */}
+      <section className="bg-secondary text-secondary-foreground">
+        <div className="container mx-auto px-6 max-w-5xl py-20 text-center">
+          <p className="text-[11px] uppercase tracking-[0.3em] text-accent mb-6">Persönliches Gespräch</p>
+          <h2 className="font-serif text-3xl md:text-5xl leading-tight">{ctaTitle}</h2>
+          <p className="mt-6 text-secondary-foreground/75 max-w-2xl mx-auto leading-relaxed">{ctaBody}</p>
+          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-6">
+            <Link to="/kontakt">
+              <Button size="lg" className="rounded-none bg-accent text-accent-foreground hover:bg-primary-foreground h-14 px-8">
+                Gespräch vereinbaren <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
+            {phoneEnabled && <a href={`tel:${phone}`} className="font-serif text-lg hover:text-accent">{phone}</a>}
           </div>
         </div>
       </section>

@@ -1,122 +1,43 @@
-import { Section } from "@/components/ui/section";
-import { Calendar, Clock, User } from "lucide-react";
-import { Footer } from "@/components/Footer";
-import { PhoneLink } from "@/components/PhoneLink";
-import { useSettings } from "@/hooks/useSettings";
-import { EditorialHero } from "@/components/EditorialHero";
+import { ArticleLayout, PullQuote } from "@/components/ArticleLayout";
+import img from "@/assets/contact-hero-bg.jpg";
 
-const BlogPostKreditgebuehr = () => {
-  const { phoneEnabled } = useSettings();
-  return (
-    <div className="min-h-screen bg-background">
-      <EditorialHero
-        eyebrow="Korte & Partner — Insights"
-        breadcrumb={[
-          { label: "Home", href: "/" },
-          { label: "News", href: "/blog" },
-          { label: "Bankrecht" },
-        ]}
-        title={<>Kreditbearbeitungsgebühren<br />unzulässig.</>}
-        lead="OGH-Urteil ermöglicht Rückforderung — in welchen Fällen Sie bereits bezahlte Bearbeitungsgebühren zurückfordern können."
-        meta={
-          <>
-            <span className="flex items-center gap-2"><Calendar className="w-3.5 h-3.5" />7. Juli 2025</span>
-            <span className="flex items-center gap-2"><Clock className="w-3.5 h-3.5" />6 min Lesezeit</span>
-            <span className="flex items-center gap-2"><User className="w-3.5 h-3.5" />Korte & Partner</span>
-          </>
-        }
-      />
+const BlogPostKreditgebuehr = () => (
+  <ArticleLayout
+    self="/blog-post/ogh-kreditgebuehr-unzulaessig"
+    rubric="Rechtsprechung"
+    title={<>Kreditgebühr<br /><em className="text-secondary">auf dem Prüfstand.</em></>}
+    standfirst="Der Oberste Gerichtshof erklärt gebündelte Bearbeitungsgebühren für intransparent. Für viele Kreditnehmer heißt das: Geld zurück — sogar bei längst getilgten Krediten."
+    date="7. Juli 2025"
+    readTime="6 Min."
+    author="Korte & Partner"
+    image={img}
+    infoTitle="Diese Begriffe im Vertrag suchen"
+    info={
+      <ul className="space-y-1.5 list-disc pl-4">
+        <li>Bearbeitungsgebühr / -entgelt</li>
+        <li>Vertragsabschlussgebühr, Kreditspesen</li>
+        <li>Einmalige Spesen für Erhebung, Auszahlung, Verwaltung</li>
+        <li>Drucksorten- und Portokosten</li>
+        <li>Schätzgebühr</li>
+        <li>Gebühren für Grundbuchgesuch und -auszug</li>
+      </ul>
+    }
+  >
+    <p>Mit einer Grundsatzentscheidung hat der OGH die Rechte von Kreditnehmern deutlich gestärkt. Bestimmte Bearbeitungsgebühren sind unzulässig — und bereits bezahlte Beträge können zurückverlangt werden.</p>
 
-      {/* Article Content - transparent background */}
-      <Section className="py-16">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="max-w-4xl mx-auto">
-            <div className="prose prose-lg max-w-none">
-              <p className="text-lg text-muted-foreground mb-8 italic border-l-4 border-primary pl-6">
-                In einem richtungsweisenden Urteil hat der Oberste Gerichtshof (OGH) entschieden, dass bestimmte Kreditbearbeitungsgebühren unzulässig sind. Damit wurde ein deutliches Signal für den Verbraucherschutz gesetzt – und für viele Kreditnehmer:innen die Tür zur Rückforderung bereits bezahlter Gebühren geöffnet.
-              </p>
+    <h2>Worum es ging</h2>
+    <p>Gegenstand war eine Klausel der WSK Bank: Neben einer Bearbeitungsgebühr von 4 % fielen Erhebungs- und Überweisungsspesen sowie Druck- und Portokosten an. Abgezogen wurde direkt vom Kreditkonto oder vom Auszahlungsbetrag.</p>
+    <p>Das Gericht sah darin eine intransparente Bündelung. Die Bank lasse sich Tätigkeiten bezahlen, die ohnehin zur Kreditvergabe gehören — teilweise sogar mehrfach. Das benachteilige Kunden unangemessen.</p>
 
-              {/* Image in article */}
-              <div className="my-12">
-                <img 
-                  src="/lovable-uploads/80e2e160-2ba5-459b-b753-58265ea0882e.png"
-                  alt="Bearbeitungsgebühr zurückholen"
-                  className="w-full rounded-lg shadow-lg"
-                />
-                <p className="text-center text-sm text-muted-foreground mt-4 italic">
-                  Bearbeitungsgebühr zurückholen
-                </p>
-              </div>
+    <PullQuote>„Ansprüche verjähren erst nach 30 Jahren — und werden mit vier Prozent jährlich verzinst."</PullQuote>
 
-              <h2 className="text-3xl font-bold mt-12 mb-6 text-foreground">Der Anlassfall: Intransparente Klauseln im Kreditvertrag</h2>
-              <p className="mb-6 text-foreground">
-                Im Mittelpunkt des OGH-Urteils stand eine Klausel der WSK Bank, in der neben einer Bearbeitungsgebühr von 4 % auch zusätzliche Entgelte wie Erhebungsspesen, Überweisungsspesen sowie Druck- und Portokosten vorgesehen waren. Diese Beträge wurden dem Kreditkonto angelastet oder vom Auszahlungsbetrag abgezogen.
-              </p>
-              <p className="mb-6 text-foreground">
-                Der OGH stellte klar: Eine derart gebündelte Gebührengestaltung sei intransparent. Die Bank verrechne für Leistungen, die im Rahmen der Kreditvergabe ohnehin zu ihren Aufgaben gehören – und das mehrfach. Aus Sicht des Gerichts benachteiligt eine solche Regelung Kreditnehmer:innen unangemessen.
-              </p>
+    <h2>Was das für Sie bedeutet</h2>
+    <p>Viele Verträge enthalten ähnliche Klauseln, etwa einen Prozentsatz der Kreditsumme oder ein pauschales Entgelt für den Abschluss. Sind diese unzulässig, lässt sich das Geld zurückfordern — oft mehrere Tausend Euro, auch wenn der Kredit längst abbezahlt ist.</p>
+    <p>Entscheidend ist, ob die Gebühren klar nachvollziehbar sind oder dieselbe Leistung doppelt berechnet wurde.</p>
 
-              <h2 className="text-3xl font-bold mt-12 mb-6 text-foreground">Was bedeutet das für Konsument:innen?</h2>
-              <p className="mb-6 text-foreground">
-                Viele Kreditverträge enthalten vergleichbare Formulierungen oder Klauseln. Besonders betroffen sind Verträge, in denen pauschale Bearbeitungsgebühren verlangt wurden, etwa in Form eines Prozentsatzes der Kreditsumme oder eines pauschalen Entgelts für Kreditbearbeitung und Vertragsabschluss.
-              </p>
-              <p className="mb-6 text-foreground">
-                Für Konsument:innen eröffnet sich nun die Möglichkeit, diese Entgelte prüfen zu lassen. Bei unzulässigen Klauseln können bereits bezahlte Beträge zurückgefordert werden – selbst bei bereits getilgten Krediten. Denn die in der Regel mehrere Tausend Euro betragenden – Ansprüche verjähren erst 30 Jahre ab Zahlung und sind mit jährlich vier Prozent zu verzinsen.
-              </p>
-
-              <h2 className="text-3xl font-bold mt-12 mb-6 text-foreground">Worauf sollten Kreditnehmer:innen achten?</h2>
-              <p className="mb-4 text-foreground">Prüfen Sie Ihren Kreditvertrag insbesondere auf folgende Begriffe:</p>
-              
-              <div className="bg-accent/30 p-6 rounded-lg my-8">
-                <ul className="space-y-2">
-                  <li>• „Bearbeitungsgebühr" oder „Bearbeitungsentgelt"</li>
-                  <li>• „Vertragsabschlussgebühr" oder „Kreditspesen"</li>
-                  <li>• Einmalige Spesen für Erhebung, Auszahlung oder Verwaltung</li>
-                  <li>• Drucksorten- und Portokosten</li>
-                  <li>• Schätzgebühr</li>
-                  <li>• Gebühr für Grundbuchgesuch und Grundbuchauszug</li>
-                </ul>
-              </div>
-
-              <p className="mb-6 text-foreground">
-                Solche Klauseln können rechtswidrig sein, wenn sie nicht klar nachvollziehbar sind oder doppelt für dieselbe Leistung verrechnet wird.
-              </p>
-
-              <h2 className="text-3xl font-bold mt-12 mb-6 text-foreground">Fazit: Prüfung lohnt sich</h2>
-              <p className="mb-6 text-foreground">
-                Das OGH-Urteil schafft Klarheit und stärkt die Rechte von Kreditnehmer:innen. Wer in den letzten Jahren einen Kreditvertrag abgeschlossen hat, sollte diesen nun sorgfältig prüfen (lassen). Wir übernehmen die Prüfung kostenlos und unverbindlich für Sie.
-              </p>
-
-              <div className="bg-gradient-to-r from-primary/10 to-secondary/10 p-8 rounded-lg my-8">
-                <h3 className="text-xl font-bold mb-4">Sie haben Fragen zu Ihrem Kreditvertrag?</h3>
-                <p className="mb-4">
-                  Lassen Sie Ihre Kreditbearbeitungsgebühren kostenfrei prüfen. Unsere Experten analysieren Ihren Vertrag und prüfen Rückforderungsansprüche.
-                </p>
-              </div>
-
-              <div className="mt-12 p-8 bg-card border rounded-lg">
-                <h3 className="text-xl font-bold mb-4">Ihre Experten für Verbraucherrecht & Bankrecht</h3>
-                <p className="mb-4">
-                  Als spezialisierte Rechtsanwälte für Verbraucher- und Bankrecht unterstützen wir Sie bei der Durchsetzung Ihrer Ansprüche – kompetent, effizient und erfolgsorientiert.
-                </p>
-                <p className="text-sm text-muted-foreground">
-                  Für weitere Informationen und eine Ersteinschätzung stehen Dr. Thomas Korte und Dr. Maximilian Krause jederzeit unter info@kortekanzlei.de{phoneEnabled ? ' bzw. telefonisch' : ''} zur Verfügung.
-                </p>
-                <div className="mt-4 flex flex-wrap gap-4">
-                  <a href="mailto:info@kortekanzlei.de" className="text-primary hover:underline font-medium">
-                    info@kortekanzlei.de
-                  </a>
-                  {phoneEnabled && <PhoneLink />}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </Section>
-
-      <Footer />
-    </div>
-  );
-};
+    <h2>Unser Angebot</h2>
+    <p>Wir prüfen Ihren Kreditvertrag kostenlos und unverbindlich und sagen Ihnen, ob sich eine Rückforderung lohnt. Ihre Ansprechpartner sind Dr. Thomas Korte und Dr. Maximilian Krause.</p>
+  </ArticleLayout>
+);
 
 export default BlogPostKreditgebuehr;

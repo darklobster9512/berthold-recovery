@@ -1,98 +1,61 @@
-import { Button } from "@/components/ui/button";
-import { MapPin, Phone, Mail } from "lucide-react";
-import { PhoneDisplay } from "./PhoneDisplay";
-import { useSettings } from "@/hooks/useSettings";
 import { Link } from "react-router-dom";
+import { useSettings } from "@/hooks/useSettings";
+import { kompetenzen } from "./Header";
 
 export const Footer = () => {
-  const { phoneEnabled } = useSettings();
+  const { phone, phoneEnabled } = useSettings();
+  const a = "text-primary-foreground/70 hover:text-accent transition-colors";
   return (
     <footer className="bg-primary text-primary-foreground">
-      <div className="container mx-auto px-6 max-w-7xl py-20">
-        <div className="grid lg:grid-cols-5 md:grid-cols-3 gap-12 mb-16">
-          <div className="lg:col-span-2">
-            <h3 className="font-serif text-2xl mb-6 leading-tight">
-              Korte <span className="opacity-60">&</span> Partner
-            </h3>
-            <p className="text-sm text-primary-foreground/70 leading-relaxed max-w-md">
-              Spezialisiert auf Kryptowährungsrecht, Betrugswiederherstellung und Anlegerschutz.
-              Mit über 10 Jahren Erfahrung im Finanzrecht sind wir Ihr vertrauensvoller Partner
-              bei komplexen Rechtsfragen im digitalen Zeitalter.
+      <div className="container mx-auto px-6 max-w-7xl pt-20 pb-10">
+        <div className="text-center pb-12 border-b border-primary-foreground/15">
+          <p className="font-serif text-4xl md:text-6xl tracking-tight">
+            Korte <span className="italic text-accent">&amp;</span> Partner
+          </p>
+          <p className="mt-4 text-[11px] uppercase tracking-[0.4em] text-primary-foreground/50">Rechtsanwälte · Hamburg</p>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 py-14">
+          <div>
+            <p className="text-[11px] uppercase tracking-[0.24em] text-accent mb-5">Die Kanzlei</p>
+            <p className="text-sm text-primary-foreground/70 leading-relaxed">
+              Eine unabhängige Sozietät für Wirtschafts-, Vermögens- und digitales Recht. Wir arbeiten in kleinen Teams, direkt und mit Blick auf das wirtschaftliche Ergebnis.
             </p>
-
-            <div className="mt-10 pt-8 border-t border-primary-foreground/15">
-              <p className="eyebrow text-primary-foreground/60 mb-3">Newsletter</p>
-              <p className="text-sm text-primary-foreground/70 mb-4">
-                Aktuelle Rechtsentwicklungen, kuratiert.
-              </p>
-              <div className="flex gap-0 max-w-sm">
-                <input
-                  type="email"
-                  placeholder="E-Mail-Adresse"
-                  className="flex-1 px-3 py-2 bg-transparent border border-primary-foreground/25 text-sm text-primary-foreground placeholder:text-primary-foreground/40 focus:outline-none focus:border-primary-foreground/70"
-                />
-                <Button size="sm" className="rounded-none bg-primary-foreground text-primary hover:bg-primary-foreground/90">
-                  Abonnieren
-                </Button>
-              </div>
-            </div>
           </div>
-
           <div>
-            <p className="eyebrow text-primary-foreground/60 mb-4">Kompetenzen</p>
-            <ul className="space-y-2.5 text-sm">
-              <li><Link to="/kompetenz/cybercrime" className="text-primary-foreground/75 hover:text-primary-foreground transition-colors">Cybercrime</Link></li>
-              <li><Link to="/kompetenz/datenschutz-und-compliance" className="text-primary-foreground/75 hover:text-primary-foreground transition-colors">Datenschutz & Compliance</Link></li>
-              <li><Link to="/kompetenz/gesellschafts-und-unternehmensrecht" className="text-primary-foreground/75 hover:text-primary-foreground transition-colors">Unternehmensrecht</Link></li>
-              <li><Link to="/kompetenz/immobilienrecht" className="text-primary-foreground/75 hover:text-primary-foreground transition-colors">Immobilienrecht</Link></li>
-              <li><Link to="/kompetenz/private-clients-family-offices" className="text-primary-foreground/75 hover:text-primary-foreground transition-colors">Private Clients</Link></li>
-              <li><Link to="/kompetenz/prozessfuhrung" className="text-primary-foreground/75 hover:text-primary-foreground transition-colors">Prozessführung</Link></li>
-              <li><Link to="/kompetenz/wertpapier-und-kapitalmarktrecht" className="text-primary-foreground/75 hover:text-primary-foreground transition-colors">Kapitalmarktrecht</Link></li>
-              <li><Link to="/kompetenz/kryptonachverfolgung-und-mittelherkunftsnachweis" className="text-primary-foreground/75 hover:text-primary-foreground transition-colors">Kryptonachverfolgung</Link></li>
+            <p className="text-[11px] uppercase tracking-[0.24em] text-accent mb-5">Rechtsgebiete</p>
+            <ul className="space-y-2 text-sm">
+              {kompetenzen.map((k) => (
+                <li key={k.to}><Link to={k.to} className={a}>{k.label}</Link></li>
+              ))}
             </ul>
           </div>
-
           <div>
-            <p className="eyebrow text-primary-foreground/60 mb-4">Rechtliches</p>
-            <ul className="space-y-2.5 text-sm">
-              <li><Link to="/impressum" className="text-primary-foreground/75 hover:text-primary-foreground transition-colors">Impressum</Link></li>
-              <li><Link to="/datenschutz" className="text-primary-foreground/75 hover:text-primary-foreground transition-colors">Datenschutz</Link></li>
-              <li><Link to="/agb" className="text-primary-foreground/75 hover:text-primary-foreground transition-colors">AGB</Link></li>
-              <li><Link to="/haftungsausschluss" className="text-primary-foreground/75 hover:text-primary-foreground transition-colors">Haftungsausschluss</Link></li>
+            <p className="text-[11px] uppercase tracking-[0.24em] text-accent mb-5">Mehr lesen</p>
+            <ul className="space-y-2 text-sm">
+              <li><Link to="/blog" className={a}>Journal</Link></li>
+              <li><Link to="/unsere-partner" className={a}>Netzwerk</Link></li>
+              <li><Link to="/stellenangebote" className={a}>Karriere</Link></li>
+              <li><Link to="/kontakt" className={a}>Kontakt</Link></li>
             </ul>
           </div>
-
           <div>
-            <p className="eyebrow text-primary-foreground/60 mb-4">Kontakt</p>
-            <div className="space-y-3 text-sm text-primary-foreground/80">
-              <div className="flex items-start gap-3">
-                <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0 opacity-70" />
-                <span>Domstraße 15<br />20095 Hamburg</span>
-              </div>
-              {phoneEnabled && (
-                <div className="flex items-center gap-3">
-                  <Phone className="h-4 w-4 flex-shrink-0 opacity-70" />
-                  <PhoneDisplay />
-                </div>
-              )}
-              <div className="flex items-center gap-3">
-                <Mail className="h-4 w-4 flex-shrink-0 opacity-70" />
-                <span>info@kortekanzlei.de</span>
-              </div>
-            </div>
+            <p className="text-[11px] uppercase tracking-[0.24em] text-accent mb-5">Besuchen Sie uns</p>
+            <address className="not-italic text-sm text-primary-foreground/80 leading-relaxed space-y-3">
+              <p>Domstraße 15<br />20095 Hamburg</p>
+              {phoneEnabled && <p><a href={`tel:${phone}`} className={a}>{phone}</a></p>}
+              <p><a href="mailto:info@kortekanzlei.de" className={a}>info@kortekanzlei.de</a></p>
+            </address>
           </div>
         </div>
 
-        <div className="pt-8 border-t border-primary-foreground/15">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-xs text-primary-foreground/55">
-              © 2026 Korte & Partner. Alle Rechte vorbehalten.
-            </p>
-            <div className="flex gap-6 text-xs">
-              <Link to="/impressum" className="text-primary-foreground/55 hover:text-primary-foreground transition-colors">Impressum</Link>
-              <Link to="/datenschutz" className="text-primary-foreground/55 hover:text-primary-foreground transition-colors">Datenschutz</Link>
-              <a href="#" className="text-primary-foreground/55 hover:text-primary-foreground transition-colors">Cookie-Einstellungen</a>
-            </div>
+        <div className="pt-8 border-t border-primary-foreground/15 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-primary-foreground/50">
+          <p>© 2026 Korte &amp; Partner. Alle Rechte vorbehalten.</p>
+          <div className="flex flex-wrap justify-center gap-6">
+            <Link to="/impressum" className={a}>Impressum</Link>
+            <Link to="/datenschutz" className={a}>Datenschutz</Link>
+            <Link to="/agb" className={a}>AGB</Link>
+            <Link to="/haftungsausschluss" className={a}>Haftungsausschluss</Link>
           </div>
         </div>
       </div>

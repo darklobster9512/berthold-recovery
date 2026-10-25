@@ -1,61 +1,28 @@
 import { KompetenzLayout } from "@/components/KompetenzLayout";
+import img from "@/assets/hero-library.jpg";
 
 const BlogPostImmobilienrecht = () => (
   <KompetenzLayout
+    image={img}
     breadcrumbLabel="Immobilienrecht"
-    title={<>Immobilienrecht.</>}
-    heroLead="Strukturierung, Vertragsgestaltung, Due Diligence und Durchsetzung — inklusive Mittelherkunftsnachweis bei Finanzierungen aus digitalen Vermögenswerten."
-    introStatement="Rechtssichere Begleitung anspruchsvoller Transaktionen."
+    title={<>Werte aus Stein<br /><em className="text-secondary">brauchen Sorgfalt.</em></>}
+    heroLead="Kauf, Entwicklung, Vermietung, Streit: Wir begleiten Investoren, Eigentümer und Unternehmen rund um Grundstücke und Gebäude."
+    introStatement="Bei Immobilien geht es selten um Kleinigkeiten — und nie um Standardverträge."
     introBody={
       <>
-        <p>
-          Wir beraten Privatpersonen, Investoren und Bauträger in allen immobilien- und baurechtlichen Angelegenheiten — von der Strukturierung über Vertragsgestaltung und Due Diligence bis zur Abwicklung und gerichtlichen Durchsetzung.
-        </p>
-        <p>
-          Bei Transaktionen mit Bezug zu digitalen Vermögenswerten — etwa wenn der Kaufpreis aus Krypto-Beständen finanziert wird — übernehmen wir die rechtssichere Aufbereitung des Mittelherkunftsnachweises gegenüber Notar, Bank und Treuhänder. Damit lassen sich Verzögerungen im Closing vermeiden, die bei Krypto-Vermögen heute regelmäßig auftreten.
-        </p>
+        <p>Immobiliengeschäfte binden viel Kapital über lange Zeit. Fehler in Verträgen oder Prüfungen wirken sich deshalb oft erst Jahre später aus — dann aber deutlich.</p>
+        <p>Wir prüfen Objekte rechtlich, verhandeln Kauf- und Mietverträge und vertreten Mandanten in Streitigkeiten mit Käufern, Bauunternehmen oder Mietern.</p>
       </>
     }
-    focusHeadline="Vom Bauträger bis zum Streit."
+    focusHeadline="Von der Prüfung bis zum Prozess."
     focusItems={[
-      {
-        title: "Bauträgerprojekte",
-        content:
-          "Von der ersten Idee bis zur finalen Umsetzung begleiten wir Bauträger und Immobilienentwickler — bei Baugenehmigungen, Auftragnehmerverträgen und der rechtlichen Absicherung von Verkaufs- und Marketingaktivitäten.",
-      },
-      {
-        title: "(Ver-)Kauf von Immobilien",
-        content:
-          "Wir prüfen und gestalten Verträge, beraten umfassend rechtlich und sorgen für eine reibungslose Abwicklung — von der Titelprüfung bis zur Treuhandabwicklung.",
-      },
-      {
-        title: "Planung und Strukturierung von Bauprojekten (Asset-/Share Deals)",
-        content:
-          "Als M&A- und Immobilien-Rechtsanwält:innen bieten wir umfassende Beratung aus einer Hand — mit Fokus auf Effizienz, Kostenoptimierung und Minimierung von Haftungsrisiken.",
-      },
-      {
-        title: "Rechtliche Due Diligence",
-        content:
-          "Eine fundierte Due Diligence ist die Grundlage jeder Transaktion. Wir bewerten die rechtliche Situation eines Unternehmens oder einer Immobilie vollständig und tragen so dazu bei, rechtliche Risiken zu minimieren.",
-      },
-      {
-        title: "Parifizierung / Wohnungseigentumsbegründung",
-        content:
-          "Wir begleiten den Prozess der Aufteilung in Eigentumswohnungen oder die Begründung mehrerer Einheiten bei Neubauten und stellen die Erfüllung aller rechtlichen Anforderungen sicher.",
-      },
-      {
-        title: "Miet- und Pachtverträge",
-        content:
-          "Durch ständige gesetzliche Anpassungen und neue oberstgerichtliche Urteile ist das Miet- und Wohnrecht äußerst komplex. Wir vertreten Mieter:innen, Vermieter:innen und Eigentümer:innen sachkundig und durchsetzungsstark.",
-      },
-      {
-        title: "Bau- und immobilienrechtliche Streitigkeiten",
-        content:
-          "Bauverzögerungen, Mängel, Kostenüberschreitungen, Gewährleistungsthematiken, Miet- und Wohnungseigentümerstreitigkeiten: Mit fundiertem Fachwissen setzen wir die Rechte unserer Mandant:innen gerichtlich und außergerichtlich durch.",
-      },
+      { title: "Transaktionen und Ankaufsprüfung", content: "Rechtliche Due Diligence, Kaufvertragsgestaltung und Begleitung bis zur Eintragung — für Einzelobjekte und Portfolios." },
+      { title: "Gewerbliches Mietrecht", content: "Verträge für Büro, Handel und Logistik, Nachträge, Kündigungen und Räumung." },
+      { title: "Bau- und Projektentwicklung", content: "Verträge mit Planern und Bauunternehmen, Nachträge, Mängel und Bauverzug." },
+      { title: "Immobilienstreitigkeiten", content: "Gewährleistung, Rückabwicklung, Eigentümerkonflikte: Wir setzen Ihre Rechte außergerichtlich und vor Gericht durch." },
     ]}
-    ctaTitle="Immobilienprojekt rechtssicher umsetzen."
-    ctaBody="Wir prüfen Ihre Transaktion, gestalten Verträge und übernehmen — wo erforderlich — auch den Mittelherkunftsnachweis bei Finanzierungen aus digitalen Vermögenswerten."
+    ctaTitle="Ein Objekt, ein Vertrag, ein Problem?"
+    ctaBody="Lassen Sie uns gemeinsam draufschauen. Wir geben Ihnen eine erste Einschätzung ohne Kosten."
   />
 );
 
