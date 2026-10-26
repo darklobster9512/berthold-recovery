@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 import { EditorialHero } from "@/components/EditorialHero";
 import { Footer } from "@/components/Footer";
 import { useSettings } from "@/hooks/useSettings";
-import cryptoImg from "@/assets/crypto-hero-bg.jpg";
-import filesImg from "@/assets/partner-bka-cooperation.jpg";
-import penImg from "@/assets/contact-hero-bg.jpg";
-import laptopImg from "@/assets/partner-binance-collaboration.jpg";
-import justiceImg from "@/assets/editorial-justice.jpg";
-import confImg from "@/assets/partner-iosco-summit.jpg";
+const cryptoImg = "/images/crypto-hero-bg.jpg";
+const filesImg = "/images/partner-bka-cooperation.jpg";
+const penImg = "/images/contact-hero-bg.jpg";
+const laptopImg = "/images/partner-binance-collaboration.jpg";
+const justiceImg = "/images/editorial-justice.jpg";
+const confImg = "/images/partner-iosco-summit.jpg";
 
 /** All journal posts, newest first. Used by journal overview, home page and article sidebars. */
 export const journalPosts = [

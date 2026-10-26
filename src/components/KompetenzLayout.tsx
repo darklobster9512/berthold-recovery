@@ -5,7 +5,7 @@ import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useSettings } from "@/hooks/useSettings";
-import heroImage from "@/assets/hero-library.jpg";
+const heroImage = "/images/hero-library.jpg";
 
 export interface FocusItem {
   title: string;

@@ -5,22 +5,22 @@ import { Header, kompetenzen } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { useSettings } from "@/hooks/useSettings";
 import { journalPosts } from "@/components/ArticleLayout";
-import heroImg from "@/assets/hero-library.jpg";
-import justiceImg from "@/assets/editorial-justice.jpg";
-import cryptoImg from "@/assets/crypto-hero-bg.jpg";
-import penImg from "@/assets/contact-hero-bg.jpg";
-import loungeImg from "@/assets/partner-coinbase-meeting.jpg";
-import meetingImg from "@/assets/partner-bka-cooperation.jpg";
+const heroImg = "/images/hero-library.jpg";
+const justiceImg = "/images/editorial-justice.jpg";
+const cryptoImg = "/images/crypto-hero-bg.jpg";
+const penImg = "/images/contact-hero-bg.jpg";
+const loungeImg = "/images/partner-coinbase-meeting.jpg";
+const meetingImg = "/images/partner-bka-cooperation.jpg";
 
-import teamBerthold from "@/assets/team/berthold.jpg";
-import teamLindner from "@/assets/team/lindner.jpg";
-import teamHartmann from "@/assets/team/hartmann.jpg";
-import teamBrandt from "@/assets/team/brandt.jpg";
-import teamSchreiber from "@/assets/team/schreiber.jpg";
-import teamAlbrecht from "@/assets/team/albrecht.jpg";
-import teamEngel from "@/assets/team/engel.jpg";
-import teamNeumann from "@/assets/team/neumann.jpg";
-import teamReinhardt from "@/assets/team/reinhardt.jpg";
+const teamBerthold = "/images/team/berthold.jpg";
+const teamLindner = "/images/team/lindner.jpg";
+const teamHartmann = "/images/team/hartmann.jpg";
+const teamBrandt = "/images/team/brandt.jpg";
+const teamSchreiber = "/images/team/schreiber.jpg";
+const teamAlbrecht = "/images/team/albrecht.jpg";
+const teamEngel = "/images/team/engel.jpg";
+const teamNeumann = "/images/team/neumann.jpg";
+const teamReinhardt = "/images/team/reinhardt.jpg";
 
 const team = [
   { name: "Dr. Holger Berthold", role: "Rechtsanwalt · Gründungspartner", focus: "Cybercrime, Kryptonachverfolgung", img: teamBerthold },

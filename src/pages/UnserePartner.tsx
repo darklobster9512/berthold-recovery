@@ -3,11 +3,11 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { EditorialHero } from "@/components/EditorialHero";
-import bkaImg from "@/assets/partner-bka-cooperation.jpg";
-import coinbaseImg from "@/assets/partner-coinbase-meeting.jpg";
-import binanceImg from "@/assets/partner-binance-collaboration.jpg";
-import ioscoImg from "@/assets/partner-iosco-summit.jpg";
-import heroImg from "@/assets/partner-iosco-summit.jpg";
+const bkaImg = "/images/partner-bka-cooperation.jpg";
+const coinbaseImg = "/images/partner-coinbase-meeting.jpg";
+const binanceImg = "/images/partner-binance-collaboration.jpg";
+const ioscoImg = "/images/partner-iosco-summit.jpg";
+const heroImg = "/images/partner-iosco-summit.jpg";
 
 const partners = [
   {

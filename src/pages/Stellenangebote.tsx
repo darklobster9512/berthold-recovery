@@ -5,7 +5,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { ArrowRight } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { EditorialHero } from "@/components/EditorialHero";
-import heroImage from "@/assets/partner-bka-cooperation.jpg";
+const heroImage = "/images/partner-bka-cooperation.jpg";
 
 const jobs = [
   {

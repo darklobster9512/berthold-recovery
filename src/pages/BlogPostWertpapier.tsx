@@ -1,5 +1,5 @@
 import { KompetenzLayout } from "@/components/KompetenzLayout";
-import img from "@/assets/partner-iosco-summit.jpg";
+const img = "/images/partner-iosco-summit.jpg";
 
 const BlogPostWertpapier = () => (
   <KompetenzLayout

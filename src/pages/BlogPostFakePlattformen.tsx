@@ -1,5 +1,5 @@
 import { ArticleLayout, PullQuote } from "@/components/ArticleLayout";
-import img from "@/assets/partner-binance-collaboration.jpg";
+const img = "/images/partner-binance-collaboration.jpg";
 
 const BlogPostFakePlattformen = () => (
   <ArticleLayout
