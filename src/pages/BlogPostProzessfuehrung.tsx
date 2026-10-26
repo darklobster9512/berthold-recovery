@@ -1,5 +1,5 @@
 import { KompetenzLayout } from "@/components/KompetenzLayout";
-import img from "@/assets/editorial-justice.jpg";
+const img = "/images/editorial-justice.jpg";
 
 const BlogPostProzessfuehrung = () => (
   <KompetenzLayout

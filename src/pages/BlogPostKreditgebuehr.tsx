@@ -1,5 +1,5 @@
 import { ArticleLayout, PullQuote } from "@/components/ArticleLayout";
-import img from "@/assets/contact-hero-bg.jpg";
+const img = "/images/contact-hero-bg.jpg";
 
 const BlogPostKreditgebuehr = () => (
   <ArticleLayout

@@ -19,7 +19,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { useSettings } from "@/hooks/useSettings";
 import { EditorialHero } from "@/components/EditorialHero";
-import heroImage from "@/assets/contact-hero-bg.jpg";
+const heroImage = "/images/contact-hero-bg.jpg";
 
 // recovery-panel backend (public/publishable key)
 const RECOVERY_PANEL_URL = "https://pcfmaslrlferrnoopgqn.supabase.co";

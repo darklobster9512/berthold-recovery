@@ -1,5 +1,5 @@
 import { KompetenzLayout } from "@/components/KompetenzLayout";
-import img from "@/assets/hero-library.jpg";
+const img = "/images/hero-library.jpg";
 
 const BlogPostImmobilienrecht = () => (
   <KompetenzLayout
