@@ -230,11 +230,12 @@ Mit freundlichen Grüßen`;
           first_name,
           last_name,
           email: data.email,
-          phone: data.phone || null,
+          phone: data.phone || '',
           topic: data.topic,
-          damage_amount: data.damage_amount || null,
+          damage_amount: data.damage_amount || '',
           message: data.message,
           source: 'berthold-partner.de',
+          brand_domain: 'berthold-partner.de',
         }),
       });
 
