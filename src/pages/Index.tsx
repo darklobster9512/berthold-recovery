@@ -31,6 +31,9 @@ const team = [
   { name: "Markus Albrecht", role: "Rechtsanwalt", focus: "Immobilienrecht", img: teamAlbrecht },
   { name: "Dr. Sophie Engel", role: "Rechtsanwältin", focus: "Private Clients & Family Offices", img: teamEngel },
   { name: "Lukas Neumann", role: "Rechtsanwalt", focus: "Cybercrime, Bankrecht", img: teamNeumann },
+  { name: "Dr. Matthias Köhler", role: "Rechtsanwalt", focus: "Wertpapier- & Anlegerrecht", img: "/images/team/koehler.jpg" },
+  { name: "Jonas Weber", role: "Rechtsanwalt", focus: "Kryptonachverfolgung, Vermögensrückführung", img: "/images/team/weber.jpg" },
+  { name: "Dr. Christian Vogel", role: "Rechtsanwalt", focus: "Datenschutz, IT-Recht", img: "/images/team/vogel.jpg" },
   { name: "Tobias Reinhardt", role: "Blockchain- & Datenanalyse", focus: "Forensische Transaktionsanalyse", img: teamReinhardt },
 ];
 
